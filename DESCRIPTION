@@ -9,6 +9,8 @@ Authors@R:
            comment = c(ORCID = "0000-0002-4221-6104"))
 Description: Implement download buttons in HTML output from RMarkdown without the need for runtime:shiny.
 License: MIT + file LICENSE
+URL: https://github.com/fmmattioni/downloadthis
+BugReports: https://github.com/fmmattioni/downloadthis/issues
 Encoding: UTF-8
 LazyData: true
 Imports: 
