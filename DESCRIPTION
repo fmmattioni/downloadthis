@@ -21,9 +21,9 @@ Imports:
     mime,
     htmltools,
     base64enc,
-    magrittr
+    magrittr,
+    rmarkdown
 RoxygenNote: 7.0.2
 Suggests: 
-    knitr,
-    rmarkdown
+    knitr
 VignetteBuilder: knitr
