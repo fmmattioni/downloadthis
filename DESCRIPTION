@@ -1,0 +1,27 @@
+Package: downloadthis
+Title: Implement Download Buttons in RMarkdown
+Version: 0.0.0.9000
+Authors@R: 
+    person(given = "Felipe",
+           family = "Mattioni Maturana",
+           role = c("aut", "cre"),
+           email = "felipe.mattioni@med.uni-tuebigen.de",
+           comment = c(ORCID = "0000-0002-4221-6104"))
+Description: Implement download buttons in HTML output from RMarkdown without the need for runtime:shiny.
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+Imports: 
+    fs,
+    readr,
+    writexl,
+    bsplus,
+    mime,
+    htmltools,
+    base64enc,
+    magrittr
+RoxygenNote: 7.0.2
+Suggests: 
+    knitr,
+    rmarkdown
+VignetteBuilder: knitr

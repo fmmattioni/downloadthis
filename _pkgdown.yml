@@ -1,0 +1,25 @@
+destination: docs
+
+template:
+  ganalytics: "UA-126092763-1"
+  params:
+    bootswatch: lumen
+
+authors:
+  Felipe Mattioni Maturana:
+    href: https://fmattioni.me
+
+toc:
+  depth: 3
+
+development:
+  mode: auto
+
+navbar:
+  title: ~
+  type: default
+  right:
+  - icon: fa-github fa-lg
+    href: https://github.com/fmmattioni/downloadthis
+  - icon: fa-twitter fa-lg
+    href: https://twitter.com/felipe_mattioni

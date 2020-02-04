@@ -1,0 +1,95 @@
+---
+title: "Introduction to  downloadthis"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Introduction to  downloadthis}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+This package provides a wrapper around `bsplus::bs_button()`, which has to goal to provide a download button in HTML outputs from RMarkdown without the need to have `runtime: shiny`.
+
+You can easily produce a download as follows:
+
+## Button
+
+### Default
+
+```{r example_1}
+library(downloadthis)
+
+mtcars %>% 
+  download_this(
+    output_name = "mtcars dataset",
+    output_extension = ".csv",
+    button_label = "Download data as csv",
+    button_type = "default"
+  )
+```
+
+### Primary
+
+```{r example_2}
+mtcars %>% 
+  download_this(
+    output_name = "mtcars dataset",
+    output_extension = ".xlsx",
+    button_label = "Download data as xlsx",
+    button_type = "primary"
+  )
+```
+
+### Success
+
+```{r example_3}
+mtcars %>% 
+  download_this(
+    output_name = "mtcars dataset",
+    output_extension = ".csv",
+    button_label = "Download data as csv",
+    button_type = "success"
+  )
+```
+
+### Info
+
+```{r example_4}
+mtcars %>% 
+  download_this(
+    output_name = "mtcars dataset",
+    output_extension = ".xlsx",
+    button_label = "Download data as xlsx",
+    button_type = "info"
+  )
+```
+
+### Warning
+
+```{r example_5}
+mtcars %>% 
+  download_this(
+    output_name = "mtcars dataset",
+    output_extension = ".csv",
+    button_label = "Download data as csv",
+    button_type = "warning"
+  )
+```
+
+### Danger
+
+```{r example_6}
+mtcars %>% 
+  download_this(
+    output_name = "mtcars dataset",
+    output_extension = ".xlsx",
+    button_label = "Download data as xlsx",
+    button_type = "danger"
+  )
+```
