@@ -8,8 +8,10 @@ download_this(
   .data,
   output_name,
   output_extension = c(".csv", ".xlsx"),
-  button_label,
+  button_label = "Download data",
   button_type = c("default", "primary", "success", "info", "warning", "danger"),
+  has_icon = TRUE,
+  icon = "fa fa-save",
   ...
 )
 }
@@ -23,6 +25,10 @@ download_this(
 \item{button_label}{character (HTML), button label}
 
 \item{button_type}{character, one of the standard Bootstrap types}
+
+\item{has_icon}{specify whether to include fontawesome icons in the button label}
+
+\item{icon}{fontawesome tag e.g.: "fa fa-save"}
 
 \item{...}{attributes (named arguments) and children (unnamed arguments)
 of the button, passed to \code{htmltools::\link[htmltools]{tag}}}
