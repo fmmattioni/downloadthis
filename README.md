@@ -7,6 +7,8 @@
 
 [![Lifecycle:
 experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
+[![Travis build
+status](https://travis-ci.com/fmmattioni/downloadthis.svg?branch=master)](https://travis-ci.com/fmmattioni/downloadthis)
 <!-- badges: end -->
 
 The goal of `downloadthis` is to implement download buttons in HTML
