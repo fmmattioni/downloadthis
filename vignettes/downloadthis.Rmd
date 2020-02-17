@@ -14,9 +14,9 @@ knitr::opts_chunk$set(
 )
 ```
 
-This package provides a wrapper around `bsplus::bs_button()`, which has to goal to provide a download button in HTML outputs from RMarkdown without the need to have `runtime: shiny`.
+This package provides a wrapper around `bsplus::bs_button()`, which has to goal to provide a download button in HTML outputs from R Markdown without the need to have `runtime: shiny`.
 
-You can easily produce a download as follows:
+You can easily produce a download button as follows:
 
 ## Button
 
@@ -30,7 +30,9 @@ mtcars %>%
     output_name = "mtcars dataset",
     output_extension = ".csv",
     button_label = "Download data as csv",
-    button_type = "default"
+    button_type = "default",
+    has_icon = TRUE,
+    icon = "fa fa-save"
   )
 ```
 
@@ -42,7 +44,9 @@ mtcars %>%
     output_name = "mtcars dataset",
     output_extension = ".xlsx",
     button_label = "Download data as xlsx",
-    button_type = "primary"
+    button_type = "primary",
+    has_icon = TRUE,
+    icon = "fa fa-save"
   )
 ```
 
@@ -54,7 +58,9 @@ mtcars %>%
     output_name = "mtcars dataset",
     output_extension = ".csv",
     button_label = "Download data as csv",
-    button_type = "success"
+    button_type = "success",
+    has_icon = TRUE,
+    icon = "fa fa-save"
   )
 ```
 
@@ -66,7 +72,9 @@ mtcars %>%
     output_name = "mtcars dataset",
     output_extension = ".xlsx",
     button_label = "Download data as xlsx",
-    button_type = "info"
+    button_type = "info",
+    has_icon = TRUE,
+    icon = "fa fa-save"
   )
 ```
 
@@ -78,7 +86,9 @@ mtcars %>%
     output_name = "mtcars dataset",
     output_extension = ".csv",
     button_label = "Download data as csv",
-    button_type = "warning"
+    button_type = "warning",
+    has_icon = TRUE,
+    icon = "fa fa-save"
   )
 ```
 
@@ -90,6 +100,8 @@ mtcars %>%
     output_name = "mtcars dataset",
     output_extension = ".xlsx",
     button_label = "Download data as xlsx",
-    button_type = "danger"
+    button_type = "danger",
+    has_icon = TRUE,
+    icon = "fa fa-save"
   )
 ```
