@@ -1,7 +1,7 @@
-
 #' Download button
 #'
-#' Wrapper around \code{bsplus::\link[bsplus]{bs_button}} to provide a download button for HTML outputs in RMarkdown
+#' Wrapper around \code{bsplus::\link[bsplus]{bs_button}} to provide a download button for HTML outputs in R Markdown.
+#' Internally, the function writes the file to `tempdir()`, encodes it, and produces the download button.
 #'
 #' @param .data A data frame to write to disk.
 #' @param output_name Name of of the output file.
@@ -16,14 +16,18 @@
 #' @return \code{htmltools::\link[htmltools]{tag}}, \code{<button/>}
 #' @export
 #'
-#' @examples
+#' @section Warning:
+#' This example will write the `mtcars` dataset to `tempdir()` and produce the download button for the file `mtcars dataset.csv` with the `fa fa-save` icon on the `Download data` label.
 #'
+#' @examples
 #' mtcars %>%
 #'   download_this(
-#'     output_name = "mtcars data set",
+#'     output_name = "mtcars dataset",
 #'     output_extension = ".csv",
 #'     button_label = "Download data",
 #'     button_type = "warning",
+#'     has_icon = TRUE,
+#'     icon = "fa fa-save"
 #'   )
 download_this <- function(
   .data,
@@ -48,8 +52,8 @@ download_this <- function(
   ## name of the final output file
   output_file <- paste0(output_name, output_extension)
 
-  ## generate temporary file
-  tmp_file <- fs::file_temp(ext = output_extension)
+  ## generate temporary file in temporary folder
+  tmp_file <- fs::file_temp(ext = output_extension, tmp_dir = tempdir())
 
   if(output_extension == ".csv") {
     readr::write_csv(x = .data, path = tmp_file)

@@ -37,15 +37,22 @@ of the button, passed to \code{htmltools::\link[htmltools]{tag}}}
 \code{htmltools::\link[htmltools]{tag}}, \code{<button/>}
 }
 \description{
-Wrapper around \code{bsplus::\link[bsplus]{bs_button}} to provide a download button for HTML outputs in RMarkdown
+Wrapper around \code{bsplus::\link[bsplus]{bs_button}} to provide a download button for HTML outputs in R Markdown.
+Internally, the function writes the file to `tempdir()`, encodes it, and produces the download button.
 }
-\examples{
+\section{Warning}{
 
+This example will write the `mtcars` dataset to `tempdir()` and produce the download button for the file `mtcars dataset.csv` with the `fa fa-save` icon on the `Download data` label.
+}
+
+\examples{
 mtcars \%>\%
   download_this(
-    output_name = "mtcars data set",
+    output_name = "mtcars dataset",
     output_extension = ".csv",
     button_label = "Download data",
     button_type = "warning",
+    has_icon = TRUE,
+    icon = "fa fa-save"
   )
 }
