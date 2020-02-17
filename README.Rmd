@@ -33,11 +33,11 @@ remotes::install_github("fmmattioni/downloadthis")
 
 ## Introduction
 
-This package builds the download button in RMarkdown using [bsplus](https://github.com/ijlyttle/bsplus), and it was inspired on [this post](https://yihui.org/en/2018/07/embed-file/) from [Yihui Xie](https://github.com/yihui).
+This package builds the download button in R Markdown using [bsplus](https://github.com/ijlyttle/bsplus), and it was inspired on [this post](https://yihui.org/en/2018/07/embed-file/) from [Yihui Xie](https://github.com/yihui).
 
 ## Example
 
-```{r example, eval=FALSE}
+```{r example}
 library(downloadthis)
 
 mtcars %>% 
@@ -45,7 +45,9 @@ mtcars %>%
     output_name = "mtcars data set",
     output_extension = ".csv",
     button_label = "Download data",
-    button_type = "warning"
+    button_type = "warning",
+    has_icon = TRUE,
+    icon = "fa fa-save"
   )
 ```
 
