@@ -9,7 +9,15 @@
 
 * This is a resubmission.
 
-Comments from previous submission:
+### Comments from previous submission:
+
+> Possibly mis-spelled words in DESCRIPTION: RMarkdown (2:38, 10:61)
+
+> Found the following (possibly) invalid file URI: URI: CODE_OF_CONDUCT.md From: README.md
+
+All the above were corrected accordingly.
+
+### Comments from previous submission:
 
 > Please do not write to the user filespace. If you really have to write out something, use tempdir() if the user is not asked and in examples.
 

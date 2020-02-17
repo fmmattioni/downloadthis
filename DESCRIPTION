@@ -1,5 +1,5 @@
 Package: downloadthis
-Title: Implement Download Buttons in RMarkdown
+Title: Implement Download Buttons in 'rmarkdown'
 Version: 0.1.0
 Authors@R: 
     person(given = "Felipe",
@@ -7,7 +7,7 @@ Authors@R:
            role = c("aut", "cre"),
            email = "felipe.mattioni@med.uni-tuebingen.de",
            comment = c(ORCID = "0000-0002-4221-6104"))
-Description: Implement download buttons in HTML output from RMarkdown without the need for runtime:shiny.
+Description: Implement download buttons in HTML output from 'rmarkdown' without the need for 'runtime:shiny'.
 License: MIT + file LICENSE
 URL: https://github.com/fmmattioni/downloadthis
 BugReports: https://github.com/fmmattioni/downloadthis/issues

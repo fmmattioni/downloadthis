@@ -54,9 +54,11 @@ mtcars %>%
 <button class="btn btn-warning"><i class="fa fa-save"></i> Download
 data</button> </a><!--/html_preserve-->
 
-Please note that the ‘downloadthis’ project is released with a
-[Contributor Code of Conduct](CODE_OF_CONDUCT.md). By contributing to
-this project, you agree to abide by its
+## Code of Conduct
+
+Please note that this project is released with a [Contributor Code of
+Conduct](https://www.contributor-covenant.org/version/1/0/0/code-of-conduct.html).
+By participating in this project you agree to abide by its
 terms.
 
 ## Support
