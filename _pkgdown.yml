@@ -1,9 +1,9 @@
 destination: docs
 
 template:
-  ganalytics: UA-126092763-1
   params:
     bootswatch: lumen
+    ganalytics: UA-126092763-1
 
 authors:
   Felipe Mattioni Maturana:
