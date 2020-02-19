@@ -2,7 +2,7 @@ destination: docs
 
 template:
   params:
-    bootswatch: sandstone
+    bootswatch: lumen
     ganalytics: UA-126092763-1
 
 authors:
