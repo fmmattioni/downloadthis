@@ -1,7 +1,7 @@
 destination: docs
 
 template:
-  ganalytics: "UA-126092763-1"
+  ganalytics: UA-126092763-1
   params:
     bootswatch: lumen
 
