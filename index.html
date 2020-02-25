@@ -101,8 +101,11 @@
 <div id="installation" class="section level2">
 <h2 class="hasAnchor">
 <a href="#installation" class="anchor"></a>Installation</h2>
-<p>You can install the development version of <code>downloadthis</code> from <a href="https://github.com/">GitHub</a> with:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a>remotes<span class="op">::</span><span class="kw"><a href="https://remotes.r-lib.org/reference/install_github.html">install_github</a></span>(<span class="st">"fmmattioni/downloadthis"</span>)</span></code></pre></div>
+<p>You can install the released version of <code>downloadthis</code> from <a href="https://cran.r-project.org/web/packages/downloadthis/index.html">CRAN</a> with:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="kw"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span>(<span class="st">"downloadthis"</span>)</span></code></pre></div>
+<p>You can install the development version of <code>downloadthis</code> from <a href="https://github.com/fmmattioni/downloadthis/">GitHub</a> with:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="co"># install.packages("remotes")</span></span>
+<span id="cb2-2"><a href="#cb2-2"></a>remotes<span class="op">::</span><span class="kw"><a href="https://remotes.r-lib.org/reference/install_github.html">install_github</a></span>(<span class="st">"fmmattioni/downloadthis"</span>)</span></code></pre></div>
 </div>
 <div id="introduction" class="section level2">
 <h2 class="hasAnchor">
@@ -112,17 +115,17 @@
 <div id="example" class="section level2">
 <h2 class="hasAnchor">
 <a href="#example" class="anchor"></a>Example</h2>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(downloadthis)</span>
-<span id="cb2-2"><a href="#cb2-2"></a></span>
-<span id="cb2-3"><a href="#cb2-3"></a>mtcars <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb2-4"><a href="#cb2-4"></a><span class="st">  </span><span class="kw"><a href="reference/download_this.html">download_this</a></span>(</span>
-<span id="cb2-5"><a href="#cb2-5"></a>    <span class="dt">output_name =</span> <span class="st">"mtcars data set"</span>,</span>
-<span id="cb2-6"><a href="#cb2-6"></a>    <span class="dt">output_extension =</span> <span class="st">".csv"</span>,</span>
-<span id="cb2-7"><a href="#cb2-7"></a>    <span class="dt">button_label =</span> <span class="st">"Download data"</span>,</span>
-<span id="cb2-8"><a href="#cb2-8"></a>    <span class="dt">button_type =</span> <span class="st">"warning"</span>,</span>
-<span id="cb2-9"><a href="#cb2-9"></a>    <span class="dt">has_icon =</span> <span class="ot">TRUE</span>,</span>
-<span id="cb2-10"><a href="#cb2-10"></a>    <span class="dt">icon =</span> <span class="st">"fa fa-save"</span></span>
-<span id="cb2-11"><a href="#cb2-11"></a>  )</span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(downloadthis)</span>
+<span id="cb3-2"><a href="#cb3-2"></a></span>
+<span id="cb3-3"><a href="#cb3-3"></a>mtcars <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb3-4"><a href="#cb3-4"></a><span class="st">  </span><span class="kw"><a href="reference/download_this.html">download_this</a></span>(</span>
+<span id="cb3-5"><a href="#cb3-5"></a>    <span class="dt">output_name =</span> <span class="st">"mtcars data set"</span>,</span>
+<span id="cb3-6"><a href="#cb3-6"></a>    <span class="dt">output_extension =</span> <span class="st">".csv"</span>,</span>
+<span id="cb3-7"><a href="#cb3-7"></a>    <span class="dt">button_label =</span> <span class="st">"Download data"</span>,</span>
+<span id="cb3-8"><a href="#cb3-8"></a>    <span class="dt">button_type =</span> <span class="st">"warning"</span>,</span>
+<span id="cb3-9"><a href="#cb3-9"></a>    <span class="dt">has_icon =</span> <span class="ot">TRUE</span>,</span>
+<span id="cb3-10"><a href="#cb3-10"></a>    <span class="dt">icon =</span> <span class="st">"fa fa-save"</span></span>
+<span id="cb3-11"><a href="#cb3-11"></a>  )</span></code></pre></div>
 <!--html_preserve-->
 <p><a href="data:text/csv;base64,bXBnLGN5bCxkaXNwLGhwLGRyYXQsd3QscXNlYyx2cyxhbSxnZWFyLGNhcmIKMjEsNiwxNjAsMTEwLDMuOSwyLjYyLDE2LjQ2LDAsMSw0LDQKMjEsNiwxNjAsMTEwLDMuOSwyLjg3NSwxNy4wMiwwLDEsNCw0CjIyLjgsNCwxMDgsOTMsMy44NSwyLjMyLDE4LjYxLDEsMSw0LDEKMjEuNCw2LDI1OCwxMTAsMy4wOCwzLjIxNSwxOS40NCwxLDAsMywxCjE4LjcsOCwzNjAsMTc1LDMuMTUsMy40NCwxNy4wMiwwLDAsMywyCjE4LjEsNiwyMjUsMTA1LDIuNzYsMy40NiwyMC4yMiwxLDAsMywxCjE0LjMsOCwzNjAsMjQ1LDMuMjEsMy41NywxNS44NCwwLDAsMyw0CjI0LjQsNCwxNDYuNyw2MiwzLjY5LDMuMTksMjAsMSwwLDQsMgoyMi44LDQsMTQwLjgsOTUsMy45MiwzLjE1LDIyLjksMSwwLDQsMgoxOS4yLDYsMTY3LjYsMTIzLDMuOTIsMy40NCwxOC4zLDEsMCw0LDQKMTcuOCw2LDE2Ny42LDEyMywzLjkyLDMuNDQsMTguOSwxLDAsNCw0CjE2LjQsOCwyNzUuOCwxODAsMy4wNyw0LjA3LDE3LjQsMCwwLDMsMwoxNy4zLDgsMjc1LjgsMTgwLDMuMDcsMy43MywxNy42LDAsMCwzLDMKMTUuMiw4LDI3NS44LDE4MCwzLjA3LDMuNzgsMTgsMCwwLDMsMwoxMC40LDgsNDcyLDIwNSwyLjkzLDUuMjUsMTcuOTgsMCwwLDMsNAoxMC40LDgsNDYwLDIxNSwzLDUuNDI0LDE3LjgyLDAsMCwzLDQKMTQuNyw4LDQ0MCwyMzAsMy4yMyw1LjM0NSwxNy40MiwwLDAsMyw0CjMyLjQsNCw3OC43LDY2LDQuMDgsMi4yLDE5LjQ3LDEsMSw0LDEKMzAuNCw0LDc1LjcsNTIsNC45MywxLjYxNSwxOC41MiwxLDEsNCwyCjMzLjksNCw3MS4xLDY1LDQuMjIsMS44MzUsMTkuOSwxLDEsNCwxCjIxLjUsNCwxMjAuMSw5NywzLjcsMi40NjUsMjAuMDEsMSwwLDMsMQoxNS41LDgsMzE4LDE1MCwyLjc2LDMuNTIsMTYuODcsMCwwLDMsMgoxNS4yLDgsMzA0LDE1MCwzLjE1LDMuNDM1LDE3LjMsMCwwLDMsMgoxMy4zLDgsMzUwLDI0NSwzLjczLDMuODQsMTUuNDEsMCwwLDMsNAoxOS4yLDgsNDAwLDE3NSwzLjA4LDMuODQ1LDE3LjA1LDAsMCwzLDIKMjcuMyw0LDc5LDY2LDQuMDgsMS45MzUsMTguOSwxLDEsNCwxCjI2LDQsMTIwLjMsOTEsNC40MywyLjE0LDE2LjcsMCwxLDUsMgozMC40LDQsOTUuMSwxMTMsMy43NywxLjUxMywxNi45LDEsMSw1LDIKMTUuOCw4LDM1MSwyNjQsNC4yMiwzLjE3LDE0LjUsMCwxLDUsNAoxOS43LDYsMTQ1LDE3NSwzLjYyLDIuNzcsMTUuNSwwLDEsNSw2CjE1LDgsMzAxLDMzNSwzLjU0LDMuNTcsMTQuNiwwLDEsNSw4CjIxLjQsNCwxMjEsMTA5LDQuMTEsMi43OCwxOC42LDEsMSw0LDIK" download="mtcars data set.csv"> <button class="btn btn-warning"><i class="fa fa-save"></i> Download data</button> </a><!--/html_preserve--></p>
 </div>
@@ -143,6 +146,8 @@
     <div class="links">
 <h2>Links</h2>
 <ul class="list-unstyled">
+<li>Download from CRAN at <br><a href="https://cloud.r-project.org/package=downloadthis">https://​cloud.r-project.org/​package=downloadthis</a>
+</li>
 <li>Browse source code at <br><a href="https://github.com/fmmattioni/downloadthis">https://​github.com/​fmmattioni/​downloadthis</a>
 </li>
 <li>Report a bug at <br><a href="https://github.com/fmmattioni/downloadthis/issues">https://​github.com/​fmmattioni/​downloadthis/​issues</a>
@@ -174,8 +179,10 @@
 <h2>Dev status</h2>
 <ul class="list-unstyled">
 <li><a href="https://www.tidyverse.org/lifecycle/#stable"><img src="https://img.shields.io/badge/lifecycle-stable-brightgreen.svg" alt="Lifecycle: stable"></a></li>
-<li><a href="https://CRAN.R-project.org/package=downloadthis"><img src="https://www.r-pkg.org/badges/version/downloadthis" alt="CRAN status"></a></li>
+<li><a href="https://CRAN.R-project.org/package=downloadthis"><img src="https://www.r-pkg.org/badges/version-ago/downloadthis" alt="CRAN status"></a></li>
 <li><a href="https://github.com/fmmattioni/downloadthis"><img src="https://github.com/fmmattioni/downloadthis/workflows/R-CMD-check/badge.svg" alt="R build status"></a></li>
+<li><a href="https://CRAN.R-project.org/package=downloadthis"><img src="https://cranlogs.r-pkg.org/badges/last-month/downloadthis?color=blue" alt="Monthly downloads badge"></a></li>
+<li><a href="https://CRAN.R-project.org/package=downloadthis"><img src="https://cranlogs.r-pkg.org/badges/grand-total/downloadthis?color=blue" alt="Total downloads badge"></a></li>
 </ul>
 </div>
 </div>
