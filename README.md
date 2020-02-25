@@ -8,9 +8,13 @@
 [![Lifecycle:
 stable](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://www.tidyverse.org/lifecycle/#stable)
 [![CRAN
-status](https://www.r-pkg.org/badges/version/downloadthis)](https://CRAN.R-project.org/package=downloadthis)
+status](https://www.r-pkg.org/badges/version-ago/downloadthis)](https://CRAN.R-project.org/package=downloadthis)
 [![R build
 status](https://github.com/fmmattioni/downloadthis/workflows/R-CMD-check/badge.svg)](https://github.com/fmmattioni/downloadthis)
+[![Monthly downloads
+badge](https://cranlogs.r-pkg.org/badges/last-month/downloadthis?color=blue)](https://CRAN.R-project.org/package=downloadthis)
+[![Total downloads
+badge](https://cranlogs.r-pkg.org/badges/grand-total/downloadthis?color=blue)](https://CRAN.R-project.org/package=downloadthis)
 <!-- badges: end -->
 
 The goal of `downloadthis` is to implement download buttons in HTML
@@ -18,10 +22,19 @@ output from RMarkdown without the need for `runtime:shiny`.
 
 ## Installation
 
-You can install the development version of `downloadthis` from
-[GitHub](https://github.com/) with:
+You can install the released version of `downloadthis` from
+[CRAN](https://cran.r-project.org/web/packages/downloadthis/index.html)
+with:
 
 ``` r
+install.packages("downloadthis")
+```
+
+You can install the development version of `downloadthis` from
+[GitHub](https://github.com/fmmattioni/downloadthis/) with:
+
+``` r
+# install.packages("remotes")
 remotes::install_github("fmmattioni/downloadthis")
 ```
 
