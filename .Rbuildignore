@@ -9,5 +9,6 @@
 ^\.travis\.yml$
 ^\.github/workflows/R-CMD-check\.yaml$
 ^\.github/workflows/pkgdown\.yaml$
+^\.github/workflows/pkgdown\.yml$
 ^cran-comments\.md$
 ^CRAN-RELEASE$
