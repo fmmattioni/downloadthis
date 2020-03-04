@@ -79,7 +79,7 @@ download_this <- function(
   button_type <- match.arg(button_type)
 
   ## if list is passed to the function, only .xlsx will be used
-  if(is.list(.data))
+  if(class(.data) == "list")
     output_extension <- ".xlsx"
 
   ## name of the final output file
