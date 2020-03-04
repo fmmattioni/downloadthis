@@ -3,7 +3,7 @@
 #' Wrapper around \code{bsplus::\link[bsplus]{bs_button}} to provide a download button for HTML outputs in R Markdown.
 #' Internally, the function writes the file to `tempdir()`, encodes it, and produces the download button.
 #'
-#' @param .data A data frame to write to disk.
+#' @param .data A data frame or (named) list to write to disk. See 'Examples' for more details.
 #' @param output_name Name of of the output file.
 #' @param output_extension Extension of the output file. Currently, only  \code{.csv} and  \code{.xlsx} are supported.
 #' @param button_label character (HTML), button label
@@ -20,7 +20,30 @@
 #' This example will write the `mtcars` dataset to `tempdir()` and produce the download button for the file `mtcars dataset.csv` with the `fa fa-save` icon on the `Download data` label.
 #'
 #' @examples
+#' # Passing a data frame to the function
 #' mtcars %>%
+#'   download_this(
+#'     output_name = "mtcars dataset",
+#'     output_extension = ".csv",
+#'     button_label = "Download data",
+#'     button_type = "warning",
+#'     has_icon = TRUE,
+#'     icon = "fa fa-save"
+#'   )
+#'
+#' # Passing a list with data framnes to the function
+#' list(mtcars, iris) %>%
+#'   download_this(
+#'     output_name = "mtcars dataset",
+#'     output_extension = ".csv",
+#'     button_label = "Download data",
+#'     button_type = "warning",
+#'     has_icon = TRUE,
+#'     icon = "fa fa-save"
+#'   )
+#'
+#' # Passing a named list with data frames to the function
+#' list('mtcars dataset' = mtcars, 'iris dataset' = iris) %>%
 #'   download_this(
 #'     output_name = "mtcars dataset",
 #'     output_extension = ".csv",
@@ -40,14 +63,24 @@ download_this <- function(
   ...
 ){
 
-  if(!is.data.frame(.data))
-    stop("You must pass a data frame to the function.", call. = FALSE)
+  ## check if .data argument only contains data frames (if list is passed) or a single data frame
+  if(is.list(.data)) {
+    if(!all_data_frame_from_list(.data))
+      stop("You can only pass data frames to the function.", call. = FALSE)
+  } else {
+    if(!is.data.frame(.data))
+      stop("You must pass a data frame to the function.", call. = FALSE)
+  }
 
   ## add fontawesome
   add_fontawesome()
 
   output_extension <- match.arg(output_extension)
   button_type <- match.arg(button_type)
+
+  ## if list is passed to the function, only .xlsx will be used
+  if(is.list(.data))
+    output_extension <- ".xlsx"
 
   ## name of the final output file
   output_file <- paste0(output_name, output_extension)
@@ -61,12 +94,9 @@ download_this <- function(
     writexl::write_xlsx(x = .data, path = tmp_file)
   }
 
-  ## create button label
-  if(has_icon) {
+  ## create button label with icon
+  if(has_icon)
     button_label <- htmltools::HTML(paste(htmltools::tags$i(class = icon), button_label))
-  } else {
-    button_label
-  }
 
   ## generate download button
   bsplus::bs_button(
@@ -96,4 +126,9 @@ add_fontawesome <- function(){
   ## https://github.com/rstudio/rmarkdown/issues/813
 
   htmltools::tagList(rmarkdown::html_dependency_font_awesome())
+}
+
+all_data_frame_from_list <- function(.list) {
+  purrr::map_lgl(.list, is.data.frame) %>%
+    all()
 }
