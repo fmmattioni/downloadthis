@@ -20,34 +20,13 @@ You can simply pass a **class** to `download_this()` and define this class in `c
 
 ## Changing size
 
-```{css}
-.button_small {
-  font-size: 12px;
-}
-```
-
-```{r}
-library(downloadthis)
-
-mtcars %>% 
-  download_this(
-    output_name = "mtcars dataset",
-    output_extension = ".csv",
-    button_label = "Download data as csv",
-    button_type = "default",
-    has_icon = TRUE,
-    icon = "fa fa-save",
-    class = "button_small"
-  )
-```
-
-<br>
-
+<details><summary>Show css code</summary>
 ```{css}
 .button_large {
   font-size: 24px;
 }
 ```
+</details>
 
 ```{r}
 library(downloadthis)
@@ -66,12 +45,14 @@ mtcars %>%
 
 ## Changing font-family
 
+<details><summary>Show css code</summary>
 ```{css}
 .button_times_new_roman {
   font-family: "Times New Roman";
   font-size: 14px;
 }
 ```
+</details>
 
 ```{r}
 library(downloadthis)
@@ -90,6 +71,7 @@ mtcars %>%
 
 ## Adding animation on hover
 
+<details><summary>Show css code</summary>
 ```{css}
 /* from https://ianlunn.github.io/Hover/ */
 .hvr-sweep-to-left {
@@ -132,6 +114,7 @@ mtcars %>%
   transform: scaleX(1);
 }
 ```
+</details>
 
 ```{r}
 library(downloadthis)
