@@ -34,7 +34,7 @@ mtcars %>%
   )
 ```
 
-# Passing a list with data frames to the function (only `.xlsx` supported)
+## Passing a list with data frames to the function (only `.xlsx` supported)
 
 ```{r}
 list(mtcars, iris) %>%
@@ -48,7 +48,7 @@ list(mtcars, iris) %>%
   )
 ```
 
-# Passing a named list with data frames to the function (only `.xlsx` supported)
+## Passing a named list with data frames to the function (only `.xlsx` supported)
 
 ```{r}
 list('mtcars dataset' = mtcars, 'iris dataset' = iris) %>%
