@@ -64,7 +64,7 @@ download_this <- function(
 ){
 
   ## check if .data argument only contains data frames (if list is passed) or a single data frame
-  if(is.list(.data)) {
+  if(class(.data) == "list") {
     if(!all_data_frame_from_list(.data))
       stop("You can only pass data frames to the function.", call. = FALSE)
   } else {

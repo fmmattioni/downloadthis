@@ -16,7 +16,7 @@ download_this(
 )
 }
 \arguments{
-\item{.data}{A data frame to write to disk.}
+\item{.data}{A data frame or (named) list to write to disk. See 'Examples' for more details.}
 
 \item{output_name}{Name of of the output file.}
 
@@ -46,7 +46,30 @@ This example will write the `mtcars` dataset to `tempdir()` and produce the down
 }
 
 \examples{
+# Passing a data frame to the function
 mtcars \%>\%
+  download_this(
+    output_name = "mtcars dataset",
+    output_extension = ".csv",
+    button_label = "Download data",
+    button_type = "warning",
+    has_icon = TRUE,
+    icon = "fa fa-save"
+  )
+
+# Passing a list with data framnes to the function
+list(mtcars, iris) \%>\%
+  download_this(
+    output_name = "mtcars dataset",
+    output_extension = ".csv",
+    button_label = "Download data",
+    button_type = "warning",
+    has_icon = TRUE,
+    icon = "fa fa-save"
+  )
+
+# Passing a named list with data frames to the function
+list('mtcars dataset' = mtcars, 'iris dataset' = iris) \%>\%
   download_this(
     output_name = "mtcars dataset",
     output_extension = ".csv",
