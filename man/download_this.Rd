@@ -60,7 +60,7 @@ mtcars \%>\%
 # Passing a list with data frames to the function
 list(mtcars, iris) \%>\%
   download_this(
-    output_name = "mtcars dataset",
+    output_name = "mtcars and iris datasets",
     output_extension = ".csv",
     button_label = "Download data",
     button_type = "warning",
@@ -71,7 +71,7 @@ list(mtcars, iris) \%>\%
 # Passing a named list with data frames to the function
 list('mtcars dataset' = mtcars, 'iris dataset' = iris) \%>\%
   download_this(
-    output_name = "mtcars dataset",
+    output_name = "mtcars and iris datasets",
     output_extension = ".csv",
     button_label = "Download data",
     button_type = "warning",
