@@ -18,13 +18,55 @@ This package provides a wrapper around `bsplus::bs_button()`, which has to goal 
 
 You can easily produce a download button as follows:
 
-## Button
+## Passing a data frame to the function
+
+```{r}
+library(downloadthis)
+
+mtcars %>% 
+  download_this(
+    output_name = "mtcars dataset",
+    output_extension = ".csv",
+    button_label = "Download data as csv",
+    button_type = "default",
+    has_icon = TRUE,
+    icon = "fa fa-save"
+  )
+```
+
+# Passing a list with data frames to the function (only `.xlsx` supported)
+
+```{r}
+list(mtcars, iris) %>%
+  download_this(
+    output_name = "mtcars dataset",
+    output_extension = ".csv",
+    button_label = "Download data",
+    button_type = "warning",
+    has_icon = TRUE,
+    icon = "fa fa-save"
+  )
+```
+
+# Passing a named list with data frames to the function (only `.xlsx` supported)
+
+```{r}
+list('mtcars dataset' = mtcars, 'iris dataset' = iris) %>%
+  download_this(
+    output_name = "mtcars dataset",
+    output_extension = ".csv",
+    button_label = "Download data",
+    button_type = "warning",
+    has_icon = TRUE,
+    icon = "fa fa-save"
+  )
+```
+
+## Button types
 
 ### Default
 
 ```{r example_1}
-library(downloadthis)
-
 mtcars %>% 
   download_this(
     output_name = "mtcars dataset",
