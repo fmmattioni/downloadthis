@@ -1,6 +1,6 @@
 Package: downloadthis
 Title: Implement Download Buttons in 'rmarkdown'
-Version: 0.1.0
+Version: 0.1.0.9000
 Authors@R: 
     person(given = "Felipe",
            family = "Mattioni Maturana",
@@ -22,7 +22,8 @@ Imports:
     htmltools,
     base64enc,
     magrittr,
-    rmarkdown
+    rmarkdown,
+    purrr
 RoxygenNote: 7.0.2
 Suggests: 
     knitr
