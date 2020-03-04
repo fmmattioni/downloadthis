@@ -1,0 +1,149 @@
+---
+title: "Customizing buttons with css"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Customizing buttons with css}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+These buttons will change according to the theme you set for your HTML output, but you can also further modify them with the power of `css`.
+
+You can simply pass a **class** to `download_this()` and define this class in `css`.
+
+## Changing size
+
+```{css}
+.button_small {
+  font-size: 12px;
+}
+```
+
+```{r}
+library(downloadthis)
+
+mtcars %>% 
+  download_this(
+    output_name = "mtcars dataset",
+    output_extension = ".csv",
+    button_label = "Download data as csv",
+    button_type = "default",
+    has_icon = TRUE,
+    icon = "fa fa-save",
+    class = "button_small"
+  )
+```
+
+<br>
+
+```{css}
+.button_large {
+  font-size: 24px;
+}
+```
+
+```{r}
+library(downloadthis)
+
+mtcars %>% 
+  download_this(
+    output_name = "mtcars dataset",
+    output_extension = ".csv",
+    button_label = "Download data as csv",
+    button_type = "default",
+    has_icon = TRUE,
+    icon = "fa fa-save",
+    class = "button_large"
+  )
+```
+
+## Changing font-family
+
+```{css}
+.button_times_new_roman {
+  font-family: "Times New Roman";
+  font-size: 14px;
+}
+```
+
+```{r}
+library(downloadthis)
+
+mtcars %>% 
+  download_this(
+    output_name = "mtcars dataset",
+    output_extension = ".csv",
+    button_label = "Download data as csv",
+    button_type = "default",
+    has_icon = TRUE,
+    icon = "fa fa-save",
+    class = "button_times_new_roman"
+  )
+```
+
+## Adding animation on hover
+
+```{css}
+/* from https://ianlunn.github.io/Hover/ */
+.hvr-sweep-to-left {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  position: relative;
+  -webkit-transition-property: color;
+  transition-property: color;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+}
+.hvr-sweep-to-left:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #2098D1;
+  -webkit-transform: scaleX(0);
+  transform: scaleX(0);
+  -webkit-transform-origin: 100% 50%;
+  transform-origin: 100% 50%;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+.hvr-sweep-to-left:hover, .hvr-sweep-to-left:focus, .hvr-sweep-to-left:active {
+  color: white;
+}
+.hvr-sweep-to-left:hover:before, .hvr-sweep-to-left:focus:before, .hvr-sweep-to-left:active:before {
+  -webkit-transform: scaleX(1);
+  transform: scaleX(1);
+}
+```
+
+```{r}
+library(downloadthis)
+
+mtcars %>% 
+  download_this(
+    output_name = "mtcars dataset",
+    output_extension = ".csv",
+    button_label = "Download data as csv",
+    button_type = "default",
+    has_icon = TRUE,
+    icon = "fa fa-save",
+    class = "hvr-sweep-to-left"
+  )
+```
