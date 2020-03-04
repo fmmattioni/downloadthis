@@ -5,7 +5,7 @@
 #'
 #' @param .data A data frame or (named) list to write to disk. See 'Examples' for more details.
 #' @param output_name Name of of the output file.
-#' @param output_extension Extension of the output file. Currently, only  \code{.csv} and  \code{.xlsx} are supported.
+#' @param output_extension Extension of the output file. Currently, only  \code{.csv} and  \code{.xlsx} are supported. If a (named) list is passed to the function, only \code{.xlsx} is supported.
 #' @param button_label character (HTML), button label
 #' @param button_type character, one of the standard Bootstrap types
 #' @param has_icon specify whether to include fontawesome icons in the button label
@@ -31,7 +31,7 @@
 #'     icon = "fa fa-save"
 #'   )
 #'
-#' # Passing a list with data framnes to the function
+#' # Passing a list with data frames to the function
 #' list(mtcars, iris) %>%
 #'   download_this(
 #'     output_name = "mtcars dataset",
