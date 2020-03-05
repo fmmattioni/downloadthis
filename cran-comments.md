@@ -11,6 +11,20 @@
 
 ### Comments from previous submission:
 
+> 
+Found the following (possibly) invalid URLs:
+    URL: https://cran.r-project.org/web/packages/downloadthis/index.html
+      From: README.md
+      Status: 200
+      Message: OK
+      CRAN URL not in canonical form
+    The canonical URL of the CRAN page for a package is
+      https://CRAN.R-project.org/package=pkgname
+      
+Corrected accordingly.
+      
+### Comments from previous submission:
+
 > Possibly mis-spelled words in DESCRIPTION: RMarkdown (2:38, 10:61)
 
 > Found the following (possibly) invalid file URI: URI: CODE_OF_CONDUCT.md From: README.md

@@ -27,7 +27,7 @@ The goal of `downloadthis` is to implement download buttons in HTML output from 
 
 ## Installation
 
-You can install the released version of `downloadthis` from [CRAN](https://cran.r-project.org/web/packages/downloadthis/index.html) with:
+You can install the released version of `downloadthis` from [CRAN](https://CRAN.R-project.org/package=downloadthis) with:
 
 ``` r
 install.packages("downloadthis")
