@@ -13,7 +13,7 @@ toc:
   depth: 3
 
 development:
-  mode: auto
+  mode: unreleased
 
 navbar:
   title: ~
