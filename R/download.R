@@ -89,7 +89,7 @@ download_this <- function(
   tmp_file <- fs::file_temp(ext = output_extension, tmp_dir = tempdir())
 
   if(output_extension == ".csv") {
-    readr::write_csv(x = .data, path = tmp_file)
+    readr::write_csv2(x = .data, path = tmp_file)
   } else {
     writexl::write_xlsx(x = .data, path = tmp_file)
   }
