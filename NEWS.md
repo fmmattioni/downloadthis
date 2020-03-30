@@ -1,5 +1,9 @@
 # downloadthis (development version)
 
+* Fixed warning when checking for list inputs.
+
+* Now the `.csv` export option uses `readr::read_csv2()`.
+
 # downloadthis 0.1.1
 
 * Now it is possible to pass a list of (named) data frames to the function to be written in separate sheets in '.xlsx'.
