@@ -14,11 +14,17 @@ knitr::opts_chunk$set(
 )
 ```
 
+```{block, type = 'rmdinfo'}
+Here you may find preset Bootstrap button types. For more information, see `bsplus::bs_button()`.
+
+Please, refer to the [Customizing buttons with css vignette](customization.html) for tips on how to further customize the buttons.
+```
+
+<br>
+
 ```{r setup}
 library(downloadthis)
 ```
-
-## Button types
 
 ### Default
 
