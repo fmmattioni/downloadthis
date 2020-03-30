@@ -1,8 +1,10 @@
-# downloadthis (development version)
+# downloadthis 0.1.2
 
 * Fixed warning when checking for list inputs.
 
 * Now the `.csv` export option uses `readr::read_csv2()`.
+
+* Added more details to the documentation.
 
 # downloadthis 0.1.1
 
