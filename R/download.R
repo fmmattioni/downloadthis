@@ -64,7 +64,7 @@ download_this <- function(
 ){
 
   ## check if .data argument only contains data frames (if list is passed) or a single data frame
-  if(class(.data) == "list") {
+  if("list" %in% class(.data)) {
     if(!all_data_frame_from_list(.data))
       stop("You can only pass data frames to the function.", call. = FALSE)
   } else {
@@ -79,7 +79,7 @@ download_this <- function(
   button_type <- match.arg(button_type)
 
   ## if list is passed to the function, only .xlsx will be used
-  if(class(.data) == "list")
+  if("list" %in% class(.data))
     output_extension <- ".xlsx"
 
   ## name of the final output file
