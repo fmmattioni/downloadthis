@@ -1,0 +1,17 @@
+.rmdinfo {
+  padding: 2em 1em 1em 7em;
+  margin: auto;
+  background-color: #e6f0ff;
+  position:relative;
+}
+
+.rmdinfo:before {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\f129";
+  top: 50%;
+  transform: translateY(-50%);
+  left: 30px;
+  position:absolute;
+  font-size: 45px;
+ }
