@@ -1,7 +1,7 @@
 #' Download button
 #'
-#' Wrapper around \code{bsplus::\link[bsplus]{bs_button}} to provide a download button for HTML outputs in R Markdown.
-#' Internally, the function writes the file to `tempdir()`, encodes it, and produces the download button.
+#' Wrapper around \code{bsplus::bs_button()} to provide a download button for HTML outputs in R Markdown.
+#' Internally, the function writes the file to \code{tempdir()}, encodes it, and produces the download button. Currently, Internet Explorer does not support downloading embedded files.
 #'
 #' @param .data A data frame or (named) list to write to disk. See 'Examples' for more details.
 #' @param output_name Name of of the output file.
@@ -17,7 +17,7 @@
 #' @export
 #'
 #' @section Warning:
-#' This example will write the `mtcars` dataset to `tempdir()` and produce the download button for the file `mtcars dataset.csv` with the `fa fa-save` icon on the `Download data` label.
+#' This example will write the \code{mtcars} dataset to \code{tempdir()} and produce the download button for the file `mtcars dataset.csv` with the `fa fa-save` icon on the `Download data` label.
 #'
 #' @examples
 #' # Passing a data frame to the function
