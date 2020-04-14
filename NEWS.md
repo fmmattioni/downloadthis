@@ -1,3 +1,7 @@
+# downloadthis 0.1.3
+
+* Fixed bug that fontawesome dependency was not being correctly added to the HTML output.
+
 # downloadthis 0.1.2
 
 * Fixed warning when checking for list inputs.
