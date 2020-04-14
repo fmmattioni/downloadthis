@@ -2,6 +2,8 @@
 
 * Fixed bug that fontawesome dependency was not being correctly added to the HTML output.
 
+* Now fontawesome icons are external, which makes the HTML output file much lighter.
+
 # downloadthis 0.1.2
 
 * Fixed warning when checking for list inputs.
