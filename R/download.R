@@ -72,9 +72,6 @@ download_this <- function(
       stop("You must pass a data frame to the function.", call. = FALSE)
   }
 
-  ## add fontawesome
-  add_fontawesome()
-
   output_extension <- match.arg(output_extension)
   button_type <- match.arg(button_type)
 
@@ -99,7 +96,7 @@ download_this <- function(
     button_label <- htmltools::HTML(paste(htmltools::tags$i(class = icon), button_label))
 
   ## generate download button
-  bsplus::bs_button(
+  button_out <- bsplus::bs_button(
     label = button_label,
     button_type = button_type,
     ... = ...
@@ -113,6 +110,11 @@ download_this <- function(
       ),
       download = output_file
     )
+
+  htmltools::tagList(
+    add_fontawesome(),
+    button_out
+  )
 }
 
 encode_this <- function(.tmp_file) {
@@ -125,7 +127,7 @@ add_fontawesome <- function(){
   ## this will ensure that fontawesome is added
   ## https://github.com/rstudio/rmarkdown/issues/813
 
-  htmltools::tagList(rmarkdown::html_dependency_font_awesome())
+  rmarkdown::html_dependency_font_awesome()
 }
 
 all_data_frame_from_list <- function(.list) {
