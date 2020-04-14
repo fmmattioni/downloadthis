@@ -1,17 +1,19 @@
 .rmdinfo {
   padding: 2em 1em 1em 7em;
-  margin: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border-radius: 25px;
   background-color: #e6f0ff;
   position:relative;
 }
 
 .rmdinfo:before {
   font-family: "Font Awesome 5 Free";
-  font-weight: 900;
-  content: "\f129";
-  top: 50%;
-  transform: translateY(-50%);
-  left: 30px;
-  position:absolute;
-  font-size: 45px;
+   font-weight: 900;
+   content: "\f129";
+   top: 50%;
+   transform: translateY(-50%);
+   left: 30px;
+   position:absolute;
+   font-size: 45px;
  }
