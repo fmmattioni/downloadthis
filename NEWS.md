@@ -1,5 +1,7 @@
 # downloadthis (development version)
 
+* Removed 'rmarkdown' dependency and moved it to 'Suggests'.
+
 # downloadthis 0.1.3
 
 * Fixed bug that fontawesome dependency was not being correctly added to the HTML output.
