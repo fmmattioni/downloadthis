@@ -22,9 +22,9 @@ Imports:
     htmltools,
     base64enc,
     magrittr,
-    rmarkdown,
     purrr
 RoxygenNote: 7.1.0
 Suggests: 
-    knitr
+    knitr,
+    rmarkdown
 VignetteBuilder: knitr
