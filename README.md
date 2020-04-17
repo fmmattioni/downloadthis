@@ -46,7 +46,7 @@ This package builds the download button in R Markdown using
 [this post](https://yihui.org/en/2018/07/embed-file/) from [Yihui
 Xie](https://github.com/yihui).
 
-:white\_check\_mark: `{downloadthis}` now uses [font-awesome icons
+✅ `{downloadthis}` now uses [font-awesome icons
 v.5.13.0](https://fontawesome.com/)
 
 ## Example
