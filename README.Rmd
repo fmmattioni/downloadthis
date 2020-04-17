@@ -46,6 +46,8 @@ remotes::install_github("fmmattioni/downloadthis")
 
 This package builds the download button in R Markdown using [bsplus](https://github.com/ijlyttle/bsplus), and it was inspired on [this post](https://yihui.org/en/2018/07/embed-file/) from [Yihui Xie](https://github.com/yihui).
 
+:white_check_mark: `{downloadthis}` now uses [font-awesome icons v.5.13.0](https://fontawesome.com/)
+
 ## Example
 
 ```{r example}
