@@ -2,6 +2,8 @@
 
 * Removed 'rmarkdown' dependency and moved it to 'Suggests'.
 
+* Font-awesome dependency is now correctly added to the `head` tag (Thanks @AmitLevinson).
+
 # downloadthis 0.1.3
 
 * Fixed bug that fontawesome dependency was not being correctly added to the HTML output.
