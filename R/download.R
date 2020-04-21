@@ -124,7 +124,13 @@ encode_this <- function(.tmp_file) {
 }
 
 add_fontawesome <- function(){
-  htmltools::HTML('<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" integrity="sha256-h20CPZ0QyXlBuAw7A+KluUYx/3pK+c7lYEpqLTlxjYQ=" crossorigin="anonymous" />')
+  htmltools::htmlDependency(
+    name = "font-awesome",
+    version = "5.13.0",
+    src = "assets",
+    script = "js/script.js",
+    package = "downloadthis"
+  )
 }
 
 all_data_frame_from_list <- function(.list) {
