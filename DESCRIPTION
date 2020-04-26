@@ -21,8 +21,7 @@ Imports:
     mime,
     htmltools,
     base64enc,
-    magrittr,
-    purrr
+    magrittr
 RoxygenNote: 7.1.0
 Suggests: 
     knitr,
