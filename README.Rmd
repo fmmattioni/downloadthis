@@ -1,5 +1,6 @@
 ---
 output: github_document
+always_allow_html: true
 ---
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
@@ -63,6 +64,27 @@ mtcars %>%
     icon = "fa fa-save"
   )
 ```
+
+```{r}
+vector_example <- 1:10
+linear_model <- lm(mpg ~ gear, data = mtcars)
+
+list(mtcars, iris, vector_example, linear_model) %>%
+  download_this(
+    output_name = "datasets, vector, and linear model",
+    output_extension = ".rds",
+    button_label = "Download as rds",
+    button_type = "success",
+    has_icon = TRUE,
+    icon = "fa fa-save"
+  )
+```
+
+## Vignettes
+
+* [Introduction to  downloadthis](https://fmmattioni.github.io/downloadthis/articles/downloadthis.html)
+* [Button types](https://fmmattioni.github.io/downloadthis/articles/button_types.html)
+* [Customizing buttons with css](https://fmmattioni.github.io/downloadthis/articles/customization.html)
 
 ## Code of Conduct
 
