@@ -1,23 +1,24 @@
 #' Download button
 #'
-#' Wrapper around \code{bsplus::bs_button()} to provide a download button for HTML outputs in R Markdown.
-#' Internally, the function writes the file to \code{tempdir()}, encodes it, and produces the download button. Currently, Internet Explorer does not support downloading embedded files.
+#' Wrapper around `bsplus::bs_button()` to provide a download button for HTML outputs in R Markdown.
+#' Internally, the function writes the file to `tempdir()`, encodes it, and produces the download button. Currently, Internet Explorer does not support downloading embedded files.
 #'
 #' @param .data A data frame or (named) list to write to disk. See 'Examples' for more details.
 #' @param output_name Name of of the output file.
-#' @param output_extension Extension of the output file. Currently, only  \code{.csv} and  \code{.xlsx} are supported. If a (named) list is passed to the function, only \code{.xlsx} is supported.
-#' @param button_label character (HTML), button label
-#' @param button_type character, one of the standard Bootstrap types
-#' @param has_icon specify whether to include fontawesome icons in the button label
-#' @param icon fontawesome tag e.g.: "fa fa-save"
+#' @param output_extension Extension of the output file. Currently, only  `.csv` and  `.xlsx` are supported. If a (named) list is passed to the function, only `.xlsx` is supported.
+#' @param button_label Character (HTML), button label
+#' @param button_type Character, one of the standard Bootstrap types
+#' @param has_icon Specify whether to include fontawesome icons in the button label
+#' @param icon Fontawesome tag e.g.: "fa fa-save"
+#' @param self_contained A boolean to specify whether your HTML output is self-contained. Default to `FALSE`.
 #' @param ... attributes (named arguments) and children (unnamed arguments)
-#'   of the button, passed to \code{htmltools::\link[htmltools]{tag}}
+#'   of the button, passed to `htmltools::tag()`.
 #'
-#' @return \code{htmltools::\link[htmltools]{tag}}, \code{<button/>}
+#' @return \code{htmltools::\link[htmltools]{tag}}, \code{<button>}
 #' @export
 #'
 #' @section Warning:
-#' This example will write the \code{mtcars} dataset to \code{tempdir()} and produce the download button for the file `mtcars dataset.csv` with the `fa fa-save` icon on the `Download data` label.
+#' This example will write the `mtcars` dataset to `tempdir()` and produce the download button for the file `mtcars dataset.csv` with the `fa fa-save` icon on the `Download data` label.
 #'
 #' @examples
 #' # Passing a data frame to the function
@@ -60,6 +61,7 @@ download_this <- function(
   button_type = c("default", "primary", "success", "info", "warning", "danger"),
   has_icon = TRUE,
   icon = "fa fa-save",
+  self_contained = FALSE,
   ...
 ){
 
@@ -112,7 +114,9 @@ download_this <- function(
     )
 
   htmltools::tagList(
-    add_fontawesome(),
+    if(has_icon)
+      add_fontawesome(self_contained),
+
     button_out
   )
 }
@@ -123,17 +127,26 @@ encode_this <- function(.tmp_file) {
   base64enc::base64encode(.tmp_file)
 }
 
-add_fontawesome <- function(){
-  htmltools::htmlDependency(
-    name = "font-awesome",
-    version = "5.13.0",
-    src = "assets",
-    script = "js/script.js",
-    package = "downloadthis"
-  )
+add_fontawesome <- function(self_contained){
+  if(self_contained) {
+    htmltools::htmlDependency(
+      name = "font-awesome",
+      version = "5.13.0",
+      src = "assets",
+      stylesheet = c("css/all.min.css", "css/v4-shims.min.css"),
+      package = "downloadthis"
+    )
+  } else {
+    htmltools::htmlDependency(
+      name = "font-awesome",
+      version = "5.13.0",
+      src = "assets",
+      script = "js/script.js",
+      package = "downloadthis"
+    )
+  }
 }
 
 all_data_frame_from_list <- function(.list) {
-  purrr::map_lgl(.list, is.data.frame) %>%
-    all()
+  all(sapply(.list, is.data.frame))
 }

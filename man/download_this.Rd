@@ -12,6 +12,7 @@ download_this(
   button_type = c("default", "primary", "success", "info", "warning", "danger"),
   has_icon = TRUE,
   icon = "fa fa-save",
+  self_contained = FALSE,
   ...
 )
 }
@@ -20,29 +21,31 @@ download_this(
 
 \item{output_name}{Name of of the output file.}
 
-\item{output_extension}{Extension of the output file. Currently, only  \code{.csv} and  \code{.xlsx} are supported. If a (named) list is passed to the function, only \code{.xlsx} is supported.}
+\item{output_extension}{Extension of the output file. Currently, only  `.csv` and  `.xlsx` are supported. If a (named) list is passed to the function, only `.xlsx` is supported.}
 
-\item{button_label}{character (HTML), button label}
+\item{button_label}{Character (HTML), button label}
 
-\item{button_type}{character, one of the standard Bootstrap types}
+\item{button_type}{Character, one of the standard Bootstrap types}
 
-\item{has_icon}{specify whether to include fontawesome icons in the button label}
+\item{has_icon}{Specify whether to include fontawesome icons in the button label}
 
-\item{icon}{fontawesome tag e.g.: "fa fa-save"}
+\item{icon}{Fontawesome tag e.g.: "fa fa-save"}
+
+\item{self_contained}{A boolean to specify whether your HTML output is self-contained. Default to `FALSE`.}
 
 \item{...}{attributes (named arguments) and children (unnamed arguments)
-of the button, passed to \code{htmltools::\link[htmltools]{tag}}}
+of the button, passed to `htmltools::tag()`.}
 }
 \value{
-\code{htmltools::\link[htmltools]{tag}}, \code{<button/>}
+\code{htmltools::\link[htmltools]{tag}}, \code{<button>}
 }
 \description{
-Wrapper around \code{bsplus::bs_button()} to provide a download button for HTML outputs in R Markdown.
-Internally, the function writes the file to \code{tempdir()}, encodes it, and produces the download button. Currently, Internet Explorer does not support downloading embedded files.
+Wrapper around `bsplus::bs_button()` to provide a download button for HTML outputs in R Markdown.
+Internally, the function writes the file to `tempdir()`, encodes it, and produces the download button. Currently, Internet Explorer does not support downloading embedded files.
 }
 \section{Warning}{
 
-This example will write the \code{mtcars} dataset to \code{tempdir()} and produce the download button for the file `mtcars dataset.csv` with the `fa fa-save` icon on the `Download data` label.
+This example will write the `mtcars` dataset to `tempdir()` and produce the download button for the file `mtcars dataset.csv` with the `fa fa-save` icon on the `Download data` label.
 }
 
 \examples{
