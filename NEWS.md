@@ -8,6 +8,8 @@
 
 * Removed `purrr` dependency.
 
+* Added `.rds` support - now any R object can be used for downloading as an `.rds` file.
+
 # downloadthis 0.1.3
 
 * Fixed bug that fontawesome dependency was not being correctly added to the HTML output.
