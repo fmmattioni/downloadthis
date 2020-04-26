@@ -1,6 +1,6 @@
 # downloadthis (development version)
 
-* Removed 'rmarkdown' dependency and moved it to 'Suggests'.
+* Removed `rmarkdown` dependency and moved it to 'Suggests'.
 
 * Font-awesome dependency is now correctly added to the `head` tag (Thanks @AmitLevinson).
 
