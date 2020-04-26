@@ -36,7 +36,7 @@
 #' list(mtcars, iris) %>%
 #'   download_this(
 #'     output_name = "mtcars and iris datasets",
-#'     output_extension = ".csv",
+#'     output_extension = ".xlsx",
 #'     button_label = "Download data",
 #'     button_type = "warning",
 #'     has_icon = TRUE,
@@ -47,12 +47,26 @@
 #' list('mtcars dataset' = mtcars, 'iris dataset' = iris) %>%
 #'   download_this(
 #'     output_name = "mtcars and iris datasets",
-#'     output_extension = ".csv",
+#'     output_extension = ".xlsx",
 #'     button_label = "Download data",
 #'     button_type = "warning",
 #'     has_icon = TRUE,
 #'     icon = "fa fa-save"
 #'   )
+#'
+#' # Passing any R object to the function
+#' vector_example <- 1:10
+#' linear_model <- lm(mpg ~ gear, data = mtcars)
+#'
+#' list(mtcars, iris, vector_example, linear_model) %>%
+#'  download_this(
+#'    output_name = "datasets, vector, and linear model",
+#'    output_extension = ".rds",
+#'    button_label = "Download as rds",
+#'    button_type = "warning",
+#'    has_icon = TRUE,
+#'    icon = "fa fa-save"
+#'  )
 download_this <- function(
   .data,
   output_name,
