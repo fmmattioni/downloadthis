@@ -5,7 +5,7 @@
 #'
 #' @param .data A data frame or (named) list to write to disk. See 'Examples' for more details.
 #' @param output_name Name of of the output file.
-#' @param output_extension Extension of the output file. Currently, only  `.csv` and  `.xlsx` are supported. If a (named) list is passed to the function, only `.xlsx` is supported.
+#' @param output_extension Extension of the output file. Currently,  `.csv`,  `.xlsx`, and `.rds` are supported. If a (named) list is passed to the function, only `.xlsx` and `.rds` are supported.
 #' @param button_label Character (HTML), button label
 #' @param button_type Character, one of the standard Bootstrap types
 #' @param has_icon Specify whether to include fontawesome icons in the button label
@@ -56,7 +56,7 @@
 download_this <- function(
   .data,
   output_name,
-  output_extension = c(".csv", ".xlsx"),
+  output_extension = c(".csv", ".xlsx", ".rds"),
   button_label = "Download data",
   button_type = c("default", "primary", "success", "info", "warning", "danger"),
   has_icon = TRUE,
@@ -66,11 +66,11 @@ download_this <- function(
 ){
 
   ## check if .data argument only contains data frames (if list is passed) or a single data frame
-  if("list" %in% class(.data)) {
+  if("list" %in% class(.data) & output_extension != ".rds") {
     if(!all_data_frame_from_list(.data))
       stop("You can only pass data frames to the function.", call. = FALSE)
   } else {
-    if(!is.data.frame(.data))
+    if(!is.data.frame(.data) & output_extension != ".rds")
       stop("You must pass a data frame to the function.", call. = FALSE)
   }
 
@@ -78,8 +78,8 @@ download_this <- function(
   button_type <- match.arg(button_type)
 
   ## if list is passed to the function, only .xlsx will be used
-  if("list" %in% class(.data))
-    output_extension <- ".xlsx"
+  if("list" %in% class(.data) & output_extension == ".csv")
+    stop("I am sorry, lists are not supported in '.csv'. Please, choose '.xlsx' instead.", call. = FALSE)
 
   ## name of the final output file
   output_file <- paste0(output_name, output_extension)
@@ -87,11 +87,11 @@ download_this <- function(
   ## generate temporary file in temporary folder
   tmp_file <- fs::file_temp(ext = output_extension, tmp_dir = tempdir())
 
-  if(output_extension == ".csv") {
-    readr::write_csv2(x = .data, path = tmp_file)
-  } else {
-    writexl::write_xlsx(x = .data, path = tmp_file)
-  }
+  switch (output_extension,
+    ".csv" = readr::write_csv2(x = .data, path = tmp_file),
+    ".xlsx" = writexl::write_xlsx(x = .data, path = tmp_file),
+    ".rds" = readr::write_rds(x = .data, path = tmp_file)
+  )
 
   ## create button label with icon
   if(has_icon)

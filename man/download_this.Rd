@@ -7,7 +7,7 @@
 download_this(
   .data,
   output_name,
-  output_extension = c(".csv", ".xlsx"),
+  output_extension = c(".csv", ".xlsx", ".rds"),
   button_label = "Download data",
   button_type = c("default", "primary", "success", "info", "warning", "danger"),
   has_icon = TRUE,
@@ -21,7 +21,7 @@ download_this(
 
 \item{output_name}{Name of of the output file.}
 
-\item{output_extension}{Extension of the output file. Currently, only  `.csv` and  `.xlsx` are supported. If a (named) list is passed to the function, only `.xlsx` is supported.}
+\item{output_extension}{Extension of the output file. Currently,  `.csv`,  `.xlsx`, and `.rds` are supported. If a (named) list is passed to the function, only `.xlsx` and `.rds` are supported.}
 
 \item{button_label}{Character (HTML), button label}
 
