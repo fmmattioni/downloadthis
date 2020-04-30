@@ -2,7 +2,7 @@
 #'
 #' Wrapper around `bsplus::bs_button()` to provide a download button for HTML outputs in R Markdown.
 #' Internally, the function writes the file to `tempdir()`, encodes it, and produces the download button. Currently, Internet Explorer does not support downloading embedded files.
-#' For downloading links, files, or directories, see `download_link()`, `download_file`, and `download_dir()`.
+#' For downloading links, files, or directories, see `download_link()`, `download_file()`, and `download_dir()`.
 #'
 #' @param .data A data frame or (named) list to write to disk. See 'Examples' for more details.
 #' @param output_name Name of of the output file.

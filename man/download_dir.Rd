@@ -28,16 +28,16 @@ download_dir(
 
 \item{icon}{Fontawesome tag e.g.: "fa fa-save"}
 
-\item{self_contained}{A boolean to specify whether your HTML output is self-contained. Default to `FALSE`.}
+\item{self_contained}{A boolean to specify whether your HTML output is self-contained. Default to \code{FALSE}.}
 
 \item{...}{attributes (named arguments) and children (unnamed arguments)
-of the button, passed to `htmltools::tag()`.}
+of the button, passed to \code{htmltools::tag()}.}
 }
 \value{
 \code{htmltools::\link[htmltools]{tag}}, \code{<button>}
 }
 \description{
-The path is converted into a `.zip` file.
+The path is converted into a \code{.zip} file.
 }
 \examples{
 \dontrun{

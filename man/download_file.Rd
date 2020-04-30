@@ -19,7 +19,7 @@ download_file(
 \item{path}{Path to the file(s). If multiple files are chosen, a vector must be passed to this argument.}
 
 \item{output_name}{Name of of the output file. If not specified, it will take the source file's name if one file
-is specified. In case of multiple files, the `output_name` must be specified.}
+is specified. In case of multiple files, the \code{output_name} must be specified.}
 
 \item{button_label}{Character (HTML), button label}
 
@@ -29,16 +29,16 @@ is specified. In case of multiple files, the `output_name` must be specified.}
 
 \item{icon}{Fontawesome tag e.g.: "fa fa-save"}
 
-\item{self_contained}{A boolean to specify whether your HTML output is self-contained. Default to `FALSE`.}
+\item{self_contained}{A boolean to specify whether your HTML output is self-contained. Default to \code{FALSE}.}
 
 \item{...}{attributes (named arguments) and children (unnamed arguments)
-of the button, passed to `htmltools::tag()`.}
+of the button, passed to \code{htmltools::tag()}.}
 }
 \value{
 \code{htmltools::\link[htmltools]{tag}}, \code{<button>}
 }
 \description{
-In case multiple files are chosen, the files will be converted to a `.zip` file.
+In case multiple files are chosen, the files will be converted to a \code{.zip} file.
 }
 \examples{
 \dontrun{

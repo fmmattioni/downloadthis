@@ -25,17 +25,17 @@ download_link(
 
 \item{icon}{Fontawesome tag e.g.: "fa fa-save"}
 
-\item{self_contained}{A boolean to specify whether your HTML output is self-contained. Default to `FALSE`.}
+\item{self_contained}{A boolean to specify whether your HTML output is self-contained. Default to \code{FALSE}.}
 
 \item{...}{attributes (named arguments) and children (unnamed arguments)
-of the button, passed to `htmltools::tag()`.}
+of the button, passed to \code{htmltools::tag()}.}
 }
 \value{
 \code{htmltools::\link[htmltools]{tag}}, \code{<button>}
 }
 \description{
 It associates your download button to a web link. This might be an alternative when your file is too big
-for being handled by `download_this()`.
+for being handled by \code{download_this()}.
 }
 \examples{
 ## Link in Github repo

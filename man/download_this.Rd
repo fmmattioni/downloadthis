@@ -21,7 +21,7 @@ download_this(
 
 \item{output_name}{Name of of the output file.}
 
-\item{output_extension}{Extension of the output file. Currently,  `.csv`,  `.xlsx`, and `.rds` are supported. If a (named) list is passed to the function, only `.xlsx` and `.rds` are supported.}
+\item{output_extension}{Extension of the output file. Currently,  \code{.csv},  \code{.xlsx}, and \code{.rds} are supported. If a (named) list is passed to the function, only \code{.xlsx} and \code{.rds} are supported.}
 
 \item{button_label}{Character (HTML), button label}
 
@@ -31,22 +31,22 @@ download_this(
 
 \item{icon}{Fontawesome tag e.g.: "fa fa-save"}
 
-\item{self_contained}{A boolean to specify whether your HTML output is self-contained. Default to `FALSE`.}
+\item{self_contained}{A boolean to specify whether your HTML output is self-contained. Default to \code{FALSE}.}
 
 \item{...}{attributes (named arguments) and children (unnamed arguments)
-of the button, passed to `htmltools::tag()`.}
+of the button, passed to \code{htmltools::tag()}.}
 }
 \value{
 \code{htmltools::\link[htmltools]{tag}}, \code{<button>}
 }
 \description{
-Wrapper around `bsplus::bs_button()` to provide a download button for HTML outputs in R Markdown.
-Internally, the function writes the file to `tempdir()`, encodes it, and produces the download button. Currently, Internet Explorer does not support downloading embedded files.
-For downloading links, files, or directories, see `download_link()`, `download_file`, and `download_dir()`.
+Wrapper around \code{bsplus::bs_button()} to provide a download button for HTML outputs in R Markdown.
+Internally, the function writes the file to \code{tempdir()}, encodes it, and produces the download button. Currently, Internet Explorer does not support downloading embedded files.
+For downloading links, files, or directories, see \code{download_link()}, \code{download_file()}, and \code{download_dir()}.
 }
 \section{Warning}{
 
-This example will write the `mtcars` dataset to `tempdir()` and produce the download button for the file `mtcars dataset.csv` with the `fa fa-save` icon on the `Download data` label.
+This example will write the \code{mtcars} dataset to \code{tempdir()} and produce the download button for the file \verb{mtcars dataset.csv} with the \verb{fa fa-save} icon on the \verb{Download data} label.
 }
 
 \examples{
