@@ -2,7 +2,7 @@
 % Please edit documentation in R/download.R
 \name{download_this}
 \alias{download_this}
-\title{Download button}
+\title{Download data frames, lists, or any R object}
 \usage{
 download_this(
   .data,
@@ -42,6 +42,7 @@ of the button, passed to `htmltools::tag()`.}
 \description{
 Wrapper around `bsplus::bs_button()` to provide a download button for HTML outputs in R Markdown.
 Internally, the function writes the file to `tempdir()`, encodes it, and produces the download button. Currently, Internet Explorer does not support downloading embedded files.
+For downloading links, files, or directories, see `download_link()`, `download_file`, and `download_dir()`.
 }
 \section{Warning}{
 
