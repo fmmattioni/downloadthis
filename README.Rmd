@@ -49,7 +49,9 @@ This package builds the download button in R Markdown using [bsplus](https://git
 
 `r emo::ji("white_check_mark")` `{downloadthis}` now uses [font-awesome icons v.5.13.0](https://fontawesome.com/)
 
-## Example
+## Usage
+
+### Data frames, lists, or any R object
 
 ```{r example}
 library(downloadthis)
@@ -80,11 +82,59 @@ list(mtcars, iris, vector_example, linear_model) %>%
   )
 ```
 
+### Web address
+
+```{r}
+## Link in Github repo
+download_link(
+  link = "https://github.com/fmmattioni/downloadthis/raw/master/inst/example/file_1.pdf",
+  button_label = "Download pdf file",
+  button_type = "danger",
+  has_icon = TRUE,
+  icon = "fa fa-save",
+  self_contained = FALSE
+)
+```
+
+### Local files
+
+```{r}
+## One file example
+download_file(
+  path = system.file("assets/css/all.min.css", package = "downloadthis"),
+  output_name = "CSS file from downloadthis",
+  button_label = "Download css file",
+  button_type = "danger",
+  has_icon = TRUE,
+  icon = "fa fa-save",
+  self_contained = FALSE
+)
+```
+
+### Local directory
+
+```{r}
+## Directory path as an example
+download_dir(
+  path = system.file("assets", package = "downloadthis"),
+  output_name = "example dir",
+  button_label = "Download directory",
+  button_type = "success",
+  has_icon = TRUE,
+  icon = "fa fa-save",
+  self_contained = FALSE
+)
+```
+
 ## Vignettes
 
 * [Introduction to  downloadthis](https://fmmattioni.github.io/downloadthis/articles/downloadthis.html)
 * [Button types](https://fmmattioni.github.io/downloadthis/articles/button_types.html)
 * [Customizing buttons with css](https://fmmattioni.github.io/downloadthis/articles/customization.html)
+
+## Related work
+
+* [xfun](https://github.com/yihui/xfun): The `xfun` package provides links instead of buttons for local files and directories.
 
 ## Code of Conduct
 
