@@ -23,3 +23,21 @@ navbar:
     href: https://github.com/fmmattioni/downloadthis
   - icon: fa-twitter fa-lg
     href: https://twitter.com/felipe_mattioni
+
+reference:
+- title: R environment
+  desc: >
+    Download data frames, lists, or any R object
+  contents:
+  - download_this
+- title: Web address
+  desc: >
+    Download file from any web address
+  contents:
+  - download_link
+- title: Local files and directory
+  desc: >
+    Download any local file(s) and directory
+  contents:
+  - download_file
+  - download_dir
