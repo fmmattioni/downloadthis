@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Changelog • downloadthis</title>
+<title>Download a local file or multiple files — download_file • downloadthis</title>
 
 <!-- favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -48,7 +48,8 @@
   <link href="../extra.css" rel="stylesheet">
   
 
-<meta property="og:title" content="Changelog" />
+<meta property="og:title" content="Download a local file or multiple files — download_file" />
+<meta property="og:description" content="In case multiple files are chosen, the files will be converted to a `.zip` file." />
 <meta property="og:image" content="/logo.png" />
 
 
@@ -78,7 +79,7 @@
   </head>
 
   <body data-spy="scroll" data-target="#toc">
-    <div class="container template-news">
+    <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -154,69 +155,101 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-      <h1 data-toc-skip>Changelog <small></small></h1>
-      <small>Source: <a href='https://github.com/fmmattioni/downloadthis/blob/master/NEWS.md'><code>NEWS.md</code></a></small>
+    <h1>Download a local file or multiple files</h1>
+    <small class="dont-index">Source: <a href='https://github.com/fmmattioni/downloadthis/blob/master/R/download.R'><code>R/download.R</code></a></small>
+    <div class="hidden name"><code>download_file.Rd</code></div>
     </div>
 
-    <div id="downloadthis-development-version" class="section level1">
-<h1 class="page-header" data-toc-text="development version">
-<a href="#downloadthis-development-version" class="anchor"></a>downloadthis (development version)<small> Unreleased </small>
-</h1>
-<ul>
-<li><p>Removed <code>rmarkdown</code> dependency and moved it to ‘Suggests’.</p></li>
-<li><p>Font-awesome dependency is now correctly added to the <code>head</code> tag (Thanks <a href='https://github.com/AmitLevinson'>@AmitLevinson</a>).</p></li>
-<li><p>Added <code>self_contained</code> option.</p></li>
-<li><p>Removed <code>purrr</code> dependency.</p></li>
-<li><p>Added <code>.rds</code> support - now any R object can be used for downloading as an <code>.rds</code> file.</p></li>
-<li><p>Added <code><a href="../reference/download_link.html">download_link()</a></code>, <code><a href="../reference/download_file.html">download_file()</a></code>, and <code><a href="../reference/download_dir.html">download_dir()</a></code> for downloading from web links, and local file(s) and directory.</p></li>
-</ul>
-</div>
-    <div id="downloadthis-013" class="section level1">
-<h1 class="page-header" data-toc-text="0.1.3">
-<a href="#downloadthis-013" class="anchor"></a>downloadthis 0.1.3<small> 2020-04-14 </small>
-</h1>
-<ul>
-<li><p>Fixed bug that fontawesome dependency was not being correctly added to the HTML output.</p></li>
-<li><p>Now fontawesome icons are external, which makes the HTML output file much lighter.</p></li>
-</ul>
-</div>
-    <div id="downloadthis-012" class="section level1">
-<h1 class="page-header" data-toc-text="0.1.2">
-<a href="#downloadthis-012" class="anchor"></a>downloadthis 0.1.2<small> 2020-03-30 </small>
-</h1>
-<ul>
-<li><p>Fixed warning when checking for list inputs.</p></li>
-<li><p>Now the <code>.csv</code> export option uses <code><a href="https://readr.tidyverse.org/reference/read_delim.html">readr::read_csv2()</a></code>.</p></li>
-<li><p>Added more details to the documentation.</p></li>
-</ul>
-</div>
-    <div id="downloadthis-011" class="section level1">
-<h1 class="page-header" data-toc-text="0.1.1">
-<a href="#downloadthis-011" class="anchor"></a>downloadthis 0.1.1<small> 2020-03-05 </small>
-</h1>
-<ul>
-<li><p>Now it is possible to pass a list of (named) data frames to the function to be written in separate sheets in ‘.xlsx’.</p></li>
-<li><p>Created vignette to show how the download button can be customized.</p></li>
-<li><p>Updated vignettes.</p></li>
-</ul>
-</div>
-    <div id="downloadthis-010" class="section level1">
-<h1 class="page-header" data-toc-text="0.1.0">
-<a href="#downloadthis-010" class="anchor"></a>downloadthis 0.1.0<small> 2020-02-25 </small>
-</h1>
-<ul>
-<li><p>Added a <code>NEWS.md</code> file to track changes to the package.</p></li>
-<li><p>Added fontawesome icons to button label.</p></li>
-</ul>
-</div>
-  </div>
+    <div class="ref-description">
+    <p>In case multiple files are chosen, the files will be converted to a `.zip` file.</p>
+    </div>
 
+    <pre class="usage"><span class='fu'>download_file</span>(
+  <span class='no'>path</span>,
+  <span class='no'>output_name</span>,
+  <span class='kw'>button_label</span> <span class='kw'>=</span> <span class='st'>"Download data"</span>,
+  <span class='kw'>button_type</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"default"</span>, <span class='st'>"primary"</span>, <span class='st'>"success"</span>, <span class='st'>"info"</span>, <span class='st'>"warning"</span>, <span class='st'>"danger"</span>),
+  <span class='kw'>has_icon</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
+  <span class='kw'>icon</span> <span class='kw'>=</span> <span class='st'>"fa fa-save"</span>,
+  <span class='kw'>self_contained</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
+  <span class='no'>...</span>
+)</pre>
+
+    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
+    <table class="ref-arguments">
+    <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>path</th>
+      <td><p>Path to the file(s). If multiple files are chosen, a vector must be passed to this argument.</p></td>
+    </tr>
+    <tr>
+      <th>output_name</th>
+      <td><p>Name of of the output file. If not specified, it will take the source file's name if one file
+is specified. In case of multiple files, the `output_name` must be specified.</p></td>
+    </tr>
+    <tr>
+      <th>button_label</th>
+      <td><p>Character (HTML), button label</p></td>
+    </tr>
+    <tr>
+      <th>button_type</th>
+      <td><p>Character, one of the standard Bootstrap types</p></td>
+    </tr>
+    <tr>
+      <th>has_icon</th>
+      <td><p>Specify whether to include fontawesome icons in the button label</p></td>
+    </tr>
+    <tr>
+      <th>icon</th>
+      <td><p>Fontawesome tag e.g.: "fa fa-save"</p></td>
+    </tr>
+    <tr>
+      <th>self_contained</th>
+      <td><p>A boolean to specify whether your HTML output is self-contained. Default to `FALSE`.</p></td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td><p>attributes (named arguments) and children (unnamed arguments)
+of the button, passed to `htmltools::tag()`.</p></td>
+    </tr>
+    </table>
+
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
+
+    <p><code>htmltools::<a href='https://rdrr.io/pkg/htmltools/man/tag.html'>tag</a></code>, <code>&lt;button&gt;</code></p>
+
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"><div class='input'><span class='kw'>if</span> (<span class='fl'>FALSE</span>) {
+<span class='co'>## One file example</span>
+<span class='fu'>download_file</span>(
+<span class='kw'>path</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/system.file.html'>system.file</a></span>(<span class='st'>"assets/css/all.min.css"</span>, <span class='kw'>package</span> <span class='kw'>=</span> <span class='st'>"downloadthis"</span>),
+<span class='kw'>output_name</span> <span class='kw'>=</span> <span class='st'>"CSS file from downloadthis"</span>,
+<span class='kw'>button_label</span> <span class='kw'>=</span> <span class='st'>"Download css file"</span>,
+<span class='kw'>button_type</span> <span class='kw'>=</span> <span class='st'>"danger"</span>,
+<span class='kw'>has_icon</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
+<span class='kw'>icon</span> <span class='kw'>=</span> <span class='st'>"fa fa-save"</span>,
+<span class='kw'>self_contained</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>
+)
+
+<span class='co'>## Multiple files example</span>
+<span class='no'>path_files</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/list.files.html'>list.files</a></span>(<span class='kw'>path</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/system.file.html'>system.file</a></span>(<span class='st'>"assets/css"</span>, <span class='kw'>package</span> <span class='kw'>=</span> <span class='st'>"downloadthis"</span>), <span class='kw'>full.names</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)
+
+<span class='fu'>download_file</span>(
+<span class='kw'>path</span> <span class='kw'>=</span> <span class='no'>path_files</span>,
+<span class='kw'>output_name</span> <span class='kw'>=</span> <span class='st'>"Files from downloadthis"</span>,
+<span class='kw'>button_label</span> <span class='kw'>=</span> <span class='st'>"Download files"</span>,
+<span class='kw'>button_type</span> <span class='kw'>=</span> <span class='st'>"danger"</span>,
+<span class='kw'>has_icon</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
+<span class='kw'>icon</span> <span class='kw'>=</span> <span class='st'>"fa fa-save"</span>,
+<span class='kw'>self_contained</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>
+)
+}</div></pre>
+  </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
       <h2 data-toc-skip>Contents</h2>
     </nav>
   </div>
-
 </div>
 
 
