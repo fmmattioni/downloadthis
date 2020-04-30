@@ -10,6 +10,8 @@
 
 * Added `.rds` support - now any R object can be used for downloading as an `.rds` file.
 
+* Added `download_link()`, `download_file()`, and `download_dir()` for downloading from web links, and local file(s) and directory.
+
 # downloadthis 0.1.3
 
 * Fixed bug that fontawesome dependency was not being correctly added to the HTML output.
