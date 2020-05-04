@@ -38,6 +38,7 @@ It associates your download button to a web link. This might be an alternative w
 for being handled by \code{download_this()}.
 }
 \examples{
+\dontrun{
 ## Link in Github repo
 download_link(
 link = "https://github.com/fmmattioni/downloadthis/raw/master/inst/example/file_1.pdf",
@@ -47,4 +48,5 @@ has_icon = TRUE,
 icon = "fa fa-save",
 self_contained = FALSE
 )
+}
 }

@@ -50,6 +50,7 @@ This example will write the \code{mtcars} dataset to \code{tempdir()} and produc
 }
 
 \examples{
+\dontrun{
 # Passing a data frame to the function
 mtcars \%>\%
   download_this(
@@ -96,4 +97,5 @@ list(mtcars, iris, vector_example, linear_model) \%>\%
    has_icon = TRUE,
    icon = "fa fa-save"
  )
+}
 }
