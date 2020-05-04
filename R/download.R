@@ -22,6 +22,7 @@
 #' This example will write the `mtcars` dataset to `tempdir()` and produce the download button for the file `mtcars dataset.csv` with the `fa fa-save` icon on the `Download data` label.
 #'
 #' @examples
+#' \dontrun{
 #' # Passing a data frame to the function
 #' mtcars %>%
 #'   download_this(
@@ -68,6 +69,7 @@
 #'    has_icon = TRUE,
 #'    icon = "fa fa-save"
 #'  )
+#' }
 download_this <- function(
   .data,
   output_name,
@@ -155,6 +157,7 @@ download_this <- function(
 #' @export
 #'
 #' @examples
+#' \dontrun{
 #' ## Link in Github repo
 #' download_link(
 #' link = "https://github.com/fmmattioni/downloadthis/raw/master/inst/example/file_1.pdf",
@@ -164,6 +167,7 @@ download_this <- function(
 #' icon = "fa fa-save",
 #' self_contained = FALSE
 #' )
+#' }
 download_link <- function(
   link,
   button_label = "Download data",
