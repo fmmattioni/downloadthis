@@ -1,4 +1,4 @@
-# downloadthis (development version)
+# downloadthis 0.2.0
 
 * Removed `rmarkdown` dependency and moved it to 'Suggests'.
 
