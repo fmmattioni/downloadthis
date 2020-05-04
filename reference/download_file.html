@@ -92,7 +92,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">downloadthis</a>
-        <span class="version label label-danger" data-toggle="tooltip" data-placement="bottom" title="Unreleased version">0.1.3.9000</span>
+        <span class="version label label-danger" data-toggle="tooltip" data-placement="bottom" title="Unreleased version">0.2.0</span>
       </span>
     </div>
 
@@ -232,7 +232,10 @@ of the button, passed to <code><a href='https://rdrr.io/pkg/htmltools/man/tag.ht
 )
 
 <span class='co'>## Multiple files example</span>
-<span class='no'>path_files</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/list.files.html'>list.files</a></span>(<span class='kw'>path</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/system.file.html'>system.file</a></span>(<span class='st'>"assets/css"</span>, <span class='kw'>package</span> <span class='kw'>=</span> <span class='st'>"downloadthis"</span>), <span class='kw'>full.names</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)
+<span class='no'>path_files</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/list.files.html'>list.files</a></span>(
+ <span class='kw'>path</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/system.file.html'>system.file</a></span>(<span class='st'>"assets/css"</span>, <span class='kw'>package</span> <span class='kw'>=</span> <span class='st'>"downloadthis"</span>),
+ <span class='kw'>full.names</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>
+)
 
 <span class='fu'>download_file</span>(
 <span class='kw'>path</span> <span class='kw'>=</span> <span class='no'>path_files</span>,

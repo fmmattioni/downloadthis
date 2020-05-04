@@ -93,7 +93,7 @@ for being handled by download_this()." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">downloadthis</a>
-        <span class="version label label-danger" data-toggle="tooltip" data-placement="bottom" title="Unreleased version">0.1.3.9000</span>
+        <span class="version label label-danger" data-toggle="tooltip" data-placement="bottom" title="Unreleased version">0.2.0</span>
       </span>
     </div>
 
@@ -215,7 +215,8 @@ of the button, passed to <code><a href='https://rdrr.io/pkg/htmltools/man/tag.ht
     <p><code>htmltools::<a href='https://rdrr.io/pkg/htmltools/man/tag.html'>tag</a></code>, <code>&lt;button&gt;</code></p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='co'>## Link in Github repo</span>
+    <pre class="examples"><div class='input'><span class='kw'>if</span> (<span class='fl'>FALSE</span>) {
+<span class='co'>## Link in Github repo</span>
 <span class='fu'>download_link</span>(
 <span class='kw'>link</span> <span class='kw'>=</span> <span class='st'>"https://github.com/fmmattioni/downloadthis/raw/master/inst/example/file_1.pdf"</span>,
 <span class='kw'>button_label</span> <span class='kw'>=</span> <span class='st'>"Download pdf file"</span>,
@@ -223,9 +224,8 @@ of the button, passed to <code><a href='https://rdrr.io/pkg/htmltools/man/tag.ht
 <span class='kw'>has_icon</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
 <span class='kw'>icon</span> <span class='kw'>=</span> <span class='st'>"fa fa-save"</span>,
 <span class='kw'>self_contained</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>
-)</div><div class='output co'>#&gt; &lt;a href="https://github.com/fmmattioni/downloadthis/raw/master/inst/example/file_1.pdf"&gt;
-#&gt;   &lt;button class="btn btn-danger"&gt;&lt;i class="fa fa-save"&gt;&lt;/i&gt; Download pdf file&lt;/button&gt;
-#&gt; &lt;/a&gt;</div></pre>
+)
+}</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
