@@ -54,7 +54,10 @@ self_contained = FALSE
 )
 
 ## Multiple files example
-path_files <- list.files(path = system.file("assets/css", package = "downloadthis"), full.names = TRUE)
+path_files <- list.files(
+ path = system.file("assets/css", package = "downloadthis"),
+ full.names = TRUE
+)
 
 download_file(
 path = path_files,
