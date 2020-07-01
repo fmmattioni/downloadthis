@@ -1,6 +1,6 @@
 Package: downloadthis
 Title: Implement Download Buttons in 'rmarkdown'
-Version: 0.2.0
+Version: 0.2.0.9000
 Authors@R: 
     person(given = "Felipe",
            family = "Mattioni Maturana",
