@@ -45,7 +45,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="index.html">downloadthis</a>
-        <span class="version label label-danger" data-toggle="tooltip" data-placement="bottom" title="Unreleased version">0.2.0</span>
+        <span class="version label label-danger" data-toggle="tooltip" data-placement="bottom" title="Unreleased version">0.2.0.9000</span>
       </span>
     </div>
 
@@ -118,10 +118,14 @@
 <h2 class="hasAnchor">
 <a href="#installation" class="anchor"></a>Installation</h2>
 <p>You can install the released version of <code>downloadthis</code> from <a href="https://CRAN.R-project.org/package=downloadthis">CRAN</a> with:</p>
-<div class="sourceCode" id="cb1"><pre class="r"><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span>(<span class="st">"downloadthis"</span>)</pre></div>
+<div class="sourceCode" id="cb1"><pre class="downlit">
+<span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span>(<span class="st">"downloadthis"</span>)
+</pre></div>
 <p>You can install the development version of <code>downloadthis</code> from <a href="https://github.com/fmmattioni/downloadthis/">GitHub</a> with:</p>
-<div class="sourceCode" id="cb2"><pre class="r"><span class="co"># install.packages("remotes")</span>
-<span class="kw pkg">remotes</span><span class="kw ns">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html">install_github</a></span>(<span class="st">"fmmattioni/downloadthis"</span>)</pre></div>
+<div class="sourceCode" id="cb2"><pre class="downlit">
+<span class="co"># install.packages("remotes")</span>
+<span class="kw">remotes</span>::<span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html">install_github</a></span>(<span class="st">"fmmattioni/downloadthis"</span>)
+</pre></div>
 </div>
 <div id="introduction" class="section level2">
 <h2 class="hasAnchor">
@@ -135,70 +139,80 @@
 <div id="data-frames-lists-or-any-r-object" class="section level3">
 <h3 class="hasAnchor">
 <a href="#data-frames-lists-or-any-r-object" class="anchor"></a>Data frames, lists, or any R object</h3>
-<div class="sourceCode" id="cb3"><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">downloadthis</span>)
+<div class="sourceCode" id="cb3"><pre class="downlit">
+<span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="kw"><a href="https://github.com/fmmattioni/downloadthis">downloadthis</a></span>)
 
-<span class="no">mtcars</span> <span class="kw">%&gt;%</span>
+<span class="kw">mtcars</span> <span class="op">%&gt;%</span> 
   <span class="fu"><a href="reference/download_this.html">download_this</a></span>(
-    <span class="kw">output_name</span> <span class="kw">=</span> <span class="st">"mtcars data set"</span>,
-    <span class="kw">output_extension</span> <span class="kw">=</span> <span class="st">".csv"</span>,
-    <span class="kw">button_label</span> <span class="kw">=</span> <span class="st">"Download data"</span>,
-    <span class="kw">button_type</span> <span class="kw">=</span> <span class="st">"warning"</span>,
-    <span class="kw">has_icon</span> <span class="kw">=</span> <span class="fl">TRUE</span>,
-    <span class="kw">icon</span> <span class="kw">=</span> <span class="st">"fa fa-save"</span>
-  )</pre></div>
-<div class="sourceCode" id="cb4"><pre class="r"><span class="no">vector_example</span> <span class="kw">&lt;-</span> <span class="fl">1</span>:<span class="fl">10</span>
-<span class="no">linear_model</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span>(<span class="no">mpg</span> ~ <span class="no">gear</span>, <span class="kw">data</span> <span class="kw">=</span> <span class="no">mtcars</span>)
+    output_name = <span class="st">"mtcars data set"</span>,
+    output_extension = <span class="st">".csv"</span>,
+    button_label = <span class="st">"Download data"</span>,
+    button_type = <span class="st">"warning"</span>,
+    has_icon = <span class="fl">TRUE</span>,
+    icon = <span class="st">"fa fa-save"</span>
+  )
+</pre></div>
+<div class="sourceCode" id="cb4"><pre class="downlit">
+<span class="kw">vector_example</span> <span class="op">&lt;-</span> <span class="fl">1</span><span class="op">:</span><span class="fl">10</span>
+<span class="kw">linear_model</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span>(<span class="kw">mpg</span> <span class="op">~</span> <span class="kw">gear</span>, data = <span class="kw">mtcars</span>)
 
-<span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span>(<span class="no">mtcars</span>, <span class="no">iris</span>, <span class="no">vector_example</span>, <span class="no">linear_model</span>) <span class="kw">%&gt;%</span>
+<span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span>(<span class="kw">mtcars</span>, <span class="kw">iris</span>, <span class="kw">vector_example</span>, <span class="kw">linear_model</span>) <span class="op">%&gt;%</span>
   <span class="fu"><a href="reference/download_this.html">download_this</a></span>(
-    <span class="kw">output_name</span> <span class="kw">=</span> <span class="st">"datasets, vector, and linear model"</span>,
-    <span class="kw">output_extension</span> <span class="kw">=</span> <span class="st">".rds"</span>,
-    <span class="kw">button_label</span> <span class="kw">=</span> <span class="st">"Download as rds"</span>,
-    <span class="kw">button_type</span> <span class="kw">=</span> <span class="st">"success"</span>,
-    <span class="kw">has_icon</span> <span class="kw">=</span> <span class="fl">TRUE</span>,
-    <span class="kw">icon</span> <span class="kw">=</span> <span class="st">"fa fa-save"</span>
-  )</pre></div>
+    output_name = <span class="st">"datasets, vector, and linear model"</span>,
+    output_extension = <span class="st">".rds"</span>,
+    button_label = <span class="st">"Download as rds"</span>,
+    button_type = <span class="st">"success"</span>,
+    has_icon = <span class="fl">TRUE</span>,
+    icon = <span class="st">"fa fa-save"</span>
+  )
+</pre></div>
 </div>
 <div id="web-address" class="section level3">
 <h3 class="hasAnchor">
 <a href="#web-address" class="anchor"></a>Web address</h3>
-<div class="sourceCode" id="cb5"><pre class="r"><span class="co">## Link in Github repo</span>
+<div class="sourceCode" id="cb5"><pre class="downlit">
+<span class="co">## Link in Github repo</span>
 <span class="fu"><a href="reference/download_link.html">download_link</a></span>(
-  <span class="kw">link</span> <span class="kw">=</span> <span class="st">"https://github.com/fmmattioni/downloadthis/raw/master/inst/example/file_1.pdf"</span>,
-  <span class="kw">button_label</span> <span class="kw">=</span> <span class="st">"Download pdf file"</span>,
-  <span class="kw">button_type</span> <span class="kw">=</span> <span class="st">"danger"</span>,
-  <span class="kw">has_icon</span> <span class="kw">=</span> <span class="fl">TRUE</span>,
-  <span class="kw">icon</span> <span class="kw">=</span> <span class="st">"fa fa-save"</span>,
-  <span class="kw">self_contained</span> <span class="kw">=</span> <span class="fl">FALSE</span>
-)</pre></div>
+  link = <span class="st">"https://github.com/fmmattioni/downloadthis/raw/master/inst/example/file_1.pdf"</span>,
+  button_label = <span class="st">"Download pdf file"</span>,
+  button_type = <span class="st">"danger"</span>,
+  has_icon = <span class="fl">TRUE</span>,
+  icon = <span class="st">"fa fa-save"</span>,
+  self_contained = <span class="fl">FALSE</span>
+)
+</pre></div>
 </div>
 <div id="local-files" class="section level3">
 <h3 class="hasAnchor">
 <a href="#local-files" class="anchor"></a>Local files</h3>
-<div class="sourceCode" id="cb6"><pre class="r"><span class="co">## One file example</span>
+<div class="sourceCode" id="cb6"><pre class="downlit">
+<span class="co">## One file example</span>
 <span class="fu"><a href="reference/download_file.html">download_file</a></span>(
-  <span class="kw">path</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/system.file.html">system.file</a></span>(<span class="st">"assets/css/all.min.css"</span>, <span class="kw">package</span> <span class="kw">=</span> <span class="st">"downloadthis"</span>),
-  <span class="kw">output_name</span> <span class="kw">=</span> <span class="st">"CSS file from downloadthis"</span>,
-  <span class="kw">button_label</span> <span class="kw">=</span> <span class="st">"Download css file"</span>,
-  <span class="kw">button_type</span> <span class="kw">=</span> <span class="st">"danger"</span>,
-  <span class="kw">has_icon</span> <span class="kw">=</span> <span class="fl">TRUE</span>,
-  <span class="kw">icon</span> <span class="kw">=</span> <span class="st">"fa fa-save"</span>,
-  <span class="kw">self_contained</span> <span class="kw">=</span> <span class="fl">FALSE</span>
-)</pre></div>
+  path = <span class="fu"><a href="https://rdrr.io/r/base/system.file.html">system.file</a></span>(<span class="st">"assets/css/all.min.css"</span>, package = <span class="st">"downloadthis"</span>),
+  output_name = <span class="st">"CSS file from downloadthis"</span>,
+  button_label = <span class="st">"Download css file"</span>,
+  button_type = <span class="st">"danger"</span>,
+  has_icon = <span class="fl">TRUE</span>,
+  icon = <span class="st">"fa fa-save"</span>,
+  self_contained = <span class="fl">FALSE</span>
+)
+</pre></div>
 </div>
 <div id="local-directory" class="section level3">
 <h3 class="hasAnchor">
 <a href="#local-directory" class="anchor"></a>Local directory</h3>
-<div class="sourceCode" id="cb7"><pre class="r"><span class="co">## Directory path as an example</span>
+<div class="sourceCode" id="cb7"><pre class="downlit">
+<span class="co">## Directory path as an example</span>
 <span class="fu"><a href="reference/download_dir.html">download_dir</a></span>(
-  <span class="kw">path</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/system.file.html">system.file</a></span>(<span class="st">"assets"</span>, <span class="kw">package</span> <span class="kw">=</span> <span class="st">"downloadthis"</span>),
-  <span class="kw">output_name</span> <span class="kw">=</span> <span class="st">"example dir"</span>,
-  <span class="kw">button_label</span> <span class="kw">=</span> <span class="st">"Download directory"</span>,
-  <span class="kw">button_type</span> <span class="kw">=</span> <span class="st">"success"</span>,
-  <span class="kw">has_icon</span> <span class="kw">=</span> <span class="fl">TRUE</span>,
-  <span class="kw">icon</span> <span class="kw">=</span> <span class="st">"fa fa-save"</span>,
-  <span class="kw">self_contained</span> <span class="kw">=</span> <span class="fl">FALSE</span>
-)</pre></div>
+  path = <span class="fu"><a href="https://rdrr.io/r/base/system.file.html">system.file</a></span>(<span class="st">"assets"</span>, package = <span class="st">"downloadthis"</span>),
+  output_name = <span class="st">"example dir"</span>,
+  button_label = <span class="st">"Download directory"</span>,
+  button_type = <span class="st">"success"</span>,
+  has_icon = <span class="fl">TRUE</span>,
+  icon = <span class="st">"fa fa-save"</span>,
+  self_contained = <span class="fl">FALSE</span>
+)
+</pre></div>
 </div>
 </div>
 <div id="vignettes" class="section level2">
