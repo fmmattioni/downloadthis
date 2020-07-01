@@ -1,5 +1,7 @@
 # downloadthis (development version)
 
+* Added option to choose between `readr::write_csv()` and `readr::write_csv2()` when output extension is '.csv' in `download_this()` (#3)
+
 # downloadthis 0.2.0
 
 * Removed `rmarkdown` dependency and moved it to 'Suggests'.
