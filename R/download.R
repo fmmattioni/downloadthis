@@ -12,6 +12,7 @@
 #' @param has_icon Specify whether to include fontawesome icons in the button label
 #' @param icon Fontawesome tag e.g.: "fa fa-save"
 #' @param self_contained A boolean to specify whether your HTML output is self-contained. Default to `FALSE`.
+#' @param csv2 A boolean to specify whether to use `readr::write_csv2()` in case the `output_extension` is chosen as '.csv'. If `FALSE`, `readr::write_csv()` will be used instead. Default to `TRUE`.
 #' @param ... attributes (named arguments) and children (unnamed arguments)
 #'   of the button, passed to `htmltools::tag()`.
 #'
@@ -79,6 +80,7 @@ download_this <- function(
   has_icon = TRUE,
   icon = "fa fa-save",
   self_contained = FALSE,
+  csv2 = TRUE,
   ...
 ){
 
@@ -105,7 +107,7 @@ download_this <- function(
   tmp_file <- fs::file_temp(ext = output_extension, tmp_dir = tempdir())
 
   switch (output_extension,
-    ".csv" = readr::write_csv2(x = .data, path = tmp_file),
+    ".csv" = ifelse(csv2, readr::write_csv2(x = .data, path = tmp_file), readr::write_csv(x = .data, path = tmp_file)),
     ".xlsx" = writexl::write_xlsx(x = .data, path = tmp_file),
     ".rds" = readr::write_rds(x = .data, path = tmp_file)
   )

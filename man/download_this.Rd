@@ -13,6 +13,7 @@ download_this(
   has_icon = TRUE,
   icon = "fa fa-save",
   self_contained = FALSE,
+  csv2 = TRUE,
   ...
 )
 }
@@ -32,6 +33,8 @@ download_this(
 \item{icon}{Fontawesome tag e.g.: "fa fa-save"}
 
 \item{self_contained}{A boolean to specify whether your HTML output is self-contained. Default to \code{FALSE}.}
+
+\item{csv2}{A boolean to specify whether to use \code{readr::write_csv2()} in case the \code{output_extension} is chosen as '.csv'. If \code{FALSE}, \code{readr::write_csv()} will be used instead. Default to \code{TRUE}.}
 
 \item{...}{attributes (named arguments) and children (unnamed arguments)
 of the button, passed to \code{htmltools::tag()}.}
