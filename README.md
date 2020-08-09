@@ -15,8 +15,6 @@ status](https://github.com/fmmattioni/downloadthis/workflows/R-CMD-check/badge.s
 badge](https://cranlogs.r-pkg.org/badges/last-month/downloadthis?color=blue)](https://CRAN.R-project.org/package=downloadthis)
 [![Total downloads
 badge](https://cranlogs.r-pkg.org/badges/grand-total/downloadthis?color=blue)](https://CRAN.R-project.org/package=downloadthis)
-<br>
-<a href="https://www.buymeacoffee.com/XQauwUWGm" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: 30px !important;width: 174px !important;box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;-webkit-box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;" ></a>
 <!-- badges: end -->
 
 The goal of `downloadthis` is to implement download buttons in HTML
@@ -144,9 +142,4 @@ download_dir(
 
 Please note that this project is released with a [Contributor Code of
 Conduct](https://www.contributor-covenant.org/version/1/0/0/code-of-conduct.html).
-By participating in this project you agree to abide by its
-terms.
-
-## Support
-
-<a href="https://www.buymeacoffee.com/XQauwUWGm" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: 41px !important;width: 174px !important;box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;-webkit-box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;" ></a>
+By participating in this project you agree to abide by its terms.
