@@ -165,10 +165,10 @@ For downloading links, files, or directories, see download_link(), download_file
     <div class="ref-description">
     <p>Wrapper around <code><a href='https://rdrr.io/pkg/bsplus/man/bs_button.html'>bsplus::bs_button()</a></code> to provide a download button for HTML outputs in R Markdown.
 Internally, the function writes the file to <code><a href='https://rdrr.io/r/base/tempfile.html'>tempdir()</a></code>, encodes it, and produces the download button. Currently, Internet Explorer does not support downloading embedded files.
-For downloading links, files, or directories, see <code><a href='https://rdrr.io/pkg/downloadthis/man/download_link.html'>download_link()</a></code>, <code><a href='https://rdrr.io/pkg/downloadthis/man/download_file.html'>download_file()</a></code>, and <code><a href='https://rdrr.io/pkg/downloadthis/man/download_dir.html'>download_dir()</a></code>.</p>
+For downloading links, files, or directories, see <code><a href='download_link.html'>download_link()</a></code>, <code><a href='download_file.html'>download_file()</a></code>, and <code><a href='download_dir.html'>download_dir()</a></code>.</p>
     </div>
 
-    <pre class="usage"><span class='fu'><a href='https://rdrr.io/pkg/downloadthis/man/download_this.html'>download_this</a></span>(
+    <pre class="usage"><span class='fu'>download_this</span>(
   <span class='kw'>.data</span>,
   <span class='kw'>output_name</span>,
   output_extension = <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>".csv"</span>, <span class='st'>".xlsx"</span>, <span class='st'>".rds"</span>),
@@ -240,7 +240,7 @@ of the button, passed to <code><a href='https://rdrr.io/pkg/htmltools/man/tag.ht
     <pre class="examples"><div class='input'><span class='co'>if</span> (<span class='fl'>FALSE</span>) {
 <span class='co'># Passing a data frame to the function</span>
 <span class='kw'>mtcars</span> <span class='op'>%&gt;%</span>
-  <span class='fu'><a href='https://rdrr.io/pkg/downloadthis/man/download_this.html'>download_this</a></span>(
+  <span class='fu'>download_this</span>(
     output_name = <span class='st'>"mtcars dataset"</span>,
     output_extension = <span class='st'>".csv"</span>,
     button_label = <span class='st'>"Download data"</span>,
@@ -251,7 +251,7 @@ of the button, passed to <code><a href='https://rdrr.io/pkg/htmltools/man/tag.ht
 
 <span class='co'># Passing a list with data frames to the function</span>
 <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span>(<span class='kw'>mtcars</span>, <span class='kw'>iris</span>) <span class='op'>%&gt;%</span>
-  <span class='fu'><a href='https://rdrr.io/pkg/downloadthis/man/download_this.html'>download_this</a></span>(
+  <span class='fu'>download_this</span>(
     output_name = <span class='st'>"mtcars and iris datasets"</span>,
     output_extension = <span class='st'>".xlsx"</span>,
     button_label = <span class='st'>"Download data"</span>,
@@ -262,7 +262,7 @@ of the button, passed to <code><a href='https://rdrr.io/pkg/htmltools/man/tag.ht
 
 <span class='co'># Passing a named list with data frames to the function</span>
 <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span>(<span class='st'>'mtcars dataset'</span> = <span class='kw'>mtcars</span>, <span class='st'>'iris dataset'</span> = <span class='kw'>iris</span>) <span class='op'>%&gt;%</span>
-  <span class='fu'><a href='https://rdrr.io/pkg/downloadthis/man/download_this.html'>download_this</a></span>(
+  <span class='fu'>download_this</span>(
     output_name = <span class='st'>"mtcars and iris datasets"</span>,
     output_extension = <span class='st'>".xlsx"</span>,
     button_label = <span class='st'>"Download data"</span>,
@@ -276,7 +276,7 @@ of the button, passed to <code><a href='https://rdrr.io/pkg/htmltools/man/tag.ht
 <span class='kw'>linear_model</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/stats/lm.html'>lm</a></span>(<span class='kw'>mpg</span> <span class='op'>~</span> <span class='kw'>gear</span>, data = <span class='kw'>mtcars</span>)
 
 <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span>(<span class='kw'>mtcars</span>, <span class='kw'>iris</span>, <span class='kw'>vector_example</span>, <span class='kw'>linear_model</span>) <span class='op'>%&gt;%</span>
- <span class='fu'><a href='https://rdrr.io/pkg/downloadthis/man/download_this.html'>download_this</a></span>(
+ <span class='fu'>download_this</span>(
    output_name = <span class='st'>"datasets, vector, and linear model"</span>,
    output_extension = <span class='st'>".rds"</span>,
    button_label = <span class='st'>"Download as rds"</span>,
