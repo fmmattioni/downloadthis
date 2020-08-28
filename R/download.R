@@ -88,7 +88,7 @@ download_this <- function(
   button_type <- match.arg(button_type)
 
   ## check if .data argument only contains data frames (if list is passed) or a single data frame
-  if("list" %in% class(.data) & output_extension != ".rds") {
+  if(inherits(.data, "list") & output_extension != ".rds") {
     if(!all_data_frame_from_list(.data))
       stop("You can only pass data frames to the function.", call. = FALSE)
   } else {
