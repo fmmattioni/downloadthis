@@ -5,7 +5,7 @@
 #' For downloading links, files, or directories, see `download_link()`, `download_file()`, and `download_dir()`.
 #'
 #' @param .data A data frame or (named) list to write to disk. See 'Examples' for more details.
-#' @param output_name Name of of the output file.
+#' @param output_name Name of of the output file, if `NULL` uses the deparsed `.data` object.
 #' @param output_extension Extension of the output file. Currently,  `.csv`,  `.xlsx`, and `.rds` are supported. If a (named) list is passed to the function, only `.xlsx` and `.rds` are supported.
 #' @param button_label Character (HTML), button label
 #' @param button_type Character, one of the standard Bootstrap types
@@ -73,7 +73,7 @@
 #' }
 download_this <- function(
   .data,
-  output_name,
+  output_name = NULL,
   output_extension = c(".csv", ".xlsx", ".rds"),
   button_label = "Download data",
   button_type = c("default", "primary", "success", "info", "warning", "danger"),
@@ -98,7 +98,10 @@ download_this <- function(
 
   ## if list is passed to the function, only .xlsx will be used
   if(inherits(.data, "list") & output_extension == ".csv")
-    stop("I am sorry, lists are not supported in '.csv'. Please, choose '.xlsx' instead.", call. = FALSE)
+    stop("lists are not supported in '.csv', choose '.xlsx' instead.", call. = FALSE)
+
+  if(is.null(output_name))
+    output_name <- deparse(substitute(output_name))
 
   ## name of the final output file
   output_file <- paste0(output_name, output_extension)
