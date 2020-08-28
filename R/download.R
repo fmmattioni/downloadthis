@@ -109,6 +109,12 @@ download_this <- function(
   ## generate temporary file in temporary folder
   tmp_file <- fs::file_temp(ext = output_extension, tmp_dir = tempdir())
 
+  # clean up after
+  # on.exit = tmp is deleted even if function errors
+  on.exit({
+    fs::file_delete(tmp_file)
+  })
+
   switch (output_extension,
     ".csv" = ifelse(csv2, readr::write_csv2(x = .data, path = tmp_file), readr::write_csv(x = .data, path = tmp_file)),
     ".xlsx" = writexl::write_xlsx(x = .data, path = tmp_file),
