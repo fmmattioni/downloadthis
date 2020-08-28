@@ -24,7 +24,7 @@ Imports:
     base64enc,
     magrittr,
     zip
-RoxygenNote: 7.1.1
+RoxygenNote: 7.1.1.9000
 Suggests: 
     knitr,
     rmarkdown
