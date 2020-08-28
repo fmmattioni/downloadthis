@@ -84,6 +84,9 @@ download_this <- function(
   ...
 ){
 
+  output_extension <- match.arg(output_extension)
+  button_type <- match.arg(button_type)
+
   ## check if .data argument only contains data frames (if list is passed) or a single data frame
   if("list" %in% class(.data) & output_extension != ".rds") {
     if(!all_data_frame_from_list(.data))
@@ -92,9 +95,6 @@ download_this <- function(
     if(!is.data.frame(.data) & output_extension != ".rds")
       stop("You must pass a data frame to the function.", call. = FALSE)
   }
-
-  output_extension <- match.arg(output_extension)
-  button_type <- match.arg(button_type)
 
   ## if list is passed to the function, only .xlsx will be used
   if("list" %in% class(.data) & output_extension == ".csv")
