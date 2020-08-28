@@ -97,7 +97,7 @@ download_this <- function(
   }
 
   ## if list is passed to the function, only .xlsx will be used
-  if("list" %in% class(.data) & output_extension == ".csv")
+  if(inherits(.data, "list") & output_extension == ".csv")
     stop("I am sorry, lists are not supported in '.csv'. Please, choose '.xlsx' instead.", call. = FALSE)
 
   ## name of the final output file
