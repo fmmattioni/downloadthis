@@ -170,7 +170,7 @@ For downloading links, files, or directories, see <code><a href='download_link.h
 
     <pre class="usage"><span class='fu'>download_this</span>(
   <span class='kw'>.data</span>,
-  <span class='kw'>output_name</span>,
+  output_name = <span class='kw'>NULL</span>,
   output_extension = <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>".csv"</span>, <span class='st'>".xlsx"</span>, <span class='st'>".rds"</span>),
   button_label = <span class='st'>"Download data"</span>,
   button_type = <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"default"</span>, <span class='st'>"primary"</span>, <span class='st'>"success"</span>, <span class='st'>"info"</span>, <span class='st'>"warning"</span>, <span class='st'>"danger"</span>),
@@ -190,7 +190,7 @@ For downloading links, files, or directories, see <code><a href='download_link.h
     </tr>
     <tr>
       <th>output_name</th>
-      <td><p>Name of of the output file.</p></td>
+      <td><p>Name of of the output file, if <code>NULL</code> uses the deparsed <code>.data</code> object.</p></td>
     </tr>
     <tr>
       <th>output_extension</th>
@@ -284,7 +284,8 @@ of the button, passed to <code><a href='https://rdrr.io/pkg/htmltools/man/tag.ht
    has_icon = <span class='fl'>TRUE</span>,
    icon = <span class='st'>"fa fa-save"</span>
  )
-}</div></pre>
+}
+</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
