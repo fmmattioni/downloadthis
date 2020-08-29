@@ -9,10 +9,10 @@
 #' @param output_extension Extension of the output file. Currently,  `.csv`,  `.xlsx`, and `.rds` are supported. If a (named) list is passed to the function, only `.xlsx` and `.rds` are supported.
 #' @param button_label Character (HTML), button label
 #' @param button_type Character, one of the standard Bootstrap types
-#' @param has_icon Specify whether to include fontawesome icons in the button label
-#' @param icon Fontawesome tag e.g.: "fa fa-save"
+#' @param icon Fontawesome tag e.g.: "fa fa-save", set to `NULL` to 
 #' @param self_contained A boolean to specify whether your HTML output is self-contained. Default to `FALSE`.
 #' @param csv2 A boolean to specify whether to use `readr::write_csv2()` in case the `output_extension` is chosen as '.csv'. If `FALSE`, `readr::write_csv()` will be used instead. Default to `TRUE`.
+#' @param ggsave_args List of arguments to pass to `ggplot2::ggsave`, e.g.: `list(height = 5)`.
 #' @param ... attributes (named arguments) and children (unnamed arguments)
 #'   of the button, passed to `htmltools::tag()`.
 #'
@@ -73,32 +73,31 @@
 #' }
 download_this <- function(
   .data,
+  ...,
   output_name = NULL,
   output_extension = c(".csv", ".xlsx", ".rds"),
   button_label = "Download data",
   button_type = c("default", "primary", "success", "info", "warning", "danger"),
-  has_icon = TRUE,
   icon = "fa fa-save",
   self_contained = FALSE,
   csv2 = TRUE,
-  ...
+  ggsave_args = list()
+) UseMethod("download_this")
+
+#' @export
+download_this.default <- function(
+  .data,
+  ...,
+  output_name = NULL,
+  output_extension = ".rds",
+  button_label = "Download data",
+  button_type = c("default", "primary", "success", "info", "warning", "danger"),
+  icon = "fa fa-save",
+  self_contained = FALSE,
+  csv2 = TRUE
 ){
 
-  output_extension <- match.arg(output_extension)
   button_type <- match.arg(button_type)
-
-  ## check if .data argument only contains data frames (if list is passed) or a single data frame
-  if(inherits(.data, "list") & output_extension != ".rds") {
-    if(!all_data_frame_from_list(.data))
-      stop("You can only pass data frames to the function.", call. = FALSE)
-  } else {
-    if(!is.data.frame(.data) & output_extension != ".rds")
-      stop("You must pass a data frame to the function.", call. = FALSE)
-  }
-
-  ## if list is passed to the function, only .xlsx will be used
-  if(inherits(.data, "list") & output_extension == ".csv")
-    stop("lists are not supported in '.csv', choose '.xlsx' instead.", call. = FALSE)
 
   if(is.null(output_name))
     output_name <- deparse(substitute(output_name))
@@ -121,34 +120,92 @@ download_this <- function(
     ".rds" = readr::write_rds(x = .data, path = tmp_file)
   )
 
-  ## create button label with icon
-  if(has_icon)
-    button_label <- htmltools::HTML(paste(htmltools::tags$i(class = icon), button_label))
-
-  ## generate download button
-  button_out <- bsplus::bs_button(
-    label = button_label,
-    button_type = button_type,
-    ... = ...
-  ) %>%
-    htmltools::a(
-      href = paste0(
-        "data:",
-        mime::guess_type(file = tmp_file),
-        ";base64,",
-        encode_this(.tmp_file = tmp_file)
-      ),
-      download = output_file
-    )
-
-  htmltools::tagList(
-    if(has_icon)
-      add_fontawesome(self_contained),
-
-    button_out
-  )
+  # create button
+  create_button(button_label, button_type, output_file, tmp_file, self_contained, icon, ...)
 }
 
+#' @export
+#' @method download_this data.frame
+download_this.data.frame <- function(
+  .data,
+  ...,
+  output_name = NULL,
+  output_extension = c(".csv", ".xlsx", ".rds"),
+  button_label = "Download data",
+  button_type = c("default", "primary", "success", "info", "warning", "danger"),
+  icon = "fa fa-save",
+  self_contained = FALSE,
+  csv2 = TRUE
+){
+
+  output_extension <- match.arg(output_extension)
+  button_type <- match.arg(button_type)
+
+  if(is.null(output_name))
+    output_name <- deparse(substitute(output_name))
+
+  ## name of the final output file
+  output_file <- paste0(output_name, output_extension)
+
+  ## generate temporary file in temporary folder
+  tmp_file <- fs::file_temp(ext = output_extension, tmp_dir = tempdir())
+
+  # clean up after
+  # on.exit = tmp is deleted even if function errors
+  on.exit({
+    fs::file_delete(tmp_file)
+  })
+
+  switch (output_extension,
+    ".csv" = ifelse(csv2, readr::write_csv2(x = .data, path = tmp_file), readr::write_csv(x = .data, path = tmp_file)),
+    ".xlsx" = writexl::write_xlsx(x = .data, path = tmp_file),
+    ".rds" = readr::write_rds(x = .data, path = tmp_file)
+  )
+
+  # create button
+  create_button(button_label, button_type, output_file, tmp_file, self_contained, icon, ...)
+}
+
+#' @export
+#' @method download_this ggplot
+download_this.ggplot <- function(
+  .data,
+  ...,
+  output_name = NULL,
+  output_extension = ".png",
+  button_label = "Download data",
+  button_type = c("default", "primary", "success", "info", "warning", "danger"),
+  icon = "fa fa-save",
+  self_contained = FALSE,
+  ggsave_args = list()
+){
+
+  button_type <- match.arg(button_type)
+
+  if(is.null(output_name))
+    output_name <- deparse(substitute(output_name))
+
+  ## name of the final output file
+  output_file <- paste0(output_name, output_extension)
+
+  ## generate temporary file in temporary folder
+  tmp_file <- fs::file_temp(ext = output_extension, tmp_dir = tempdir())
+
+  # clean up after
+  # on.exit = tmp is deleted even if function errors
+  on.exit({
+    fs::file_delete(tmp_file)
+  })
+
+  # to allow additional arguments to ggsave
+  ggsave_args$device <- gsub("\\.", "", output_extension)
+  ggsave_args$plot <- .data
+  ggsave_args$filename <- tmp_file
+  do.call(ggplot2::ggsave, ggsave_args)
+
+  # create button
+  create_button(button_label, button_type, output_file, tmp_file, self_contained, icon, ...)
+}
 
 #' Download file from a web address
 #'

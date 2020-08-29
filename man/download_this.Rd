@@ -6,19 +6,22 @@
 \usage{
 download_this(
   .data,
+  ...,
   output_name = NULL,
   output_extension = c(".csv", ".xlsx", ".rds"),
   button_label = "Download data",
   button_type = c("default", "primary", "success", "info", "warning", "danger"),
-  has_icon = TRUE,
   icon = "fa fa-save",
   self_contained = FALSE,
   csv2 = TRUE,
-  ...
+  ggsave_args = list()
 )
 }
 \arguments{
 \item{.data}{A data frame or (named) list to write to disk. See 'Examples' for more details.}
+
+\item{...}{attributes (named arguments) and children (unnamed arguments)
+of the button, passed to \code{htmltools::tag()}.}
 
 \item{output_name}{Name of of the output file, if \code{NULL} uses the deparsed \code{.data} object.}
 
@@ -28,16 +31,13 @@ download_this(
 
 \item{button_type}{Character, one of the standard Bootstrap types}
 
-\item{has_icon}{Specify whether to include fontawesome icons in the button label}
-
-\item{icon}{Fontawesome tag e.g.: "fa fa-save"}
+\item{icon}{Fontawesome tag e.g.: "fa fa-save", set to \code{NULL} to}
 
 \item{self_contained}{A boolean to specify whether your HTML output is self-contained. Default to \code{FALSE}.}
 
 \item{csv2}{A boolean to specify whether to use \code{readr::write_csv2()} in case the \code{output_extension} is chosen as '.csv'. If \code{FALSE}, \code{readr::write_csv()} will be used instead. Default to \code{TRUE}.}
 
-\item{...}{attributes (named arguments) and children (unnamed arguments)
-of the button, passed to \code{htmltools::tag()}.}
+\item{ggsave_args}{List of arguments to pass to \code{ggplot2::ggsave}, e.g.: \code{list(height = 5)}.}
 }
 \value{
 \code{htmltools::\link[htmltools]{tag}}, \code{<button>}

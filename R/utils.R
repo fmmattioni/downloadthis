@@ -24,6 +24,34 @@ add_fontawesome <- function(self_contained){
   }
 }
 
-all_data_frame_from_list <- function(.list) {
-  all(sapply(.list, is.data.frame))
+get_data_uri <- function(tmp_file){
+  paste0(
+    "data:",
+    mime::guess_type(file = tmp_file),
+    ";base64,",
+    encode_this(.tmp_file = tmp_file)
+  )
+}
+
+create_button <- function(button_label, button_type, output_file, tmp_file, self_contained, icon, ...){
+
+  has_icon <- is.null(icon)
+
+  if(has_icon)
+    button_label <- htmltools::HTML(paste(htmltools::tags$i(class = icon), button_label))
+
+  button_out <- bsplus::bs_button(
+    label = button_label,
+    button_type = button_type,
+    ...
+  ) %>%
+    htmltools::a(
+      href = get_data_uri(tmp_file),
+      download = output_file
+    )
+
+  if(has_icon)
+    button_out <- htmltools::attachDependencies(button_out, add_fontawesome(self_contained))
+
+  return(button_out)
 }
