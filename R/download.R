@@ -100,7 +100,7 @@ download_this.default <- function(
   button_type <- match.arg(button_type)
 
   if(is.null(output_name))
-    output_name <- deparse(substitute(output_name))
+    output_name <- deparse(substitute(.data))
 
   ## name of the final output file
   output_file <- paste0(output_name, output_extension)
@@ -142,7 +142,7 @@ download_this.data.frame <- function(
   button_type <- match.arg(button_type)
 
   if(is.null(output_name))
-    output_name <- deparse(substitute(output_name))
+    output_name <- deparse(substitute(.data))
 
   ## name of the final output file
   output_file <- paste0(output_name, output_extension)
@@ -173,7 +173,7 @@ download_this.ggplot <- function(
   ...,
   output_name = NULL,
   output_extension = ".png",
-  button_label = "Download data",
+  button_label = "Download plot",
   button_type = c("default", "primary", "success", "info", "warning", "danger"),
   icon = "fa fa-save",
   self_contained = FALSE,
@@ -183,7 +183,7 @@ download_this.ggplot <- function(
   button_type <- match.arg(button_type)
 
   if(is.null(output_name))
-    output_name <- deparse(substitute(output_name))
+    output_name <- deparse(substitute(.data))
 
   ## name of the final output file
   output_file <- paste0(output_name, output_extension)

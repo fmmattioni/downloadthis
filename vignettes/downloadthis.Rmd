@@ -152,3 +152,18 @@ download_dir(
   self_contained = FALSE
 )
 ```
+
+## ggplot2
+
+```{r}
+library(ggplot2)
+
+plot <- ggplot(cars, aes(speed, dist)) +
+  geom_point()
+
+plot
+```
+
+```{r}
+download_this(plot)
+```
