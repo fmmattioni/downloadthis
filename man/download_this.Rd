@@ -6,7 +6,7 @@
 \usage{
 download_this(
   .data,
-  output_name,
+  output_name = NULL,
   output_extension = c(".csv", ".xlsx", ".rds"),
   button_label = "Download data",
   button_type = c("default", "primary", "success", "info", "warning", "danger"),
@@ -20,7 +20,7 @@ download_this(
 \arguments{
 \item{.data}{A data frame or (named) list to write to disk. See 'Examples' for more details.}
 
-\item{output_name}{Name of of the output file.}
+\item{output_name}{Name of of the output file, if \code{NULL} uses the deparsed \code{.data} object.}
 
 \item{output_extension}{Extension of the output file. Currently,  \code{.csv},  \code{.xlsx}, and \code{.rds} are supported. If a (named) list is passed to the function, only \code{.xlsx} and \code{.rds} are supported.}
 

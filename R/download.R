@@ -5,7 +5,7 @@
 #' For downloading links, files, or directories, see `download_link()`, `download_file()`, and `download_dir()`.
 #'
 #' @param .data A data frame or (named) list to write to disk. See 'Examples' for more details.
-#' @param output_name Name of of the output file.
+#' @param output_name Name of of the output file, if `NULL` uses the deparsed `.data` object.
 #' @param output_extension Extension of the output file. Currently,  `.csv`,  `.xlsx`, and `.rds` are supported. If a (named) list is passed to the function, only `.xlsx` and `.rds` are supported.
 #' @param button_label Character (HTML), button label
 #' @param button_type Character, one of the standard Bootstrap types
@@ -73,7 +73,7 @@
 #' }
 download_this <- function(
   .data,
-  output_name,
+  output_name = NULL,
   output_extension = c(".csv", ".xlsx", ".rds"),
   button_label = "Download data",
   button_type = c("default", "primary", "success", "info", "warning", "danger"),
@@ -84,8 +84,11 @@ download_this <- function(
   ...
 ){
 
+  output_extension <- match.arg(output_extension)
+  button_type <- match.arg(button_type)
+
   ## check if .data argument only contains data frames (if list is passed) or a single data frame
-  if("list" %in% class(.data) & output_extension != ".rds") {
+  if(inherits(.data, "list") & output_extension != ".rds") {
     if(!all_data_frame_from_list(.data))
       stop("You can only pass data frames to the function.", call. = FALSE)
   } else {
@@ -93,18 +96,24 @@ download_this <- function(
       stop("You must pass a data frame to the function.", call. = FALSE)
   }
 
-  output_extension <- match.arg(output_extension)
-  button_type <- match.arg(button_type)
-
   ## if list is passed to the function, only .xlsx will be used
-  if("list" %in% class(.data) & output_extension == ".csv")
-    stop("I am sorry, lists are not supported in '.csv'. Please, choose '.xlsx' instead.", call. = FALSE)
+  if(inherits(.data, "list") & output_extension == ".csv")
+    stop("lists are not supported in '.csv', choose '.xlsx' instead.", call. = FALSE)
+
+  if(is.null(output_name))
+    output_name <- deparse(substitute(output_name))
 
   ## name of the final output file
   output_file <- paste0(output_name, output_extension)
 
   ## generate temporary file in temporary folder
   tmp_file <- fs::file_temp(ext = output_extension, tmp_dir = tempdir())
+
+  # clean up after
+  # on.exit = tmp is deleted even if function errors
+  on.exit({
+    fs::file_delete(tmp_file)
+  })
 
   switch (output_extension,
     ".csv" = ifelse(csv2, readr::write_csv2(x = .data, path = tmp_file), readr::write_csv(x = .data, path = tmp_file)),
