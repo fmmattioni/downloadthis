@@ -170,15 +170,15 @@ For downloading links, files, or directories, see <code><a href='download_link.h
 
     <pre class="usage"><span class='fu'>download_this</span>(
   <span class='kw'>.data</span>,
+  <span class='kw'>...</span>,
   output_name = <span class='kw'>NULL</span>,
   output_extension = <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>".csv"</span>, <span class='st'>".xlsx"</span>, <span class='st'>".rds"</span>),
   button_label = <span class='st'>"Download data"</span>,
   button_type = <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"default"</span>, <span class='st'>"primary"</span>, <span class='st'>"success"</span>, <span class='st'>"info"</span>, <span class='st'>"warning"</span>, <span class='st'>"danger"</span>),
-  has_icon = <span class='fl'>TRUE</span>,
   icon = <span class='st'>"fa fa-save"</span>,
   self_contained = <span class='fl'>FALSE</span>,
   csv2 = <span class='fl'>TRUE</span>,
-  <span class='kw'>...</span>
+  ggsave_args = <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span>()
 )</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
@@ -187,6 +187,11 @@ For downloading links, files, or directories, see <code><a href='download_link.h
     <tr>
       <th>.data</th>
       <td><p>A data frame or (named) list to write to disk. See 'Examples' for more details.</p></td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td><p>attributes (named arguments) and children (unnamed arguments)
+of the button, passed to <code><a href='https://rdrr.io/pkg/htmltools/man/tag.html'>htmltools::tag()</a></code>.</p></td>
     </tr>
     <tr>
       <th>output_name</th>
@@ -205,12 +210,8 @@ For downloading links, files, or directories, see <code><a href='download_link.h
       <td><p>Character, one of the standard Bootstrap types</p></td>
     </tr>
     <tr>
-      <th>has_icon</th>
-      <td><p>Specify whether to include fontawesome icons in the button label</p></td>
-    </tr>
-    <tr>
       <th>icon</th>
-      <td><p>Fontawesome tag e.g.: "fa fa-save"</p></td>
+      <td><p>Fontawesome tag e.g.: "fa fa-save", set to <code>NULL</code> to</p></td>
     </tr>
     <tr>
       <th>self_contained</th>
@@ -221,9 +222,8 @@ For downloading links, files, or directories, see <code><a href='download_link.h
       <td><p>A boolean to specify whether to use <code><a href='https://readr.tidyverse.org/reference/write_delim.html'>readr::write_csv2()</a></code> in case the <code>output_extension</code> is chosen as '.csv'. If <code>FALSE</code>, <code><a href='https://readr.tidyverse.org/reference/write_delim.html'>readr::write_csv()</a></code> will be used instead. Default to <code>TRUE</code>.</p></td>
     </tr>
     <tr>
-      <th>...</th>
-      <td><p>attributes (named arguments) and children (unnamed arguments)
-of the button, passed to <code><a href='https://rdrr.io/pkg/htmltools/man/tag.html'>htmltools::tag()</a></code>.</p></td>
+      <th>ggsave_args</th>
+      <td><p>List of arguments to pass to <code><a href='https://ggplot2.tidyverse.org/reference/ggsave.html'>ggplot2::ggsave</a></code>, e.g.: <code><a href='https://rdrr.io/r/base/list.html'>list(height = 5)</a></code>.</p></td>
     </tr>
     </table>
 
