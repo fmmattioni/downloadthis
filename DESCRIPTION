@@ -23,7 +23,8 @@ Imports:
     htmltools,
     base64enc,
     magrittr,
-    zip
+    zip,
+    ggplot2
 RoxygenNote: 7.1.1.9000
 Suggests: 
     knitr,
