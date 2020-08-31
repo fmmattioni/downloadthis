@@ -1,5 +1,9 @@
 # downloadthis (development version)
 
+* Added method to download a `ggplot2` object (#7). Thanks @JohnCoene.
+
+* Now `output_name` is optional, thanks @JohnCoene.
+
 * Added option to choose between `readr::write_csv()` and `readr::write_csv2()` when output extension is '.csv' in `download_this()` (#3)
 
 # downloadthis 0.2.0
