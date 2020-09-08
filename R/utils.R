@@ -35,7 +35,7 @@ get_data_uri <- function(tmp_file){
 
 create_button <- function(button_label, button_type, output_file, tmp_file, self_contained, icon, ...){
 
-  has_icon <- is.null(icon)
+  has_icon <- !is.null(icon)
 
   if(has_icon)
     button_label <- htmltools::HTML(paste(htmltools::tags$i(class = icon), button_label))
