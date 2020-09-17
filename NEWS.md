@@ -1,4 +1,4 @@
-# downloadthis (development version)
+# downloadthis 0.2.1
 
 * Added method to download a `ggplot2` object (#7). Thanks @JohnCoene.
 
