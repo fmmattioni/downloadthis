@@ -29,7 +29,9 @@ RoxygenNote: 7.1.1.9000
 Suggests: 
     knitr,
     rmarkdown,
-    testthat,
+    testthat (>= 3.0.1),
     spelling
 VignetteBuilder: knitr
 Language: en-US
+Config/testthat/edition: 3
+Config/testthat/parallel: true
