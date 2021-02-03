@@ -54,7 +54,7 @@ This package builds the download button in R Markdown using [bsplus](https://git
 ```{r eval=FALSE}
 library(downloadthis)
 
-mtcars %>% 
+mtcars %>%
   download_this(
     output_name = "mtcars data set",
     output_extension = ".csv",
