@@ -31,7 +31,7 @@ You can simply pass a **class** to `download_this()` and define this class in `c
 ```{r}
 library(downloadthis)
 
-mtcars %>% 
+mtcars %>%
   download_this(
     output_name = "mtcars dataset",
     output_extension = ".csv",
@@ -57,7 +57,7 @@ mtcars %>%
 ```{r}
 library(downloadthis)
 
-mtcars %>% 
+mtcars %>%
   download_this(
     output_name = "mtcars dataset",
     output_extension = ".csv",
@@ -119,7 +119,7 @@ mtcars %>%
 ```{r}
 library(downloadthis)
 
-mtcars %>% 
+mtcars %>%
   download_this(
     output_name = "mtcars dataset",
     output_extension = ".csv",

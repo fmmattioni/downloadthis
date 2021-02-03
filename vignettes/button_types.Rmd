@@ -29,7 +29,7 @@ library(downloadthis)
 ### Default
 
 ```{r example_1}
-mtcars %>% 
+mtcars %>%
   download_this(
     output_name = "mtcars dataset",
     output_extension = ".csv",
@@ -43,7 +43,7 @@ mtcars %>%
 ### Primary
 
 ```{r example_2}
-mtcars %>% 
+mtcars %>%
   download_this(
     output_name = "mtcars dataset",
     output_extension = ".xlsx",
@@ -57,7 +57,7 @@ mtcars %>%
 ### Success
 
 ```{r example_3}
-mtcars %>% 
+mtcars %>%
   download_this(
     output_name = "mtcars dataset",
     output_extension = ".csv",
@@ -71,7 +71,7 @@ mtcars %>%
 ### Info
 
 ```{r example_4}
-mtcars %>% 
+mtcars %>%
   download_this(
     output_name = "mtcars dataset",
     output_extension = ".xlsx",
@@ -85,7 +85,7 @@ mtcars %>%
 ### Warning
 
 ```{r example_5}
-mtcars %>% 
+mtcars %>%
   download_this(
     output_name = "mtcars dataset",
     output_extension = ".csv",
@@ -99,7 +99,7 @@ mtcars %>%
 ### Danger
 
 ```{r example_6}
-mtcars %>% 
+mtcars %>%
   download_this(
     output_name = "mtcars dataset",
     output_extension = ".xlsx",

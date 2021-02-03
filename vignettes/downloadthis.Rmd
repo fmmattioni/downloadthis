@@ -33,7 +33,7 @@ You can easily produce a download button as follows:
 ```{r}
 library(downloadthis)
 
-mtcars %>% 
+mtcars %>%
   download_this(
     output_name = "mtcars dataset",
     output_extension = ".csv",
@@ -63,7 +63,7 @@ list(mtcars, iris) %>%
 ### Passing a named list with data frames to the function
 
 ```{r}
-list('mtcars dataset' = mtcars, 'iris dataset' = iris) %>%
+list("mtcars dataset" = mtcars, "iris dataset" = iris) %>%
   download_this(
     output_name = "mtcars and iris datasets",
     output_extension = ".xlsx",
