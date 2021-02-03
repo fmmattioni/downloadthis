@@ -29,5 +29,7 @@ RoxygenNote: 7.1.1.9000
 Suggests: 
     knitr,
     rmarkdown,
-    testthat
+    testthat,
+    spelling
 VignetteBuilder: knitr
+Language: en-US
