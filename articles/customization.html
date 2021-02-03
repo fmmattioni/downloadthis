@@ -52,12 +52,6 @@
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
 <li>
-  <a href="../index.html">
-    <span class="fas fa fas fa-home fa-lg"></span>
-     
-  </a>
-</li>
-<li>
   <a href="../articles/downloadthis.html">Get started</a>
 </li>
 <li>
@@ -85,13 +79,13 @@
 <ul class="nav navbar-nav navbar-right">
 <li>
   <a href="https://github.com/fmmattioni/downloadthis">
-    <span class="fa fa-github fa-lg"></span>
+    <span class="fas fa-github fa-lg"></span>
      
   </a>
 </li>
 <li>
   <a href="https://twitter.com/felipe_mattioni">
-    <span class="fa fa-twitter fa-lg"></span>
+    <span class="fas fa-twitter fa-lg"></span>
      
   </a>
 </li>
@@ -131,21 +125,24 @@
 .button_large {
   font-size: 24px;
 }
-</style></details><div class="sourceCode" id="cb2"><pre class="downlit">
-<span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="kw"><a href="https://github.com/fmmattioni/downloadthis">downloadthis</a></span>)
+</style></details><div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/fmmattioni/downloadthis">downloadthis</a></span><span class="op">)</span>
 
-<span class="kw">mtcars</span> <span class="op">%&gt;%</span> 
-  <span class="fu"><a href="../reference/download_this.html">download_this</a></span>(
-    output_name = <span class="st">"mtcars dataset"</span>,
-    output_extension = <span class="st">".csv"</span>,
-    button_label = <span class="st">"Download data as csv"</span>,
-    button_type = <span class="st">"default"</span>,
-    has_icon = <span class="fl">TRUE</span>,
-    icon = <span class="st">"fa fa-save"</span>,
-    class = <span class="st">"button_large"</span>
-  )
-</pre></div>
-<a href="data:text/csv;base64,bXBnO2N5bDtkaXNwO2hwO2RyYXQ7d3Q7cXNlYzt2czthbTtnZWFyO2NhcmIKMjEsMDs2OzE2MCwwOzExMDszLDkwOzIsNjIwOzE2LDQ2OzA7MTs0OzQKMjEsMDs2OzE2MCwwOzExMDszLDkwOzIsODc1OzE3LDAyOzA7MTs0OzQKMjIsODs0OzEwOCwwOyA5MzszLDg1OzIsMzIwOzE4LDYxOzE7MTs0OzEKMjEsNDs2OzI1OCwwOzExMDszLDA4OzMsMjE1OzE5LDQ0OzE7MDszOzEKMTgsNzs4OzM2MCwwOzE3NTszLDE1OzMsNDQwOzE3LDAyOzA7MDszOzIKMTgsMTs2OzIyNSwwOzEwNTsyLDc2OzMsNDYwOzIwLDIyOzE7MDszOzEKMTQsMzs4OzM2MCwwOzI0NTszLDIxOzMsNTcwOzE1LDg0OzA7MDszOzQKMjQsNDs0OzE0Niw3OyA2MjszLDY5OzMsMTkwOzIwLDAwOzE7MDs0OzIKMjIsODs0OzE0MCw4OyA5NTszLDkyOzMsMTUwOzIyLDkwOzE7MDs0OzIKMTksMjs2OzE2Nyw2OzEyMzszLDkyOzMsNDQwOzE4LDMwOzE7MDs0OzQKMTcsODs2OzE2Nyw2OzEyMzszLDkyOzMsNDQwOzE4LDkwOzE7MDs0OzQKMTYsNDs4OzI3NSw4OzE4MDszLDA3OzQsMDcwOzE3LDQwOzA7MDszOzMKMTcsMzs4OzI3NSw4OzE4MDszLDA3OzMsNzMwOzE3LDYwOzA7MDszOzMKMTUsMjs4OzI3NSw4OzE4MDszLDA3OzMsNzgwOzE4LDAwOzA7MDszOzMKMTAsNDs4OzQ3MiwwOzIwNTsyLDkzOzUsMjUwOzE3LDk4OzA7MDszOzQKMTAsNDs4OzQ2MCwwOzIxNTszLDAwOzUsNDI0OzE3LDgyOzA7MDszOzQKMTQsNzs4OzQ0MCwwOzIzMDszLDIzOzUsMzQ1OzE3LDQyOzA7MDszOzQKMzIsNDs0OyA3OCw3OyA2Njs0LDA4OzIsMjAwOzE5LDQ3OzE7MTs0OzEKMzAsNDs0OyA3NSw3OyA1Mjs0LDkzOzEsNjE1OzE4LDUyOzE7MTs0OzIKMzMsOTs0OyA3MSwxOyA2NTs0LDIyOzEsODM1OzE5LDkwOzE7MTs0OzEKMjEsNTs0OzEyMCwxOyA5NzszLDcwOzIsNDY1OzIwLDAxOzE7MDszOzEKMTUsNTs4OzMxOCwwOzE1MDsyLDc2OzMsNTIwOzE2LDg3OzA7MDszOzIKMTUsMjs4OzMwNCwwOzE1MDszLDE1OzMsNDM1OzE3LDMwOzA7MDszOzIKMTMsMzs4OzM1MCwwOzI0NTszLDczOzMsODQwOzE1LDQxOzA7MDszOzQKMTksMjs4OzQwMCwwOzE3NTszLDA4OzMsODQ1OzE3LDA1OzA7MDszOzIKMjcsMzs0OyA3OSwwOyA2Njs0LDA4OzEsOTM1OzE4LDkwOzE7MTs0OzEKMjYsMDs0OzEyMCwzOyA5MTs0LDQzOzIsMTQwOzE2LDcwOzA7MTs1OzIKMzAsNDs0OyA5NSwxOzExMzszLDc3OzEsNTEzOzE2LDkwOzE7MTs1OzIKMTUsODs4OzM1MSwwOzI2NDs0LDIyOzMsMTcwOzE0LDUwOzA7MTs1OzQKMTksNzs2OzE0NSwwOzE3NTszLDYyOzIsNzcwOzE1LDUwOzA7MTs1OzYKMTUsMDs4OzMwMSwwOzMzNTszLDU0OzMsNTcwOzE0LDYwOzA7MTs1OzgKMjEsNDs0OzEyMSwwOzEwOTs0LDExOzIsNzgwOzE4LDYwOzE7MTs0OzIK" download="mtcars dataset.csv">
+<span class="va">mtcars</span> <span class="op">%&gt;%</span>
+  <span class="fu"><a href="../reference/download_this.html">download_this</a></span><span class="op">(</span>
+    output_name <span class="op">=</span> <span class="st">"mtcars dataset"</span>,
+    output_extension <span class="op">=</span> <span class="st">".csv"</span>,
+    button_label <span class="op">=</span> <span class="st">"Download data as csv"</span>,
+    button_type <span class="op">=</span> <span class="st">"default"</span>,
+    has_icon <span class="op">=</span> <span class="cn">TRUE</span>,
+    icon <span class="op">=</span> <span class="st">"fa fa-save"</span>,
+    class <span class="op">=</span> <span class="st">"button_large"</span>
+  <span class="op">)</span>
+<span class="co">#&gt; Warning: The `path` argument of `write_csv2()` is deprecated as of readr 1.4.0.</span>
+<span class="co">#&gt; Please use the `file` argument instead.</span>
+<span class="co">#&gt; This warning is displayed once every 8 hours.</span>
+<span class="co">#&gt; Call `lifecycle::last_warnings()` to see where this warning was generated.</span></code></pre></div>
+<a href="data:text/csv;base64,bXBnO2N5bDtkaXNwO2hwO2RyYXQ7d3Q7cXNlYzt2czthbTtnZWFyO2NhcmIKMjEsMDs2OzE2MCwwOzExMDszLDkwOzIsNjIwOzE2LDQ2OzA7MTs0OzQKMjEsMDs2OzE2MCwwOzExMDszLDkwOzIsODc1OzE3LDAyOzA7MTs0OzQKMjIsODs0OzEwOCwwOzkzOzMsODU7MiwzMjA7MTgsNjE7MTsxOzQ7MQoyMSw0OzY7MjU4LDA7MTEwOzMsMDg7MywyMTU7MTksNDQ7MTswOzM7MQoxOCw3Ozg7MzYwLDA7MTc1OzMsMTU7Myw0NDA7MTcsMDI7MDswOzM7MgoxOCwxOzY7MjI1LDA7MTA1OzIsNzY7Myw0NjA7MjAsMjI7MTswOzM7MQoxNCwzOzg7MzYwLDA7MjQ1OzMsMjE7Myw1NzA7MTUsODQ7MDswOzM7NAoyNCw0OzQ7MTQ2LDc7NjI7Myw2OTszLDE5MDsyMCwwMDsxOzA7NDsyCjIyLDg7NDsxNDAsODs5NTszLDkyOzMsMTUwOzIyLDkwOzE7MDs0OzIKMTksMjs2OzE2Nyw2OzEyMzszLDkyOzMsNDQwOzE4LDMwOzE7MDs0OzQKMTcsODs2OzE2Nyw2OzEyMzszLDkyOzMsNDQwOzE4LDkwOzE7MDs0OzQKMTYsNDs4OzI3NSw4OzE4MDszLDA3OzQsMDcwOzE3LDQwOzA7MDszOzMKMTcsMzs4OzI3NSw4OzE4MDszLDA3OzMsNzMwOzE3LDYwOzA7MDszOzMKMTUsMjs4OzI3NSw4OzE4MDszLDA3OzMsNzgwOzE4LDAwOzA7MDszOzMKMTAsNDs4OzQ3MiwwOzIwNTsyLDkzOzUsMjUwOzE3LDk4OzA7MDszOzQKMTAsNDs4OzQ2MCwwOzIxNTszLDAwOzUsNDI0OzE3LDgyOzA7MDszOzQKMTQsNzs4OzQ0MCwwOzIzMDszLDIzOzUsMzQ1OzE3LDQyOzA7MDszOzQKMzIsNDs0Ozc4LDc7NjY7NCwwODsyLDIwMDsxOSw0NzsxOzE7NDsxCjMwLDQ7NDs3NSw3OzUyOzQsOTM7MSw2MTU7MTgsNTI7MTsxOzQ7MgozMyw5OzQ7NzEsMTs2NTs0LDIyOzEsODM1OzE5LDkwOzE7MTs0OzEKMjEsNTs0OzEyMCwxOzk3OzMsNzA7Miw0NjU7MjAsMDE7MTswOzM7MQoxNSw1Ozg7MzE4LDA7MTUwOzIsNzY7Myw1MjA7MTYsODc7MDswOzM7MgoxNSwyOzg7MzA0LDA7MTUwOzMsMTU7Myw0MzU7MTcsMzA7MDswOzM7MgoxMywzOzg7MzUwLDA7MjQ1OzMsNzM7Myw4NDA7MTUsNDE7MDswOzM7NAoxOSwyOzg7NDAwLDA7MTc1OzMsMDg7Myw4NDU7MTcsMDU7MDswOzM7MgoyNywzOzQ7NzksMDs2Njs0LDA4OzEsOTM1OzE4LDkwOzE7MTs0OzEKMjYsMDs0OzEyMCwzOzkxOzQsNDM7MiwxNDA7MTYsNzA7MDsxOzU7MgozMCw0OzQ7OTUsMTsxMTM7Myw3NzsxLDUxMzsxNiw5MDsxOzE7NTsyCjE1LDg7ODszNTEsMDsyNjQ7NCwyMjszLDE3MDsxNCw1MDswOzE7NTs0CjE5LDc7NjsxNDUsMDsxNzU7Myw2MjsyLDc3MDsxNSw1MDswOzE7NTs2CjE1LDA7ODszMDEsMDszMzU7Myw1NDszLDU3MDsxNCw2MDswOzE7NTs4CjIxLDQ7NDsxMjEsMDsxMDk7NCwxMTsyLDc4MDsxOCw2MDsxOzE7NDsyCg==" download="mtcars dataset.csv">
 <button class="btn btn-default button_large" has_icon="TRUE"><i class="fa fa-save"></i> Download data as csv</button>
 </a>
 </div>
@@ -162,21 +159,20 @@
   font-family: "Times New Roman";
   font-size: 14px;
 }
-</style></details><div class="sourceCode" id="cb4"><pre class="downlit">
-<span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="kw"><a href="https://github.com/fmmattioni/downloadthis">downloadthis</a></span>)
+</style></details><div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/fmmattioni/downloadthis">downloadthis</a></span><span class="op">)</span>
 
-<span class="kw">mtcars</span> <span class="op">%&gt;%</span> 
-  <span class="fu"><a href="../reference/download_this.html">download_this</a></span>(
-    output_name = <span class="st">"mtcars dataset"</span>,
-    output_extension = <span class="st">".csv"</span>,
-    button_label = <span class="st">"Download data as csv"</span>,
-    button_type = <span class="st">"default"</span>,
-    has_icon = <span class="fl">TRUE</span>,
-    icon = <span class="st">"fa fa-save"</span>,
-    class = <span class="st">"button_times_new_roman"</span>
-  )
-</pre></div>
-<a href="data:text/csv;base64,bXBnO2N5bDtkaXNwO2hwO2RyYXQ7d3Q7cXNlYzt2czthbTtnZWFyO2NhcmIKMjEsMDs2OzE2MCwwOzExMDszLDkwOzIsNjIwOzE2LDQ2OzA7MTs0OzQKMjEsMDs2OzE2MCwwOzExMDszLDkwOzIsODc1OzE3LDAyOzA7MTs0OzQKMjIsODs0OzEwOCwwOyA5MzszLDg1OzIsMzIwOzE4LDYxOzE7MTs0OzEKMjEsNDs2OzI1OCwwOzExMDszLDA4OzMsMjE1OzE5LDQ0OzE7MDszOzEKMTgsNzs4OzM2MCwwOzE3NTszLDE1OzMsNDQwOzE3LDAyOzA7MDszOzIKMTgsMTs2OzIyNSwwOzEwNTsyLDc2OzMsNDYwOzIwLDIyOzE7MDszOzEKMTQsMzs4OzM2MCwwOzI0NTszLDIxOzMsNTcwOzE1LDg0OzA7MDszOzQKMjQsNDs0OzE0Niw3OyA2MjszLDY5OzMsMTkwOzIwLDAwOzE7MDs0OzIKMjIsODs0OzE0MCw4OyA5NTszLDkyOzMsMTUwOzIyLDkwOzE7MDs0OzIKMTksMjs2OzE2Nyw2OzEyMzszLDkyOzMsNDQwOzE4LDMwOzE7MDs0OzQKMTcsODs2OzE2Nyw2OzEyMzszLDkyOzMsNDQwOzE4LDkwOzE7MDs0OzQKMTYsNDs4OzI3NSw4OzE4MDszLDA3OzQsMDcwOzE3LDQwOzA7MDszOzMKMTcsMzs4OzI3NSw4OzE4MDszLDA3OzMsNzMwOzE3LDYwOzA7MDszOzMKMTUsMjs4OzI3NSw4OzE4MDszLDA3OzMsNzgwOzE4LDAwOzA7MDszOzMKMTAsNDs4OzQ3MiwwOzIwNTsyLDkzOzUsMjUwOzE3LDk4OzA7MDszOzQKMTAsNDs4OzQ2MCwwOzIxNTszLDAwOzUsNDI0OzE3LDgyOzA7MDszOzQKMTQsNzs4OzQ0MCwwOzIzMDszLDIzOzUsMzQ1OzE3LDQyOzA7MDszOzQKMzIsNDs0OyA3OCw3OyA2Njs0LDA4OzIsMjAwOzE5LDQ3OzE7MTs0OzEKMzAsNDs0OyA3NSw3OyA1Mjs0LDkzOzEsNjE1OzE4LDUyOzE7MTs0OzIKMzMsOTs0OyA3MSwxOyA2NTs0LDIyOzEsODM1OzE5LDkwOzE7MTs0OzEKMjEsNTs0OzEyMCwxOyA5NzszLDcwOzIsNDY1OzIwLDAxOzE7MDszOzEKMTUsNTs4OzMxOCwwOzE1MDsyLDc2OzMsNTIwOzE2LDg3OzA7MDszOzIKMTUsMjs4OzMwNCwwOzE1MDszLDE1OzMsNDM1OzE3LDMwOzA7MDszOzIKMTMsMzs4OzM1MCwwOzI0NTszLDczOzMsODQwOzE1LDQxOzA7MDszOzQKMTksMjs4OzQwMCwwOzE3NTszLDA4OzMsODQ1OzE3LDA1OzA7MDszOzIKMjcsMzs0OyA3OSwwOyA2Njs0LDA4OzEsOTM1OzE4LDkwOzE7MTs0OzEKMjYsMDs0OzEyMCwzOyA5MTs0LDQzOzIsMTQwOzE2LDcwOzA7MTs1OzIKMzAsNDs0OyA5NSwxOzExMzszLDc3OzEsNTEzOzE2LDkwOzE7MTs1OzIKMTUsODs4OzM1MSwwOzI2NDs0LDIyOzMsMTcwOzE0LDUwOzA7MTs1OzQKMTksNzs2OzE0NSwwOzE3NTszLDYyOzIsNzcwOzE1LDUwOzA7MTs1OzYKMTUsMDs4OzMwMSwwOzMzNTszLDU0OzMsNTcwOzE0LDYwOzA7MTs1OzgKMjEsNDs0OzEyMSwwOzEwOTs0LDExOzIsNzgwOzE4LDYwOzE7MTs0OzIK" download="mtcars dataset.csv">
+<span class="va">mtcars</span> <span class="op">%&gt;%</span>
+  <span class="fu"><a href="../reference/download_this.html">download_this</a></span><span class="op">(</span>
+    output_name <span class="op">=</span> <span class="st">"mtcars dataset"</span>,
+    output_extension <span class="op">=</span> <span class="st">".csv"</span>,
+    button_label <span class="op">=</span> <span class="st">"Download data as csv"</span>,
+    button_type <span class="op">=</span> <span class="st">"default"</span>,
+    has_icon <span class="op">=</span> <span class="cn">TRUE</span>,
+    icon <span class="op">=</span> <span class="st">"fa fa-save"</span>,
+    class <span class="op">=</span> <span class="st">"button_times_new_roman"</span>
+  <span class="op">)</span></code></pre></div>
+<a href="data:text/csv;base64,bXBnO2N5bDtkaXNwO2hwO2RyYXQ7d3Q7cXNlYzt2czthbTtnZWFyO2NhcmIKMjEsMDs2OzE2MCwwOzExMDszLDkwOzIsNjIwOzE2LDQ2OzA7MTs0OzQKMjEsMDs2OzE2MCwwOzExMDszLDkwOzIsODc1OzE3LDAyOzA7MTs0OzQKMjIsODs0OzEwOCwwOzkzOzMsODU7MiwzMjA7MTgsNjE7MTsxOzQ7MQoyMSw0OzY7MjU4LDA7MTEwOzMsMDg7MywyMTU7MTksNDQ7MTswOzM7MQoxOCw3Ozg7MzYwLDA7MTc1OzMsMTU7Myw0NDA7MTcsMDI7MDswOzM7MgoxOCwxOzY7MjI1LDA7MTA1OzIsNzY7Myw0NjA7MjAsMjI7MTswOzM7MQoxNCwzOzg7MzYwLDA7MjQ1OzMsMjE7Myw1NzA7MTUsODQ7MDswOzM7NAoyNCw0OzQ7MTQ2LDc7NjI7Myw2OTszLDE5MDsyMCwwMDsxOzA7NDsyCjIyLDg7NDsxNDAsODs5NTszLDkyOzMsMTUwOzIyLDkwOzE7MDs0OzIKMTksMjs2OzE2Nyw2OzEyMzszLDkyOzMsNDQwOzE4LDMwOzE7MDs0OzQKMTcsODs2OzE2Nyw2OzEyMzszLDkyOzMsNDQwOzE4LDkwOzE7MDs0OzQKMTYsNDs4OzI3NSw4OzE4MDszLDA3OzQsMDcwOzE3LDQwOzA7MDszOzMKMTcsMzs4OzI3NSw4OzE4MDszLDA3OzMsNzMwOzE3LDYwOzA7MDszOzMKMTUsMjs4OzI3NSw4OzE4MDszLDA3OzMsNzgwOzE4LDAwOzA7MDszOzMKMTAsNDs4OzQ3MiwwOzIwNTsyLDkzOzUsMjUwOzE3LDk4OzA7MDszOzQKMTAsNDs4OzQ2MCwwOzIxNTszLDAwOzUsNDI0OzE3LDgyOzA7MDszOzQKMTQsNzs4OzQ0MCwwOzIzMDszLDIzOzUsMzQ1OzE3LDQyOzA7MDszOzQKMzIsNDs0Ozc4LDc7NjY7NCwwODsyLDIwMDsxOSw0NzsxOzE7NDsxCjMwLDQ7NDs3NSw3OzUyOzQsOTM7MSw2MTU7MTgsNTI7MTsxOzQ7MgozMyw5OzQ7NzEsMTs2NTs0LDIyOzEsODM1OzE5LDkwOzE7MTs0OzEKMjEsNTs0OzEyMCwxOzk3OzMsNzA7Miw0NjU7MjAsMDE7MTswOzM7MQoxNSw1Ozg7MzE4LDA7MTUwOzIsNzY7Myw1MjA7MTYsODc7MDswOzM7MgoxNSwyOzg7MzA0LDA7MTUwOzMsMTU7Myw0MzU7MTcsMzA7MDswOzM7MgoxMywzOzg7MzUwLDA7MjQ1OzMsNzM7Myw4NDA7MTUsNDE7MDswOzM7NAoxOSwyOzg7NDAwLDA7MTc1OzMsMDg7Myw4NDU7MTcsMDU7MDswOzM7MgoyNywzOzQ7NzksMDs2Njs0LDA4OzEsOTM1OzE4LDkwOzE7MTs0OzEKMjYsMDs0OzEyMCwzOzkxOzQsNDM7MiwxNDA7MTYsNzA7MDsxOzU7MgozMCw0OzQ7OTUsMTsxMTM7Myw3NzsxLDUxMzsxNiw5MDsxOzE7NTsyCjE1LDg7ODszNTEsMDsyNjQ7NCwyMjszLDE3MDsxNCw1MDswOzE7NTs0CjE5LDc7NjsxNDUsMDsxNzU7Myw2MjsyLDc3MDsxNSw1MDswOzE7NTs2CjE1LDA7ODszMDEsMDszMzU7Myw1NDszLDU3MDsxNCw2MDswOzE7NTs4CjIxLDQ7NDsxMjEsMDsxMDk7NCwxMTsyLDc4MDsxOCw2MDsxOzE7NDsyCg==" download="mtcars dataset.csv">
 <button class="btn btn-default button_times_new_roman" has_icon="TRUE"><i class="fa fa-save"></i> Download data as csv</button>
 </a>
 </div>
@@ -265,21 +261,20 @@
   -webkit-transform: scaleX(1);
   transform: scaleX(1);
 }
-</style></details><div class="sourceCode" id="cb6"><pre class="downlit">
-<span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="kw"><a href="https://github.com/fmmattioni/downloadthis">downloadthis</a></span>)
+</style></details><div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/fmmattioni/downloadthis">downloadthis</a></span><span class="op">)</span>
 
-<span class="kw">mtcars</span> <span class="op">%&gt;%</span> 
-  <span class="fu"><a href="../reference/download_this.html">download_this</a></span>(
-    output_name = <span class="st">"mtcars dataset"</span>,
-    output_extension = <span class="st">".csv"</span>,
-    button_label = <span class="st">"Download data as csv"</span>,
-    button_type = <span class="st">"default"</span>,
-    has_icon = <span class="fl">TRUE</span>,
-    icon = <span class="st">"fa fa-save"</span>,
-    class = <span class="st">"hvr-sweep-to-left"</span>
-  )
-</pre></div>
-<a href="data:text/csv;base64,bXBnO2N5bDtkaXNwO2hwO2RyYXQ7d3Q7cXNlYzt2czthbTtnZWFyO2NhcmIKMjEsMDs2OzE2MCwwOzExMDszLDkwOzIsNjIwOzE2LDQ2OzA7MTs0OzQKMjEsMDs2OzE2MCwwOzExMDszLDkwOzIsODc1OzE3LDAyOzA7MTs0OzQKMjIsODs0OzEwOCwwOyA5MzszLDg1OzIsMzIwOzE4LDYxOzE7MTs0OzEKMjEsNDs2OzI1OCwwOzExMDszLDA4OzMsMjE1OzE5LDQ0OzE7MDszOzEKMTgsNzs4OzM2MCwwOzE3NTszLDE1OzMsNDQwOzE3LDAyOzA7MDszOzIKMTgsMTs2OzIyNSwwOzEwNTsyLDc2OzMsNDYwOzIwLDIyOzE7MDszOzEKMTQsMzs4OzM2MCwwOzI0NTszLDIxOzMsNTcwOzE1LDg0OzA7MDszOzQKMjQsNDs0OzE0Niw3OyA2MjszLDY5OzMsMTkwOzIwLDAwOzE7MDs0OzIKMjIsODs0OzE0MCw4OyA5NTszLDkyOzMsMTUwOzIyLDkwOzE7MDs0OzIKMTksMjs2OzE2Nyw2OzEyMzszLDkyOzMsNDQwOzE4LDMwOzE7MDs0OzQKMTcsODs2OzE2Nyw2OzEyMzszLDkyOzMsNDQwOzE4LDkwOzE7MDs0OzQKMTYsNDs4OzI3NSw4OzE4MDszLDA3OzQsMDcwOzE3LDQwOzA7MDszOzMKMTcsMzs4OzI3NSw4OzE4MDszLDA3OzMsNzMwOzE3LDYwOzA7MDszOzMKMTUsMjs4OzI3NSw4OzE4MDszLDA3OzMsNzgwOzE4LDAwOzA7MDszOzMKMTAsNDs4OzQ3MiwwOzIwNTsyLDkzOzUsMjUwOzE3LDk4OzA7MDszOzQKMTAsNDs4OzQ2MCwwOzIxNTszLDAwOzUsNDI0OzE3LDgyOzA7MDszOzQKMTQsNzs4OzQ0MCwwOzIzMDszLDIzOzUsMzQ1OzE3LDQyOzA7MDszOzQKMzIsNDs0OyA3OCw3OyA2Njs0LDA4OzIsMjAwOzE5LDQ3OzE7MTs0OzEKMzAsNDs0OyA3NSw3OyA1Mjs0LDkzOzEsNjE1OzE4LDUyOzE7MTs0OzIKMzMsOTs0OyA3MSwxOyA2NTs0LDIyOzEsODM1OzE5LDkwOzE7MTs0OzEKMjEsNTs0OzEyMCwxOyA5NzszLDcwOzIsNDY1OzIwLDAxOzE7MDszOzEKMTUsNTs4OzMxOCwwOzE1MDsyLDc2OzMsNTIwOzE2LDg3OzA7MDszOzIKMTUsMjs4OzMwNCwwOzE1MDszLDE1OzMsNDM1OzE3LDMwOzA7MDszOzIKMTMsMzs4OzM1MCwwOzI0NTszLDczOzMsODQwOzE1LDQxOzA7MDszOzQKMTksMjs4OzQwMCwwOzE3NTszLDA4OzMsODQ1OzE3LDA1OzA7MDszOzIKMjcsMzs0OyA3OSwwOyA2Njs0LDA4OzEsOTM1OzE4LDkwOzE7MTs0OzEKMjYsMDs0OzEyMCwzOyA5MTs0LDQzOzIsMTQwOzE2LDcwOzA7MTs1OzIKMzAsNDs0OyA5NSwxOzExMzszLDc3OzEsNTEzOzE2LDkwOzE7MTs1OzIKMTUsODs4OzM1MSwwOzI2NDs0LDIyOzMsMTcwOzE0LDUwOzA7MTs1OzQKMTksNzs2OzE0NSwwOzE3NTszLDYyOzIsNzcwOzE1LDUwOzA7MTs1OzYKMTUsMDs4OzMwMSwwOzMzNTszLDU0OzMsNTcwOzE0LDYwOzA7MTs1OzgKMjEsNDs0OzEyMSwwOzEwOTs0LDExOzIsNzgwOzE4LDYwOzE7MTs0OzIK" download="mtcars dataset.csv">
+<span class="va">mtcars</span> <span class="op">%&gt;%</span>
+  <span class="fu"><a href="../reference/download_this.html">download_this</a></span><span class="op">(</span>
+    output_name <span class="op">=</span> <span class="st">"mtcars dataset"</span>,
+    output_extension <span class="op">=</span> <span class="st">".csv"</span>,
+    button_label <span class="op">=</span> <span class="st">"Download data as csv"</span>,
+    button_type <span class="op">=</span> <span class="st">"default"</span>,
+    has_icon <span class="op">=</span> <span class="cn">TRUE</span>,
+    icon <span class="op">=</span> <span class="st">"fa fa-save"</span>,
+    class <span class="op">=</span> <span class="st">"hvr-sweep-to-left"</span>
+  <span class="op">)</span></code></pre></div>
+<a href="data:text/csv;base64,bXBnO2N5bDtkaXNwO2hwO2RyYXQ7d3Q7cXNlYzt2czthbTtnZWFyO2NhcmIKMjEsMDs2OzE2MCwwOzExMDszLDkwOzIsNjIwOzE2LDQ2OzA7MTs0OzQKMjEsMDs2OzE2MCwwOzExMDszLDkwOzIsODc1OzE3LDAyOzA7MTs0OzQKMjIsODs0OzEwOCwwOzkzOzMsODU7MiwzMjA7MTgsNjE7MTsxOzQ7MQoyMSw0OzY7MjU4LDA7MTEwOzMsMDg7MywyMTU7MTksNDQ7MTswOzM7MQoxOCw3Ozg7MzYwLDA7MTc1OzMsMTU7Myw0NDA7MTcsMDI7MDswOzM7MgoxOCwxOzY7MjI1LDA7MTA1OzIsNzY7Myw0NjA7MjAsMjI7MTswOzM7MQoxNCwzOzg7MzYwLDA7MjQ1OzMsMjE7Myw1NzA7MTUsODQ7MDswOzM7NAoyNCw0OzQ7MTQ2LDc7NjI7Myw2OTszLDE5MDsyMCwwMDsxOzA7NDsyCjIyLDg7NDsxNDAsODs5NTszLDkyOzMsMTUwOzIyLDkwOzE7MDs0OzIKMTksMjs2OzE2Nyw2OzEyMzszLDkyOzMsNDQwOzE4LDMwOzE7MDs0OzQKMTcsODs2OzE2Nyw2OzEyMzszLDkyOzMsNDQwOzE4LDkwOzE7MDs0OzQKMTYsNDs4OzI3NSw4OzE4MDszLDA3OzQsMDcwOzE3LDQwOzA7MDszOzMKMTcsMzs4OzI3NSw4OzE4MDszLDA3OzMsNzMwOzE3LDYwOzA7MDszOzMKMTUsMjs4OzI3NSw4OzE4MDszLDA3OzMsNzgwOzE4LDAwOzA7MDszOzMKMTAsNDs4OzQ3MiwwOzIwNTsyLDkzOzUsMjUwOzE3LDk4OzA7MDszOzQKMTAsNDs4OzQ2MCwwOzIxNTszLDAwOzUsNDI0OzE3LDgyOzA7MDszOzQKMTQsNzs4OzQ0MCwwOzIzMDszLDIzOzUsMzQ1OzE3LDQyOzA7MDszOzQKMzIsNDs0Ozc4LDc7NjY7NCwwODsyLDIwMDsxOSw0NzsxOzE7NDsxCjMwLDQ7NDs3NSw3OzUyOzQsOTM7MSw2MTU7MTgsNTI7MTsxOzQ7MgozMyw5OzQ7NzEsMTs2NTs0LDIyOzEsODM1OzE5LDkwOzE7MTs0OzEKMjEsNTs0OzEyMCwxOzk3OzMsNzA7Miw0NjU7MjAsMDE7MTswOzM7MQoxNSw1Ozg7MzE4LDA7MTUwOzIsNzY7Myw1MjA7MTYsODc7MDswOzM7MgoxNSwyOzg7MzA0LDA7MTUwOzMsMTU7Myw0MzU7MTcsMzA7MDswOzM7MgoxMywzOzg7MzUwLDA7MjQ1OzMsNzM7Myw4NDA7MTUsNDE7MDswOzM7NAoxOSwyOzg7NDAwLDA7MTc1OzMsMDg7Myw4NDU7MTcsMDU7MDswOzM7MgoyNywzOzQ7NzksMDs2Njs0LDA4OzEsOTM1OzE4LDkwOzE7MTs0OzEKMjYsMDs0OzEyMCwzOzkxOzQsNDM7MiwxNDA7MTYsNzA7MDsxOzU7MgozMCw0OzQ7OTUsMTsxMTM7Myw3NzsxLDUxMzsxNiw5MDsxOzE7NTsyCjE1LDg7ODszNTEsMDsyNjQ7NCwyMjszLDE3MDsxNCw1MDswOzE7NTs0CjE5LDc7NjsxNDUsMDsxNzU7Myw2MjsyLDc3MDsxNSw1MDswOzE7NTs2CjE1LDA7ODszMDEsMDszMzU7Myw1NDszLDU3MDsxNCw2MDswOzE7NTs4CjIxLDQ7NDsxMjEsMDsxMDk7NCwxMTsyLDc4MDsxOCw2MDsxOzE7NDsyCg==" download="mtcars dataset.csv">
 <button class="btn btn-default hvr-sweep-to-left" has_icon="TRUE"><i class="fa fa-save"></i> Download data as csv</button>
 </a>
 </div>
