@@ -21,32 +21,34 @@ download_link(
 
 \item{button_type}{Character, one of the standard Bootstrap types}
 
-\item{has_icon}{Specify whether to include fontawesome icons in the button label}
+\item{has_icon}{Specify whether to include fontawesome icons in the button
+label}
 
 \item{icon}{Fontawesome tag e.g.: "fa fa-save"}
 
-\item{self_contained}{A boolean to specify whether your HTML output is self-contained. Default to \code{FALSE}.}
+\item{self_contained}{A boolean to specify whether your HTML output is
+self-contained. Default to \code{FALSE}.}
 
-\item{...}{attributes (named arguments) and children (unnamed arguments)
-of the button, passed to \code{htmltools::tag()}.}
+\item{...}{attributes (named arguments) and children (unnamed arguments) of
+the button, passed to \code{htmltools::tag()}.}
 }
 \value{
 \code{htmltools::\link[htmltools]{tag}}, \code{<button>}
 }
 \description{
-It associates your download button to a web link. This might be an alternative when your file is too big
-for being handled by \code{download_this()}.
+It associates your download button to a web link. This might be an
+alternative when your file is too big for being handled by \code{download_this()}.
 }
 \examples{
 \dontrun{
 ## Link in Github repo
 download_link(
-link = "https://github.com/fmmattioni/downloadthis/raw/master/inst/example/file_1.pdf",
-button_label = "Download pdf file",
-button_type = "danger",
-has_icon = TRUE,
-icon = "fa fa-save",
-self_contained = FALSE
+  link = "https://github.com/fmmattioni/downloadthis/raw/master/inst/example/file_1.pdf",
+  button_label = "Download pdf file",
+  button_type = "danger",
+  has_icon = TRUE,
+  icon = "fa fa-save",
+  self_contained = FALSE
 )
 }
 }

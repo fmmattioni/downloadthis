@@ -1,26 +1,39 @@
 #' Download data frames, lists, or any R object
 #'
-#' Wrapper around `bsplus::bs_button()` to provide a download button for HTML outputs in R Markdown.
-#' Internally, the function writes the file to `tempdir()`, encodes it, and produces the download button. Currently, Internet Explorer does not support downloading embedded files.
-#' For downloading links, files, or directories, see `download_link()`, `download_file()`, and `download_dir()`.
+#' Wrapper around `bsplus::bs_button()` to provide a download button for HTML
+#' outputs in R Markdown. Internally, the function writes the file to
+#' `tempdir()`, encodes it, and produces the download button. Currently,
+#' Internet Explorer does not support downloading embedded files. For
+#' downloading links, files, or directories, see `download_link()`,
+#' `download_file()`, and `download_dir()`.
 #'
-#' @param .data A data frame or (named) list to write to disk. See 'Examples' for more details.
-#' @param output_name Name of of the output file, if `NULL` uses the deparsed `.data` object.
-#' @param output_extension Extension of the output file. Currently,  `.csv`,  `.xlsx`, and `.rds` are supported. If a (named) list is passed to the function, only `.xlsx` and `.rds` are supported.
+#' @param .data A data frame or (named) list to write to disk. See 'Examples'
+#'   for more details.
+#' @param output_name Name of of the output file, if `NULL` uses the deparsed
+#'   `.data` object.
+#' @param output_extension Extension of the output file. Currently,  `.csv`,
+#'   `.xlsx`, and `.rds` are supported. If a (named) list is passed to the
+#'   function, only `.xlsx` and `.rds` are supported.
 #' @param button_label Character (HTML), button label
 #' @param button_type Character, one of the standard Bootstrap types
 #' @param icon Fontawesome tag e.g.: "fa fa-save", set to `NULL` to
-#' @param self_contained A boolean to specify whether your HTML output is self-contained. Default to `FALSE`.
-#' @param csv2 A boolean to specify whether to use `readr::write_csv2()` in case the `output_extension` is chosen as '.csv'. If `FALSE`, `readr::write_csv()` will be used instead. Default to `TRUE`.
-#' @param ggsave_args List of arguments to pass to `ggplot2::ggsave`, e.g.: `list(height = 5)`.
-#' @param ... attributes (named arguments) and children (unnamed arguments)
-#'   of the button, passed to `htmltools::tag()`.
+#' @param self_contained A boolean to specify whether your HTML output is
+#'   self-contained. Default to `FALSE`.
+#' @param csv2 A boolean to specify whether to use `readr::write_csv2()` in case
+#'   the `output_extension` is chosen as '.csv'. If `FALSE`,
+#'   `readr::write_csv()` will be used instead. Default to `TRUE`.
+#' @param ggsave_args List of arguments to pass to `ggplot2::ggsave`, e.g.:
+#'   `list(height = 5)`.
+#' @param ... attributes (named arguments) and children (unnamed arguments) of
+#'   the button, passed to `htmltools::tag()`.
 #'
 #' @return \code{htmltools::\link[htmltools]{tag}}, \code{<button>}
 #' @export
 #'
 #' @section Warning:
-#' This example will write the `mtcars` dataset to `tempdir()` and produce the download button for the file `mtcars dataset.csv` with the `fa fa-save` icon on the `Download data` label.
+#' This example will write the `mtcars` dataset to `tempdir()` and produce the
+#' download button for the file `mtcars dataset.csv` with the `fa fa-save` icon
+#' on the `Download data` label.
 #'
 #' @examples
 #' \dontrun{
@@ -203,17 +216,19 @@ download_this.ggplot <- function(.data,
 
 #' Download file from a web address
 #'
-#' It associates your download button to a web link. This might be an alternative when your file is too big
-#' for being handled by `download_this()`.
+#' It associates your download button to a web link. This might be an
+#' alternative when your file is too big for being handled by `download_this()`.
 #'
 #' @param link A web address for downloadthing the file.
 #' @param button_label Character (HTML), button label
 #' @param button_type Character, one of the standard Bootstrap types
-#' @param has_icon Specify whether to include fontawesome icons in the button label
+#' @param has_icon Specify whether to include fontawesome icons in the button
+#'   label
 #' @param icon Fontawesome tag e.g.: "fa fa-save"
-#' @param self_contained A boolean to specify whether your HTML output is self-contained. Default to `FALSE`.
-#' @param ... attributes (named arguments) and children (unnamed arguments)
-#'   of the button, passed to `htmltools::tag()`.
+#' @param self_contained A boolean to specify whether your HTML output is
+#'   self-contained. Default to `FALSE`.
+#' @param ... attributes (named arguments) and children (unnamed arguments) of
+#'   the button, passed to `htmltools::tag()`.
 #'
 #' @return \code{htmltools::\link[htmltools]{tag}}, \code{<button>}
 #' @export
@@ -265,18 +280,23 @@ download_link <- function(link,
 
 #' Download a local file or multiple files
 #'
-#' In case multiple files are chosen, the files will be converted to a `.zip` file.
+#' In case multiple files are chosen, the files will be converted to a `.zip`
+#' file.
 #'
-#' @param path Path to the file(s). If multiple files are chosen, a vector must be passed to this argument.
-#' @param output_name Name of of the output file. If not specified, it will take the source file's name if one file
-#' is specified. In case of multiple files, the `output_name` must be specified.
+#' @param path Path to the file(s). If multiple files are chosen, a vector must
+#'   be passed to this argument.
+#' @param output_name Name of of the output file. If not specified, it will take
+#'   the source file's name if one file is specified. In case of multiple files,
+#'   the `output_name` must be specified.
 #' @param button_label Character (HTML), button label
 #' @param button_type Character, one of the standard Bootstrap types
-#' @param has_icon Specify whether to include fontawesome icons in the button label
+#' @param has_icon Specify whether to include fontawesome icons in the button
+#'   label
 #' @param icon Fontawesome tag e.g.: "fa fa-save"
-#' @param self_contained A boolean to specify whether your HTML output is self-contained. Default to `FALSE`.
-#' @param ... attributes (named arguments) and children (unnamed arguments)
-#'   of the button, passed to `htmltools::tag()`.
+#' @param self_contained A boolean to specify whether your HTML output is
+#'   self-contained. Default to `FALSE`.
+#' @param ... attributes (named arguments) and children (unnamed arguments) of
+#'   the button, passed to `htmltools::tag()`.
 #'
 #' @return \code{htmltools::\link[htmltools]{tag}}, \code{<button>}
 #' @export
@@ -385,11 +405,13 @@ download_file <- function(path,
 #' @param output_name Name of of the output file.
 #' @param button_label Character (HTML), button label
 #' @param button_type Character, one of the standard Bootstrap types
-#' @param has_icon Specify whether to include fontawesome icons in the button label
+#' @param has_icon Specify whether to include fontawesome icons in the button
+#'   label
 #' @param icon Fontawesome tag e.g.: "fa fa-save"
-#' @param self_contained A boolean to specify whether your HTML output is self-contained. Default to `FALSE`.
-#' @param ... attributes (named arguments) and children (unnamed arguments)
-#'   of the button, passed to `htmltools::tag()`.
+#' @param self_contained A boolean to specify whether your HTML output is
+#'   self-contained. Default to `FALSE`.
+#' @param ... attributes (named arguments) and children (unnamed arguments) of
+#'   the button, passed to `htmltools::tag()`.
 #'
 #' @return \code{htmltools::\link[htmltools]{tag}}, \code{<button>}
 #' @export

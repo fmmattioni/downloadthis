@@ -16,57 +16,62 @@ download_file(
 )
 }
 \arguments{
-\item{path}{Path to the file(s). If multiple files are chosen, a vector must be passed to this argument.}
+\item{path}{Path to the file(s). If multiple files are chosen, a vector must
+be passed to this argument.}
 
-\item{output_name}{Name of of the output file. If not specified, it will take the source file's name if one file
-is specified. In case of multiple files, the \code{output_name} must be specified.}
+\item{output_name}{Name of of the output file. If not specified, it will take
+the source file's name if one file is specified. In case of multiple files,
+the \code{output_name} must be specified.}
 
 \item{button_label}{Character (HTML), button label}
 
 \item{button_type}{Character, one of the standard Bootstrap types}
 
-\item{has_icon}{Specify whether to include fontawesome icons in the button label}
+\item{has_icon}{Specify whether to include fontawesome icons in the button
+label}
 
 \item{icon}{Fontawesome tag e.g.: "fa fa-save"}
 
-\item{self_contained}{A boolean to specify whether your HTML output is self-contained. Default to \code{FALSE}.}
+\item{self_contained}{A boolean to specify whether your HTML output is
+self-contained. Default to \code{FALSE}.}
 
-\item{...}{attributes (named arguments) and children (unnamed arguments)
-of the button, passed to \code{htmltools::tag()}.}
+\item{...}{attributes (named arguments) and children (unnamed arguments) of
+the button, passed to \code{htmltools::tag()}.}
 }
 \value{
 \code{htmltools::\link[htmltools]{tag}}, \code{<button>}
 }
 \description{
-In case multiple files are chosen, the files will be converted to a \code{.zip} file.
+In case multiple files are chosen, the files will be converted to a \code{.zip}
+file.
 }
 \examples{
 \dontrun{
 ## One file example
 download_file(
-path = system.file("assets/css/all.min.css", package = "downloadthis"),
-output_name = "CSS file from downloadthis",
-button_label = "Download css file",
-button_type = "danger",
-has_icon = TRUE,
-icon = "fa fa-save",
-self_contained = FALSE
+  path = system.file("assets/css/all.min.css", package = "downloadthis"),
+  output_name = "CSS file from downloadthis",
+  button_label = "Download css file",
+  button_type = "danger",
+  has_icon = TRUE,
+  icon = "fa fa-save",
+  self_contained = FALSE
 )
 
 ## Multiple files example
 path_files <- list.files(
- path = system.file("assets/css", package = "downloadthis"),
- full.names = TRUE
+  path = system.file("assets/css", package = "downloadthis"),
+  full.names = TRUE
 )
 
 download_file(
-path = path_files,
-output_name = "Files from downloadthis",
-button_label = "Download files",
-button_type = "danger",
-has_icon = TRUE,
-icon = "fa fa-save",
-self_contained = FALSE
+  path = path_files,
+  output_name = "Files from downloadthis",
+  button_label = "Download files",
+  button_type = "danger",
+  has_icon = TRUE,
+  icon = "fa fa-save",
+  self_contained = FALSE
 )
 }
 }
