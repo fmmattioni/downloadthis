@@ -49,8 +49,8 @@
   
 
 <meta property="og:title" content="Download file from a web address — download_link" />
-<meta property="og:description" content="It associates your download button to a web link. This might be an alternative when your file is too big
-for being handled by download_this()." />
+<meta property="og:description" content="It associates your download button to a web link. This might be an
+alternative when your file is too big for being handled by download_this()." />
 <meta property="og:image" content="/logo.png" />
 
 
@@ -158,8 +158,8 @@ for being handled by download_this()." />
     </div>
 
     <div class="ref-description">
-    <p>It associates your download button to a web link. This might be an alternative when your file is too big
-for being handled by <code><a href='download_this.html'>download_this()</a></code>.</p>
+    <p>It associates your download button to a web link. This might be an
+alternative when your file is too big for being handled by <code><a href='download_this.html'>download_this()</a></code>.</p>
     </div>
 
     <pre class="usage"><span class='fu'>download_link</span><span class='op'>(</span>
@@ -189,7 +189,8 @@ for being handled by <code><a href='download_this.html'>download_this()</a></cod
     </tr>
     <tr>
       <th>has_icon</th>
-      <td><p>Specify whether to include fontawesome icons in the button label</p></td>
+      <td><p>Specify whether to include fontawesome icons in the button
+label</p></td>
     </tr>
     <tr>
       <th>icon</th>
@@ -197,12 +198,13 @@ for being handled by <code><a href='download_this.html'>download_this()</a></cod
     </tr>
     <tr>
       <th>self_contained</th>
-      <td><p>A boolean to specify whether your HTML output is self-contained. Default to <code>FALSE</code>.</p></td>
+      <td><p>A boolean to specify whether your HTML output is
+self-contained. Default to <code>FALSE</code>.</p></td>
     </tr>
     <tr>
       <th>...</th>
-      <td><p>attributes (named arguments) and children (unnamed arguments)
-of the button, passed to <code><a href='https://rdrr.io/pkg/htmltools/man/tag.html'>htmltools::tag()</a></code>.</p></td>
+      <td><p>attributes (named arguments) and children (unnamed arguments) of
+the button, passed to <code><a href='https://rdrr.io/pkg/htmltools/man/tag.html'>htmltools::tag()</a></code>.</p></td>
     </tr>
     </table>
 
@@ -214,12 +216,12 @@ of the button, passed to <code><a href='https://rdrr.io/pkg/htmltools/man/tag.ht
     <pre class="examples"><div class='input'><span class='kw'>if</span> <span class='op'>(</span><span class='cn'>FALSE</span><span class='op'>)</span> <span class='op'>{</span>
 <span class='co'>## Link in Github repo</span>
 <span class='fu'>download_link</span><span class='op'>(</span>
-link <span class='op'>=</span> <span class='st'>"https://github.com/fmmattioni/downloadthis/raw/master/inst/example/file_1.pdf"</span>,
-button_label <span class='op'>=</span> <span class='st'>"Download pdf file"</span>,
-button_type <span class='op'>=</span> <span class='st'>"danger"</span>,
-has_icon <span class='op'>=</span> <span class='cn'>TRUE</span>,
-icon <span class='op'>=</span> <span class='st'>"fa fa-save"</span>,
-self_contained <span class='op'>=</span> <span class='cn'>FALSE</span>
+  link <span class='op'>=</span> <span class='st'>"https://github.com/fmmattioni/downloadthis/raw/master/inst/example/file_1.pdf"</span>,
+  button_label <span class='op'>=</span> <span class='st'>"Download pdf file"</span>,
+  button_type <span class='op'>=</span> <span class='st'>"danger"</span>,
+  has_icon <span class='op'>=</span> <span class='cn'>TRUE</span>,
+  icon <span class='op'>=</span> <span class='st'>"fa fa-save"</span>,
+  self_contained <span class='op'>=</span> <span class='cn'>FALSE</span>
 <span class='op'>)</span>
 <span class='op'>}</span>
 </div></pre>

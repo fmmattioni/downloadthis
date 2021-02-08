@@ -49,9 +49,12 @@
   
 
 <meta property="og:title" content="Download data frames, lists, or any R object — download_this" />
-<meta property="og:description" content="Wrapper around bsplus::bs_button() to provide a download button for HTML outputs in R Markdown.
-Internally, the function writes the file to tempdir(), encodes it, and produces the download button. Currently, Internet Explorer does not support downloading embedded files.
-For downloading links, files, or directories, see download_link(), download_file(), and download_dir()." />
+<meta property="og:description" content="Wrapper around bsplus::bs_button() to provide a download button for HTML
+outputs in R Markdown. Internally, the function writes the file to
+tempdir(), encodes it, and produces the download button. Currently,
+Internet Explorer does not support downloading embedded files. For
+downloading links, files, or directories, see download_link(),
+download_file(), and download_dir()." />
 <meta property="og:image" content="/logo.png" />
 
 
@@ -159,9 +162,12 @@ For downloading links, files, or directories, see download_link(), download_file
     </div>
 
     <div class="ref-description">
-    <p>Wrapper around <code><a href='https://rdrr.io/pkg/bsplus/man/bs_button.html'>bsplus::bs_button()</a></code> to provide a download button for HTML outputs in R Markdown.
-Internally, the function writes the file to <code><a href='https://rdrr.io/r/base/tempfile.html'>tempdir()</a></code>, encodes it, and produces the download button. Currently, Internet Explorer does not support downloading embedded files.
-For downloading links, files, or directories, see <code><a href='download_link.html'>download_link()</a></code>, <code><a href='download_file.html'>download_file()</a></code>, and <code><a href='download_dir.html'>download_dir()</a></code>.</p>
+    <p>Wrapper around <code><a href='https://rdrr.io/pkg/bsplus/man/bs_button.html'>bsplus::bs_button()</a></code> to provide a download button for HTML
+outputs in R Markdown. Internally, the function writes the file to
+<code><a href='https://rdrr.io/r/base/tempfile.html'>tempdir()</a></code>, encodes it, and produces the download button. Currently,
+Internet Explorer does not support downloading embedded files. For
+downloading links, files, or directories, see <code><a href='download_link.html'>download_link()</a></code>,
+<code><a href='download_file.html'>download_file()</a></code>, and <code><a href='download_dir.html'>download_dir()</a></code>.</p>
     </div>
 
     <pre class="usage"><span class='fu'>download_this</span><span class='op'>(</span>
@@ -182,20 +188,24 @@ For downloading links, files, or directories, see <code><a href='download_link.h
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>.data</th>
-      <td><p>A data frame or (named) list to write to disk. See 'Examples' for more details.</p></td>
+      <td><p>A data frame or (named) list to write to disk. See 'Examples'
+for more details.</p></td>
     </tr>
     <tr>
       <th>...</th>
-      <td><p>attributes (named arguments) and children (unnamed arguments)
-of the button, passed to <code><a href='https://rdrr.io/pkg/htmltools/man/tag.html'>htmltools::tag()</a></code>.</p></td>
+      <td><p>attributes (named arguments) and children (unnamed arguments) of
+the button, passed to <code><a href='https://rdrr.io/pkg/htmltools/man/tag.html'>htmltools::tag()</a></code>.</p></td>
     </tr>
     <tr>
       <th>output_name</th>
-      <td><p>Name of of the output file, if <code>NULL</code> uses the deparsed <code>.data</code> object.</p></td>
+      <td><p>Name of of the output file, if <code>NULL</code> uses the deparsed
+<code>.data</code> object.</p></td>
     </tr>
     <tr>
       <th>output_extension</th>
-      <td><p>Extension of the output file. Currently,  <code>.csv</code>,  <code>.xlsx</code>, and <code>.rds</code> are supported. If a (named) list is passed to the function, only <code>.xlsx</code> and <code>.rds</code> are supported.</p></td>
+      <td><p>Extension of the output file. Currently,  <code>.csv</code>,
+<code>.xlsx</code>, and <code>.rds</code> are supported. If a (named) list is passed to the
+function, only <code>.xlsx</code> and <code>.rds</code> are supported.</p></td>
     </tr>
     <tr>
       <th>button_label</th>
@@ -211,15 +221,19 @@ of the button, passed to <code><a href='https://rdrr.io/pkg/htmltools/man/tag.ht
     </tr>
     <tr>
       <th>self_contained</th>
-      <td><p>A boolean to specify whether your HTML output is self-contained. Default to <code>FALSE</code>.</p></td>
+      <td><p>A boolean to specify whether your HTML output is
+self-contained. Default to <code>FALSE</code>.</p></td>
     </tr>
     <tr>
       <th>csv2</th>
-      <td><p>A boolean to specify whether to use <code><a href='https://readr.tidyverse.org/reference/write_delim.html'>readr::write_csv2()</a></code> in case the <code>output_extension</code> is chosen as '.csv'. If <code>FALSE</code>, <code><a href='https://readr.tidyverse.org/reference/write_delim.html'>readr::write_csv()</a></code> will be used instead. Default to <code>TRUE</code>.</p></td>
+      <td><p>A boolean to specify whether to use <code><a href='https://readr.tidyverse.org/reference/write_delim.html'>readr::write_csv2()</a></code> in case
+the <code>output_extension</code> is chosen as '.csv'. If <code>FALSE</code>,
+<code><a href='https://readr.tidyverse.org/reference/write_delim.html'>readr::write_csv()</a></code> will be used instead. Default to <code>TRUE</code>.</p></td>
     </tr>
     <tr>
       <th>ggsave_args</th>
-      <td><p>List of arguments to pass to <code><a href='https://ggplot2.tidyverse.org/reference/ggsave.html'>ggplot2::ggsave</a></code>, e.g.: <code><a href='https://rdrr.io/r/base/list.html'>list(height = 5)</a></code>.</p></td>
+      <td><p>List of arguments to pass to <code><a href='https://ggplot2.tidyverse.org/reference/ggsave.html'>ggplot2::ggsave</a></code>, e.g.:
+<code><a href='https://rdrr.io/r/base/list.html'>list(height = 5)</a></code>.</p></td>
     </tr>
     </table>
 
@@ -230,7 +244,9 @@ of the button, passed to <code><a href='https://rdrr.io/pkg/htmltools/man/tag.ht
 
     
 
-<p>This example will write the <code>mtcars</code> dataset to <code><a href='https://rdrr.io/r/base/tempfile.html'>tempdir()</a></code> and produce the download button for the file <code>mtcars dataset.csv</code> with the <code>fa fa-save</code> icon on the <code>Download data</code> label.</p>
+<p>This example will write the <code>mtcars</code> dataset to <code><a href='https://rdrr.io/r/base/tempfile.html'>tempdir()</a></code> and produce the
+download button for the file <code>mtcars dataset.csv</code> with the <code>fa fa-save</code> icon
+on the <code>Download data</code> label.</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='kw'>if</span> <span class='op'>(</span><span class='cn'>FALSE</span><span class='op'>)</span> <span class='op'>{</span>
@@ -257,7 +273,7 @@ of the button, passed to <code><a href='https://rdrr.io/pkg/htmltools/man/tag.ht
   <span class='op'>)</span>
 
 <span class='co'># Passing a named list with data frames to the function</span>
-<span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span><span class='st'>'mtcars dataset'</span> <span class='op'>=</span> <span class='va'>mtcars</span>, <span class='st'>'iris dataset'</span> <span class='op'>=</span> <span class='va'>iris</span><span class='op'>)</span> <span class='op'>%&gt;%</span>
+<span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span><span class='st'>"mtcars dataset"</span> <span class='op'>=</span> <span class='va'>mtcars</span>, <span class='st'>"iris dataset"</span> <span class='op'>=</span> <span class='va'>iris</span><span class='op'>)</span> <span class='op'>%&gt;%</span>
   <span class='fu'>download_this</span><span class='op'>(</span>
     output_name <span class='op'>=</span> <span class='st'>"mtcars and iris datasets"</span>,
     output_extension <span class='op'>=</span> <span class='st'>".xlsx"</span>,
@@ -272,14 +288,14 @@ of the button, passed to <code><a href='https://rdrr.io/pkg/htmltools/man/tag.ht
 <span class='va'>linear_model</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/stats/lm.html'>lm</a></span><span class='op'>(</span><span class='va'>mpg</span> <span class='op'>~</span> <span class='va'>gear</span>, data <span class='op'>=</span> <span class='va'>mtcars</span><span class='op'>)</span>
 
 <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span><span class='va'>mtcars</span>, <span class='va'>iris</span>, <span class='va'>vector_example</span>, <span class='va'>linear_model</span><span class='op'>)</span> <span class='op'>%&gt;%</span>
- <span class='fu'>download_this</span><span class='op'>(</span>
-   output_name <span class='op'>=</span> <span class='st'>"datasets, vector, and linear model"</span>,
-   output_extension <span class='op'>=</span> <span class='st'>".rds"</span>,
-   button_label <span class='op'>=</span> <span class='st'>"Download as rds"</span>,
-   button_type <span class='op'>=</span> <span class='st'>"warning"</span>,
-   has_icon <span class='op'>=</span> <span class='cn'>TRUE</span>,
-   icon <span class='op'>=</span> <span class='st'>"fa fa-save"</span>
- <span class='op'>)</span>
+  <span class='fu'>download_this</span><span class='op'>(</span>
+    output_name <span class='op'>=</span> <span class='st'>"datasets, vector, and linear model"</span>,
+    output_extension <span class='op'>=</span> <span class='st'>".rds"</span>,
+    button_label <span class='op'>=</span> <span class='st'>"Download as rds"</span>,
+    button_type <span class='op'>=</span> <span class='st'>"warning"</span>,
+    has_icon <span class='op'>=</span> <span class='cn'>TRUE</span>,
+    icon <span class='op'>=</span> <span class='st'>"fa fa-save"</span>
+  <span class='op'>)</span>
 <span class='op'>}</span>
 </div></pre>
   </div>

@@ -49,7 +49,8 @@
   
 
 <meta property="og:title" content="Download a local file or multiple files — download_file" />
-<meta property="og:description" content="In case multiple files are chosen, the files will be converted to a .zip file." />
+<meta property="og:description" content="In case multiple files are chosen, the files will be converted to a .zip
+file." />
 <meta property="og:image" content="/logo.png" />
 
 
@@ -157,7 +158,8 @@
     </div>
 
     <div class="ref-description">
-    <p>In case multiple files are chosen, the files will be converted to a <code>.zip</code> file.</p>
+    <p>In case multiple files are chosen, the files will be converted to a <code>.zip</code>
+file.</p>
     </div>
 
     <pre class="usage"><span class='fu'>download_file</span><span class='op'>(</span>
@@ -176,12 +178,14 @@
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>path</th>
-      <td><p>Path to the file(s). If multiple files are chosen, a vector must be passed to this argument.</p></td>
+      <td><p>Path to the file(s). If multiple files are chosen, a vector must
+be passed to this argument.</p></td>
     </tr>
     <tr>
       <th>output_name</th>
-      <td><p>Name of of the output file. If not specified, it will take the source file's name if one file
-is specified. In case of multiple files, the <code>output_name</code> must be specified.</p></td>
+      <td><p>Name of of the output file. If not specified, it will take
+the source file's name if one file is specified. In case of multiple files,
+the <code>output_name</code> must be specified.</p></td>
     </tr>
     <tr>
       <th>button_label</th>
@@ -193,7 +197,8 @@ is specified. In case of multiple files, the <code>output_name</code> must be sp
     </tr>
     <tr>
       <th>has_icon</th>
-      <td><p>Specify whether to include fontawesome icons in the button label</p></td>
+      <td><p>Specify whether to include fontawesome icons in the button
+label</p></td>
     </tr>
     <tr>
       <th>icon</th>
@@ -201,12 +206,13 @@ is specified. In case of multiple files, the <code>output_name</code> must be sp
     </tr>
     <tr>
       <th>self_contained</th>
-      <td><p>A boolean to specify whether your HTML output is self-contained. Default to <code>FALSE</code>.</p></td>
+      <td><p>A boolean to specify whether your HTML output is
+self-contained. Default to <code>FALSE</code>.</p></td>
     </tr>
     <tr>
       <th>...</th>
-      <td><p>attributes (named arguments) and children (unnamed arguments)
-of the button, passed to <code><a href='https://rdrr.io/pkg/htmltools/man/tag.html'>htmltools::tag()</a></code>.</p></td>
+      <td><p>attributes (named arguments) and children (unnamed arguments) of
+the button, passed to <code><a href='https://rdrr.io/pkg/htmltools/man/tag.html'>htmltools::tag()</a></code>.</p></td>
     </tr>
     </table>
 
@@ -218,29 +224,29 @@ of the button, passed to <code><a href='https://rdrr.io/pkg/htmltools/man/tag.ht
     <pre class="examples"><div class='input'><span class='kw'>if</span> <span class='op'>(</span><span class='cn'>FALSE</span><span class='op'>)</span> <span class='op'>{</span>
 <span class='co'>## One file example</span>
 <span class='fu'>download_file</span><span class='op'>(</span>
-path <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/system.file.html'>system.file</a></span><span class='op'>(</span><span class='st'>"assets/css/all.min.css"</span>, package <span class='op'>=</span> <span class='st'>"downloadthis"</span><span class='op'>)</span>,
-output_name <span class='op'>=</span> <span class='st'>"CSS file from downloadthis"</span>,
-button_label <span class='op'>=</span> <span class='st'>"Download css file"</span>,
-button_type <span class='op'>=</span> <span class='st'>"danger"</span>,
-has_icon <span class='op'>=</span> <span class='cn'>TRUE</span>,
-icon <span class='op'>=</span> <span class='st'>"fa fa-save"</span>,
-self_contained <span class='op'>=</span> <span class='cn'>FALSE</span>
+  path <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/system.file.html'>system.file</a></span><span class='op'>(</span><span class='st'>"assets/css/all.min.css"</span>, package <span class='op'>=</span> <span class='st'>"downloadthis"</span><span class='op'>)</span>,
+  output_name <span class='op'>=</span> <span class='st'>"CSS file from downloadthis"</span>,
+  button_label <span class='op'>=</span> <span class='st'>"Download css file"</span>,
+  button_type <span class='op'>=</span> <span class='st'>"danger"</span>,
+  has_icon <span class='op'>=</span> <span class='cn'>TRUE</span>,
+  icon <span class='op'>=</span> <span class='st'>"fa fa-save"</span>,
+  self_contained <span class='op'>=</span> <span class='cn'>FALSE</span>
 <span class='op'>)</span>
 
 <span class='co'>## Multiple files example</span>
 <span class='va'>path_files</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/list.files.html'>list.files</a></span><span class='op'>(</span>
- path <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/system.file.html'>system.file</a></span><span class='op'>(</span><span class='st'>"assets/css"</span>, package <span class='op'>=</span> <span class='st'>"downloadthis"</span><span class='op'>)</span>,
- full.names <span class='op'>=</span> <span class='cn'>TRUE</span>
+  path <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/system.file.html'>system.file</a></span><span class='op'>(</span><span class='st'>"assets/css"</span>, package <span class='op'>=</span> <span class='st'>"downloadthis"</span><span class='op'>)</span>,
+  full.names <span class='op'>=</span> <span class='cn'>TRUE</span>
 <span class='op'>)</span>
 
 <span class='fu'>download_file</span><span class='op'>(</span>
-path <span class='op'>=</span> <span class='va'>path_files</span>,
-output_name <span class='op'>=</span> <span class='st'>"Files from downloadthis"</span>,
-button_label <span class='op'>=</span> <span class='st'>"Download files"</span>,
-button_type <span class='op'>=</span> <span class='st'>"danger"</span>,
-has_icon <span class='op'>=</span> <span class='cn'>TRUE</span>,
-icon <span class='op'>=</span> <span class='st'>"fa fa-save"</span>,
-self_contained <span class='op'>=</span> <span class='cn'>FALSE</span>
+  path <span class='op'>=</span> <span class='va'>path_files</span>,
+  output_name <span class='op'>=</span> <span class='st'>"Files from downloadthis"</span>,
+  button_label <span class='op'>=</span> <span class='st'>"Download files"</span>,
+  button_type <span class='op'>=</span> <span class='st'>"danger"</span>,
+  has_icon <span class='op'>=</span> <span class='cn'>TRUE</span>,
+  icon <span class='op'>=</span> <span class='st'>"fa fa-save"</span>,
+  self_contained <span class='op'>=</span> <span class='cn'>FALSE</span>
 <span class='op'>)</span>
 <span class='op'>}</span>
 </div></pre>
