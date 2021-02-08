@@ -18,14 +18,18 @@ download_this(
 )
 }
 \arguments{
-\item{.data}{A data frame or (named) list to write to disk. See 'Examples' for more details.}
+\item{.data}{A data frame or (named) list to write to disk. See 'Examples'
+for more details.}
 
-\item{...}{attributes (named arguments) and children (unnamed arguments)
-of the button, passed to \code{htmltools::tag()}.}
+\item{...}{attributes (named arguments) and children (unnamed arguments) of
+the button, passed to \code{htmltools::tag()}.}
 
-\item{output_name}{Name of of the output file, if \code{NULL} uses the deparsed \code{.data} object.}
+\item{output_name}{Name of of the output file, if \code{NULL} uses the deparsed
+\code{.data} object.}
 
-\item{output_extension}{Extension of the output file. Currently,  \code{.csv},  \code{.xlsx}, and \code{.rds} are supported. If a (named) list is passed to the function, only \code{.xlsx} and \code{.rds} are supported.}
+\item{output_extension}{Extension of the output file. Currently,  \code{.csv},
+\code{.xlsx}, and \code{.rds} are supported. If a (named) list is passed to the
+function, only \code{.xlsx} and \code{.rds} are supported.}
 
 \item{button_label}{Character (HTML), button label}
 
@@ -33,23 +37,32 @@ of the button, passed to \code{htmltools::tag()}.}
 
 \item{icon}{Fontawesome tag e.g.: "fa fa-save", set to \code{NULL} to}
 
-\item{self_contained}{A boolean to specify whether your HTML output is self-contained. Default to \code{FALSE}.}
+\item{self_contained}{A boolean to specify whether your HTML output is
+self-contained. Default to \code{FALSE}.}
 
-\item{csv2}{A boolean to specify whether to use \code{readr::write_csv2()} in case the \code{output_extension} is chosen as '.csv'. If \code{FALSE}, \code{readr::write_csv()} will be used instead. Default to \code{TRUE}.}
+\item{csv2}{A boolean to specify whether to use \code{readr::write_csv2()} in case
+the \code{output_extension} is chosen as '.csv'. If \code{FALSE},
+\code{readr::write_csv()} will be used instead. Default to \code{TRUE}.}
 
-\item{ggsave_args}{List of arguments to pass to \code{ggplot2::ggsave}, e.g.: \code{list(height = 5)}.}
+\item{ggsave_args}{List of arguments to pass to \code{ggplot2::ggsave}, e.g.:
+\code{list(height = 5)}.}
 }
 \value{
 \code{htmltools::\link[htmltools]{tag}}, \code{<button>}
 }
 \description{
-Wrapper around \code{bsplus::bs_button()} to provide a download button for HTML outputs in R Markdown.
-Internally, the function writes the file to \code{tempdir()}, encodes it, and produces the download button. Currently, Internet Explorer does not support downloading embedded files.
-For downloading links, files, or directories, see \code{download_link()}, \code{download_file()}, and \code{download_dir()}.
+Wrapper around \code{bsplus::bs_button()} to provide a download button for HTML
+outputs in R Markdown. Internally, the function writes the file to
+\code{tempdir()}, encodes it, and produces the download button. Currently,
+Internet Explorer does not support downloading embedded files. For
+downloading links, files, or directories, see \code{download_link()},
+\code{download_file()}, and \code{download_dir()}.
 }
 \section{Warning}{
 
-This example will write the \code{mtcars} dataset to \code{tempdir()} and produce the download button for the file \verb{mtcars dataset.csv} with the \verb{fa fa-save} icon on the \verb{Download data} label.
+This example will write the \code{mtcars} dataset to \code{tempdir()} and produce the
+download button for the file \verb{mtcars dataset.csv} with the \verb{fa fa-save} icon
+on the \verb{Download data} label.
 }
 
 \examples{
@@ -77,7 +90,7 @@ list(mtcars, iris) \%>\%
   )
 
 # Passing a named list with data frames to the function
-list('mtcars dataset' = mtcars, 'iris dataset' = iris) \%>\%
+list("mtcars dataset" = mtcars, "iris dataset" = iris) \%>\%
   download_this(
     output_name = "mtcars and iris datasets",
     output_extension = ".xlsx",
@@ -92,13 +105,13 @@ vector_example <- 1:10
 linear_model <- lm(mpg ~ gear, data = mtcars)
 
 list(mtcars, iris, vector_example, linear_model) \%>\%
- download_this(
-   output_name = "datasets, vector, and linear model",
-   output_extension = ".rds",
-   button_label = "Download as rds",
-   button_type = "warning",
-   has_icon = TRUE,
-   icon = "fa fa-save"
- )
+  download_this(
+    output_name = "datasets, vector, and linear model",
+    output_extension = ".rds",
+    button_label = "Download as rds",
+    button_type = "warning",
+    has_icon = TRUE,
+    icon = "fa fa-save"
+  )
 }
 }

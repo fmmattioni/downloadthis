@@ -24,14 +24,16 @@ download_dir(
 
 \item{button_type}{Character, one of the standard Bootstrap types}
 
-\item{has_icon}{Specify whether to include fontawesome icons in the button label}
+\item{has_icon}{Specify whether to include fontawesome icons in the button
+label}
 
 \item{icon}{Fontawesome tag e.g.: "fa fa-save"}
 
-\item{self_contained}{A boolean to specify whether your HTML output is self-contained. Default to \code{FALSE}.}
+\item{self_contained}{A boolean to specify whether your HTML output is
+self-contained. Default to \code{FALSE}.}
 
-\item{...}{attributes (named arguments) and children (unnamed arguments)
-of the button, passed to \code{htmltools::tag()}.}
+\item{...}{attributes (named arguments) and children (unnamed arguments) of
+the button, passed to \code{htmltools::tag()}.}
 }
 \value{
 \code{htmltools::\link[htmltools]{tag}}, \code{<button>}
@@ -43,13 +45,13 @@ The path is converted into a \code{.zip} file.
 \dontrun{
 ## Directory path as an example
 download_dir(
-path = system.file("assets", package = "downloadthis"),
-output_name = "example dir",
-button_label = "Download directory",
-button_type = "success",
-has_icon = TRUE,
-icon = "fa fa-save",
-self_contained = FALSE
+  path = system.file("assets", package = "downloadthis"),
+  output_name = "example dir",
+  button_label = "Download directory",
+  button_type = "success",
+  has_icon = TRUE,
+  icon = "fa fa-save",
+  self_contained = FALSE
 )
 }
 }
