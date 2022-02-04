@@ -17,7 +17,6 @@ badge](https://cranlogs.r-pkg.org/badges/last-month/downloadthis?color=blue)](ht
 badge](https://cranlogs.r-pkg.org/badges/grand-total/downloadthis?color=blue)](https://CRAN.R-project.org/package=downloadthis)
 [![Codecov test
 coverage](https://codecov.io/gh/fmmattioni/downloadthis/branch/master/graph/badge.svg)](https://app.codecov.io/gh/fmmattioni/downloadthis?branch=master)
-[![R-CMD-check](https://github.com/fmmattioni/downloadthis/workflows/R-CMD-check/badge.svg)](https://github.com/fmmattioni/downloadthis/actions)
 <!-- badges: end -->
 
 The goal of `downloadthis` is to implement download buttons in HTML
