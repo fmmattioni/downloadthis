@@ -367,11 +367,6 @@ download_file <- function(path,
     tmp_file <- path
   }
 
-  ## create button label with icon
-  if (has_icon) {
-    button_label <- htmltools::HTML(paste(htmltools::tags$i(class = icon), button_label))
-  }
-
   # create button
   create_button(button_label, button_type, output_file, tmp_file, self_contained, icon, ...)
 }
@@ -436,11 +431,6 @@ download_dir <- function(path,
   tmp_file <- fs::file_temp(ext = ".zip", tmp_dir = tempdir())
 
   zip::zipr(zipfile = tmp_file, files = path)
-
-  ## create button label with icon
-  if (has_icon) {
-    button_label <- htmltools::HTML(paste(htmltools::tags$i(class = icon), button_label))
-  }
 
   # create button
   create_button(button_label, button_type, output_file, tmp_file, self_contained, icon, ...)
