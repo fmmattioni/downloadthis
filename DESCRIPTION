@@ -30,7 +30,8 @@ Suggests:
     knitr,
     rmarkdown,
     testthat (>= 3.0.1),
-    spelling
+    spelling,
+    covr
 VignetteBuilder: knitr
 Language: en-US
 Config/testthat/edition: 3

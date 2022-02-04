@@ -13,3 +13,5 @@
 ^cran-comments\.md$
 ^CRAN-RELEASE$
 ^\.github$
+^CRAN-SUBMISSION$
+^codecov\.yml$
