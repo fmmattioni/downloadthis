@@ -12,7 +12,6 @@ License: MIT + file LICENSE
 URL: https://github.com/fmmattioni/downloadthis
 BugReports: https://github.com/fmmattioni/downloadthis/issues
 Encoding: UTF-8
-LazyData: true
 Roxygen: list(markdown = TRUE)
 Imports: 
     fs,
