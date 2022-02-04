@@ -1,8 +1,17 @@
+url: https://fmmattioni.github.io/downloadthis/
+
 destination: docs
 
 template:
+  bootstrap: 5
+  bootswatch: lumen
+  opengraph:
+    image:
+      src: man/figures/header.png
+    twitter:
+      creator: "@felipe_mattioni"
+      card: summary_large_image
   params:
-    bootswatch: lumen
     ganalytics: UA-126092763-1
 
 authors:
@@ -13,7 +22,7 @@ toc:
   depth: 3
 
 development:
-  mode: unreleased
+  mode: auto
 
 navbar:
   title: ~
