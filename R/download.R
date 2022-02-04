@@ -126,9 +126,9 @@ download_this.default <- function(.data,
   })
 
   switch(output_extension,
-    ".csv" = ifelse(csv2, readr::write_csv2(x = .data, path = tmp_file), readr::write_csv(x = .data, path = tmp_file)),
+    ".csv" = ifelse(csv2, readr::write_csv2(x = .data, file = tmp_file), readr::write_csv(x = .data, file = tmp_file)),
     ".xlsx" = writexl::write_xlsx(x = .data, path = tmp_file),
-    ".rds" = readr::write_rds(x = .data, path = tmp_file)
+    ".rds" = readr::write_rds(x = .data, file = tmp_file)
   )
 
   # create button
@@ -166,9 +166,9 @@ download_this.data.frame <- function(.data,
   })
 
   switch(output_extension,
-    ".csv" = ifelse(csv2, readr::write_csv2(x = .data, path = tmp_file), readr::write_csv(x = .data, path = tmp_file)),
+    ".csv" = ifelse(csv2, readr::write_csv2(x = .data, file = tmp_file), readr::write_csv(x = .data, file = tmp_file)),
     ".xlsx" = writexl::write_xlsx(x = .data, path = tmp_file),
-    ".rds" = readr::write_rds(x = .data, path = tmp_file)
+    ".rds" = readr::write_rds(x = .data, file = tmp_file)
   )
 
   # create button
@@ -372,28 +372,8 @@ download_file <- function(path,
     button_label <- htmltools::HTML(paste(htmltools::tags$i(class = icon), button_label))
   }
 
-  ## generate download button
-  button_out <- bsplus::bs_button(
-    label = button_label,
-    button_type = button_type,
-    ... = ...
-  ) %>%
-    htmltools::a(
-      href = paste0(
-        "data:",
-        mime::guess_type(file = tmp_file),
-        ";base64,",
-        encode_this(.tmp_file = tmp_file)
-      ),
-      download = output_file
-    )
-
-  htmltools::tagList(
-    if (has_icon) {
-      add_fontawesome(self_contained)
-    },
-    button_out
-  )
+  # create button
+  create_button(button_label, button_type, output_file, tmp_file, self_contained, icon, ...)
 }
 
 
@@ -462,26 +442,6 @@ download_dir <- function(path,
     button_label <- htmltools::HTML(paste(htmltools::tags$i(class = icon), button_label))
   }
 
-  ## generate download button
-  button_out <- bsplus::bs_button(
-    label = button_label,
-    button_type = button_type,
-    ... = ...
-  ) %>%
-    htmltools::a(
-      href = paste0(
-        "data:",
-        mime::guess_type(file = tmp_file),
-        ";base64,",
-        encode_this(.tmp_file = tmp_file)
-      ),
-      download = output_file
-    )
-
-  htmltools::tagList(
-    if (has_icon) {
-      add_fontawesome(self_contained)
-    },
-    button_out
-  )
+  # create button
+  create_button(button_label, button_type, output_file, tmp_file, self_contained, icon, ...)
 }

@@ -1,9 +1,3 @@
-encode_this <- function(.tmp_file) {
-  ## encode file as a base64 string
-  ## taken from https://yihui.org/en/2018/07/embed-file/
-  base64enc::base64encode(.tmp_file)
-}
-
 add_fontawesome <- function(self_contained) {
   if (self_contained) {
     htmltools::htmlDependency(
@@ -24,15 +18,6 @@ add_fontawesome <- function(self_contained) {
   }
 }
 
-get_data_uri <- function(tmp_file) {
-  paste0(
-    "data:",
-    mime::guess_type(file = tmp_file),
-    ";base64,",
-    encode_this(.tmp_file = tmp_file)
-  )
-}
-
 create_button <- function(button_label, button_type, output_file, tmp_file, self_contained, icon, ...) {
   has_icon <- !is.null(icon)
 
@@ -46,8 +31,7 @@ create_button <- function(button_label, button_type, output_file, tmp_file, self
     ...
   ) %>%
     htmltools::a(
-      href = get_data_uri(tmp_file),
-      download = output_file
+      onclick = create_blob(tmp_file = tmp_file, output_file = output_file)
     )
 
   if (has_icon) {
@@ -55,4 +39,29 @@ create_button <- function(button_label, button_type, output_file, tmp_file, self
   }
 
   return(button_out)
+}
+
+create_blob <- function(tmp_file, output_file) {
+  ## get type of file
+  type_file <- mime::guess_type(file = tmp_file)
+  ## read bin
+  bin_file <- readBin(tmp_file, "raw", 10e6)
+  bin_file <- jsonlite::toJSON(bin_file, raw = "js")
+  ## produce js function
+  js_function <- glue::glue(
+    "
+    const myBlob = new Blob([{{bin_file}}], { type: '{{type_file}}' });
+    const downloadURL = window.URL.createObjectURL(myBlob);
+    const a = document.createElement('a');
+    document.body.appendChild(a);
+    a.href = downloadURL;
+    a.download = '{{output_file}}';
+    a.click();
+    window.URL.revokeObjectURL(downloadURL);
+    document.body.removeChild(a);
+    ",
+    .open = "{{",
+    .close = "}}"
+  )
+  js_function
 }
