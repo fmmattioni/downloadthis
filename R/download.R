@@ -126,9 +126,9 @@ download_this.default <- function(.data,
   })
 
   switch(output_extension,
-    ".csv" = ifelse(csv2, readr::write_csv2(x = .data, path = tmp_file), readr::write_csv(x = .data, path = tmp_file)),
+    ".csv" = ifelse(csv2, readr::write_csv2(x = .data, file = tmp_file), readr::write_csv(x = .data, file = tmp_file)),
     ".xlsx" = writexl::write_xlsx(x = .data, path = tmp_file),
-    ".rds" = readr::write_rds(x = .data, path = tmp_file)
+    ".rds" = readr::write_rds(x = .data, file = tmp_file)
   )
 
   # create button
@@ -166,9 +166,9 @@ download_this.data.frame <- function(.data,
   })
 
   switch(output_extension,
-    ".csv" = ifelse(csv2, readr::write_csv2(x = .data, path = tmp_file), readr::write_csv(x = .data, path = tmp_file)),
+    ".csv" = ifelse(csv2, readr::write_csv2(x = .data, file = tmp_file), readr::write_csv(x = .data, file = tmp_file)),
     ".xlsx" = writexl::write_xlsx(x = .data, path = tmp_file),
-    ".rds" = readr::write_rds(x = .data, path = tmp_file)
+    ".rds" = readr::write_rds(x = .data, file = tmp_file)
   )
 
   # create button
