@@ -1,3 +1,9 @@
+# downloadthis 0.3.0
+
+* Implemented the use of blobs.
+
+* Removed warning from `readr` package (#17).
+
 # downloadthis 0.2.1
 
 * Added method to download a `ggplot2` object (#7). Thanks @JohnCoene.
