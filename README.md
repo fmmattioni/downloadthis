@@ -54,7 +54,7 @@ v.5.13.0](https://fontawesome.com/)
 ``` r
 library(downloadthis)
 
-mtcars %>% 
+mtcars %>%
   download_this(
     output_name = "mtcars data set",
     output_extension = ".csv",
@@ -126,16 +126,16 @@ download_dir(
 
 ## Vignettes
 
-  - [Introduction to
+-   [Introduction to
     downloadthis](https://fmmattioni.github.io/downloadthis/articles/downloadthis.html)
-  - [Button
+-   [Button
     types](https://fmmattioni.github.io/downloadthis/articles/button_types.html)
-  - [Customizing buttons with
+-   [Customizing buttons with
     css](https://fmmattioni.github.io/downloadthis/articles/customization.html)
 
 ## Related work
 
-  - [xfun](https://github.com/yihui/xfun): The `xfun` package provides
+-   [xfun](https://github.com/yihui/xfun): The `xfun` package provides
     links instead of buttons for local files and directories.
 
 ## Code of Conduct
