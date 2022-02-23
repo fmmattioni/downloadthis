@@ -1,3 +1,9 @@
+# downloadthis 0.3.1
+
+* Updated the use of blobs to be generated from base64 strings instead of Uint8Array.
+
+* Updated dependencies.
+
 # downloadthis 0.3.0
 
 * Implemented the use of blobs.
