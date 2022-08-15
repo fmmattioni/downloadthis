@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# downloadthis <img src='man/figures/logo.png' align="right" height="240" />
+# downloadthis <img src='man/figures/logo.png' height="240" />
 
 <!-- badges: start -->
 

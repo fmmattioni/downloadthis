@@ -1,3 +1,7 @@
+# downloadthis 0.3.2
+
+* Removed `align` attribute in `img` tag.
+
 # downloadthis 0.3.1
 
 * Updated the use of blobs to be generated from base64 strings instead of Uint8Array.
