@@ -6,7 +6,7 @@
 \alias{downloadthis-package}
 \title{downloadthis: Implement Download Buttons in 'rmarkdown'}
 \description{
-\if{html}{\figure{logo.png}{options: align='right' alt='logo' width='120'}}
+\if{html}{\figure{logo.png}{options: style='float: right' alt='logo' width='120'}}
 
 Implement download buttons in HTML output from 'rmarkdown' without the need for 'runtime:shiny'.
 }

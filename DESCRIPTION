@@ -30,7 +30,7 @@ Imports:
     zip,
     ggplot2,
     base64enc
-RoxygenNote: 7.1.2
+RoxygenNote: 7.2.1
 Suggests: 
     knitr,
     rmarkdown,
