@@ -128,17 +128,17 @@ download_dir(
 
 ## Vignettes
 
--   [Introduction to
-    downloadthis](https://fmmattioni.github.io/downloadthis/articles/downloadthis.html)
--   [Button
-    types](https://fmmattioni.github.io/downloadthis/articles/button_types.html)
--   [Customizing buttons with
-    css](https://fmmattioni.github.io/downloadthis/articles/customization.html)
+- [Introduction to
+  downloadthis](https://fmmattioni.github.io/downloadthis/articles/downloadthis.html)
+- [Button
+  types](https://fmmattioni.github.io/downloadthis/articles/button_types.html)
+- [Customizing buttons with
+  css](https://fmmattioni.github.io/downloadthis/articles/customization.html)
 
 ## Related work
 
--   [xfun](https://github.com/yihui/xfun): The `xfun` package provides
-    links instead of buttons for local files and directories.
+- [xfun](https://github.com/yihui/xfun): The `xfun` package provides
+  links instead of buttons for local files and directories.
 
 ## Code of Conduct
 
