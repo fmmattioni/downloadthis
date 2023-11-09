@@ -67,6 +67,7 @@ create_blob <- function(tmp_file, output_file) {
       a.click();
       window.URL.revokeObjectURL(downloadURL);
       document.body.removeChild(a);
+      return false;
     });"
   )
   js_function
