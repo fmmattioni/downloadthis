@@ -1,11 +1,11 @@
-pandoc: 2.7.3
-pkgdown: 2.0.6
+pandoc: 2.19.2
+pkgdown: 2.0.7
 pkgdown_sha: ~
 articles:
   button_types: button_types.html
   customization: customization.html
   downloadthis: downloadthis.html
-last_built: 2022-08-16T14:37Z
+last_built: 2023-11-09T10:34Z
 urls:
   reference: https://fmmattioni.github.io/downloadthis/reference
   article: https://fmmattioni.github.io/downloadthis/articles
