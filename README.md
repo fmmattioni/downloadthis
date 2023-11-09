@@ -17,6 +17,7 @@ badge](https://cranlogs.r-pkg.org/badges/last-month/downloadthis?color=blue)](ht
 badge](https://cranlogs.r-pkg.org/badges/grand-total/downloadthis?color=blue)](https://CRAN.R-project.org/package=downloadthis)
 [![Codecov test
 coverage](https://codecov.io/gh/fmmattioni/downloadthis/branch/master/graph/badge.svg)](https://app.codecov.io/gh/fmmattioni/downloadthis?branch=master)
+[![R-CMD-check](https://github.com/fmmattioni/downloadthis/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/fmmattioni/downloadthis/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
 The goal of `downloadthis` is to implement download buttons in HTML
@@ -128,17 +129,17 @@ download_dir(
 
 ## Vignettes
 
--   [Introduction to
-    downloadthis](https://fmmattioni.github.io/downloadthis/articles/downloadthis.html)
--   [Button
-    types](https://fmmattioni.github.io/downloadthis/articles/button_types.html)
--   [Customizing buttons with
-    css](https://fmmattioni.github.io/downloadthis/articles/customization.html)
+- [Introduction to
+  downloadthis](https://fmmattioni.github.io/downloadthis/articles/downloadthis.html)
+- [Button
+  types](https://fmmattioni.github.io/downloadthis/articles/button_types.html)
+- [Customizing buttons with
+  css](https://fmmattioni.github.io/downloadthis/articles/customization.html)
 
 ## Related work
 
--   [xfun](https://github.com/yihui/xfun): The `xfun` package provides
-    links instead of buttons for local files and directories.
+- [xfun](https://github.com/yihui/xfun): The `xfun` package provides
+  links instead of buttons for local files and directories.
 
 ## Code of Conduct
 

@@ -1,3 +1,7 @@
+# downloadthis 0.3.3
+
+* Fixed issue that download button in Quarto documents were not working in Firefox (#33).
+
 # downloadthis 0.3.2
 
 * Removed `align` attribute in `img` tag.

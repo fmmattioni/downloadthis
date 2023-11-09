@@ -43,11 +43,9 @@ create_button <- function(button_label, button_type, output_file, tmp_file, self
   button_out <- bsplus::bs_button(
     label = button_label,
     button_type = button_type,
+    onclick = create_blob(tmp_file = tmp_file, output_file = output_file),
     ...
-  ) %>%
-    htmltools::a(
-      onclick = create_blob(tmp_file = tmp_file, output_file = output_file)
-    )
+  )
 
   if (has_icon) {
     button_out <- htmltools::attachDependencies(button_out, add_fontawesome(self_contained))
@@ -62,9 +60,11 @@ create_blob <- function(tmp_file, output_file) {
   js_function <- paste0("fetch('", base64, "').then(res => res.blob()).then(blob => {
       const downloadURL = window.URL.createObjectURL(blob);
       const a = document.createElement('a');
+      a.style.display = 'none'; // Hide the link
       document.body.appendChild(a);
       a.href = downloadURL;
-      a.download = '", output_file, "'; a.click();
+      a.download = '", output_file, "';
+      a.click();
       window.URL.revokeObjectURL(downloadURL);
       document.body.removeChild(a);
     });"
