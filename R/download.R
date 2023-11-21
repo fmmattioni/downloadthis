@@ -16,7 +16,7 @@
 #'   function, only `.xlsx` and `.rds` are supported.
 #' @param button_label Character (HTML), button label
 #' @param button_type Character, one of the standard Bootstrap types
-#' @param icon Fontawesome tag e.g.: "fa fa-save", set to `NULL` to
+#' @param icon Fontawesome tag e.g.: "fa fa-save", set to `NULL` to not show any icon.
 #' @param self_contained A boolean to specify whether your HTML output is
 #'   self-contained. Default to `FALSE`.
 #' @param csv2 A boolean to specify whether to use `readr::write_csv2()` in case
@@ -44,7 +44,6 @@
 #'     output_extension = ".csv",
 #'     button_label = "Download data",
 #'     button_type = "warning",
-#'     has_icon = TRUE,
 #'     icon = "fa fa-save"
 #'   )
 #'
@@ -55,7 +54,6 @@
 #'     output_extension = ".xlsx",
 #'     button_label = "Download data",
 #'     button_type = "warning",
-#'     has_icon = TRUE,
 #'     icon = "fa fa-save"
 #'   )
 #'
@@ -66,7 +64,6 @@
 #'     output_extension = ".xlsx",
 #'     button_label = "Download data",
 #'     button_type = "warning",
-#'     has_icon = TRUE,
 #'     icon = "fa fa-save"
 #'   )
 #'
@@ -80,7 +77,6 @@
 #'     output_extension = ".rds",
 #'     button_label = "Download as rds",
 #'     button_type = "warning",
-#'     has_icon = TRUE,
 #'     icon = "fa fa-save"
 #'   )
 #' }

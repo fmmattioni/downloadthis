@@ -48,7 +48,7 @@ This package builds the download button in R Markdown using
 Xie](https://github.com/yihui).
 
 ✅ `{downloadthis}` now uses [font-awesome icons
-v.5.13.0](https://fontawesome.com/)
+v.6.4.2](https://fontawesome.com/)
 
 ## Usage
 
