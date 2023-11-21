@@ -17,7 +17,7 @@ add_fontawesome <- function(self_contained) {
   if (self_contained) {
     htmltools::htmlDependency(
       name = "font-awesome",
-      version = "5.13.0",
+      version = "6.4.2",
       src = "assets",
       stylesheet = c("css/all.min.css", "css/v4-shims.min.css"),
       package = "downloadthis"
@@ -25,7 +25,7 @@ add_fontawesome <- function(self_contained) {
   } else {
     htmltools::htmlDependency(
       name = "font-awesome",
-      version = "5.13.0",
+      version = "6.4.2",
       src = "assets",
       script = "js/script.js",
       package = "downloadthis"

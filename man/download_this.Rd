@@ -35,7 +35,7 @@ function, only \code{.xlsx} and \code{.rds} are supported.}
 
 \item{button_type}{Character, one of the standard Bootstrap types}
 
-\item{icon}{Fontawesome tag e.g.: "fa fa-save", set to \code{NULL} to}
+\item{icon}{Fontawesome tag e.g.: "fa fa-save", set to \code{NULL} to not show any icon.}
 
 \item{self_contained}{A boolean to specify whether your HTML output is
 self-contained. Default to \code{FALSE}.}
@@ -74,7 +74,6 @@ mtcars \%>\%
     output_extension = ".csv",
     button_label = "Download data",
     button_type = "warning",
-    has_icon = TRUE,
     icon = "fa fa-save"
   )
 
@@ -85,7 +84,6 @@ list(mtcars, iris) \%>\%
     output_extension = ".xlsx",
     button_label = "Download data",
     button_type = "warning",
-    has_icon = TRUE,
     icon = "fa fa-save"
   )
 
@@ -96,7 +94,6 @@ list("mtcars dataset" = mtcars, "iris dataset" = iris) \%>\%
     output_extension = ".xlsx",
     button_label = "Download data",
     button_type = "warning",
-    has_icon = TRUE,
     icon = "fa fa-save"
   )
 
@@ -110,7 +107,6 @@ list(mtcars, iris, vector_example, linear_model) \%>\%
     output_extension = ".rds",
     button_label = "Download as rds",
     button_type = "warning",
-    has_icon = TRUE,
     icon = "fa fa-save"
   )
 }
