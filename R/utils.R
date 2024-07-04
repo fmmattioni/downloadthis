@@ -1,7 +1,6 @@
 encode_this <- function(.tmp_file) {
   ## encode file as a base64 string
-  ## taken from https://yihui.org/en/2018/07/embed-file/
-  base64enc::base64encode(.tmp_file)
+  b64::encode_file(path = .tmp_file)
 }
 
 get_data_uri <- function(tmp_file) {
@@ -17,7 +16,7 @@ add_fontawesome <- function(self_contained) {
   if (self_contained) {
     htmltools::htmlDependency(
       name = "font-awesome",
-      version = "6.4.2",
+      version = "6.5.2",
       src = "assets",
       stylesheet = c("css/all.min.css", "css/v4-shims.min.css"),
       package = "downloadthis"
@@ -25,7 +24,7 @@ add_fontawesome <- function(self_contained) {
   } else {
     htmltools::htmlDependency(
       name = "font-awesome",
-      version = "6.4.2",
+      version = "6.5.2",
       src = "assets",
       script = "js/script.js",
       package = "downloadthis"
@@ -56,19 +55,31 @@ create_button <- function(button_label, button_type, output_file, tmp_file, self
 
 create_blob <- function(tmp_file, output_file) {
   base64 <- get_data_uri(tmp_file)
-  ## produce js function
-  js_function <- paste0("fetch('", base64, "').then(res => res.blob()).then(blob => {
-      const downloadURL = window.URL.createObjectURL(blob);
-      const a = document.createElement('a');
-      a.style.display = 'none'; // Hide the link
-      document.body.appendChild(a);
-      a.href = downloadURL;
-      a.download = '", output_file, "';
-      a.click();
-      window.URL.revokeObjectURL(downloadURL);
-      document.body.removeChild(a);
-      return false;
-    });"
-  )
+  js_function <- paste0("
+    async function downloadFile(event) {
+      event.preventDefault();
+      try {
+        const response = await fetch('", base64, "');
+        if (!response.ok) throw new Error('Network response failed');
+        const blob = await response.blob();
+        const blobUrl = window.URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = blobUrl;
+        a.download = '", output_file, "';
+        a.style.display = 'none';
+        document.body.appendChild(a);
+        a.dispatchEvent(new MouseEvent('click'));
+        document.body.removeChild(a);
+        setTimeout(() => {
+          window.URL.revokeObjectURL(blobUrl);
+        }, 100);
+        return false;
+      } catch (error) {
+        console.error('Download failed:', error);
+        alert('Download failed. Please try again.');
+      }
+    }
+    downloadFile(event);
+  ")
   js_function
 }
