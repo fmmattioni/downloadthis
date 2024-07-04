@@ -1,3 +1,9 @@
+# downloadthis 0.4.0
+
+* Switched `base64enc` dependency for `b64`.
+* Improved download function.
+* Updated fontawesome icons to v.6.5.2.
+
 # downloadthis 0.3.4
 
 * Fixed issue that download button with icons were messing button in plotly (#29).
