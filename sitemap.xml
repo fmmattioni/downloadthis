@@ -1,57 +1,21 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://fmmattioni.github.io/downloadthis/404.html</loc>
-  </url>
-  <url>
-    <loc>https://fmmattioni.github.io/downloadthis/CODE_OF_CONDUCT.html</loc>
-  </url>
-  <url>
-    <loc>https://fmmattioni.github.io/downloadthis/LICENSE-text.html</loc>
-  </url>
-  <url>
-    <loc>https://fmmattioni.github.io/downloadthis/LICENSE.html</loc>
-  </url>
-  <url>
-    <loc>https://fmmattioni.github.io/downloadthis/articles/button_types.html</loc>
-  </url>
-  <url>
-    <loc>https://fmmattioni.github.io/downloadthis/articles/customization.html</loc>
-  </url>
-  <url>
-    <loc>https://fmmattioni.github.io/downloadthis/articles/downloadthis.html</loc>
-  </url>
-  <url>
-    <loc>https://fmmattioni.github.io/downloadthis/articles/index.html</loc>
-  </url>
-  <url>
-    <loc>https://fmmattioni.github.io/downloadthis/authors.html</loc>
-  </url>
-  <url>
-    <loc>https://fmmattioni.github.io/downloadthis/index.html</loc>
-  </url>
-  <url>
-    <loc>https://fmmattioni.github.io/downloadthis/news/index.html</loc>
-  </url>
-  <url>
-    <loc>https://fmmattioni.github.io/downloadthis/reference/download_dir.html</loc>
-  </url>
-  <url>
-    <loc>https://fmmattioni.github.io/downloadthis/reference/download_file.html</loc>
-  </url>
-  <url>
-    <loc>https://fmmattioni.github.io/downloadthis/reference/download_link.html</loc>
-  </url>
-  <url>
-    <loc>https://fmmattioni.github.io/downloadthis/reference/download_this.html</loc>
-  </url>
-  <url>
-    <loc>https://fmmattioni.github.io/downloadthis/reference/downloadthis-package.html</loc>
-  </url>
-  <url>
-    <loc>https://fmmattioni.github.io/downloadthis/reference/index.html</loc>
-  </url>
-  <url>
-    <loc>https://fmmattioni.github.io/downloadthis/reference/pipe.html</loc>
-  </url>
+<urlset xmlns = 'http://www.sitemaps.org/schemas/sitemap/0.9'>
+<url><loc>https://fmmattioni.github.io/downloadthis/404.html</loc></url>
+<url><loc>https://fmmattioni.github.io/downloadthis/CODE_OF_CONDUCT.html</loc></url>
+<url><loc>https://fmmattioni.github.io/downloadthis/LICENSE-text.html</loc></url>
+<url><loc>https://fmmattioni.github.io/downloadthis/LICENSE.html</loc></url>
+<url><loc>https://fmmattioni.github.io/downloadthis/articles/button_types.html</loc></url>
+<url><loc>https://fmmattioni.github.io/downloadthis/articles/customization.html</loc></url>
+<url><loc>https://fmmattioni.github.io/downloadthis/articles/downloadthis.html</loc></url>
+<url><loc>https://fmmattioni.github.io/downloadthis/articles/index.html</loc></url>
+<url><loc>https://fmmattioni.github.io/downloadthis/authors.html</loc></url>
+<url><loc>https://fmmattioni.github.io/downloadthis/index.html</loc></url>
+<url><loc>https://fmmattioni.github.io/downloadthis/news/index.html</loc></url>
+<url><loc>https://fmmattioni.github.io/downloadthis/reference/download_dir.html</loc></url>
+<url><loc>https://fmmattioni.github.io/downloadthis/reference/download_file.html</loc></url>
+<url><loc>https://fmmattioni.github.io/downloadthis/reference/download_link.html</loc></url>
+<url><loc>https://fmmattioni.github.io/downloadthis/reference/download_this.html</loc></url>
+<url><loc>https://fmmattioni.github.io/downloadthis/reference/downloadthis-package.html</loc></url>
+<url><loc>https://fmmattioni.github.io/downloadthis/reference/index.html</loc></url>
+<url><loc>https://fmmattioni.github.io/downloadthis/reference/pipe.html</loc></url>
 </urlset>
+
