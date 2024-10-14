@@ -1,3 +1,7 @@
+# downloadthis 0.4.1
+
+* Add additional Font Awesome 6.5.2 webfonts to fix pandoc errors (Issue #43).
+
 # downloadthis 0.4.0
 
 * Switched `base64enc` dependency for `b64`.
