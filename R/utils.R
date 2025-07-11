@@ -1,6 +1,6 @@
 encode_this <- function(.tmp_file) {
-  ## encode file as a base64 string
-  b64::encode_file(path = .tmp_file)
+  ## taken from https://yihui.org/en/2018/07/embed-file/
+  base64enc::base64encode(.tmp_file)
 }
 
 get_data_uri <- function(tmp_file) {
@@ -16,7 +16,7 @@ add_fontawesome <- function(self_contained) {
   if (self_contained) {
     htmltools::htmlDependency(
       name = "font-awesome",
-      version = "6.5.2",
+      version = "6.7.2",
       src = "assets",
       stylesheet = c("css/all.min.css", "css/v4-shims.min.css"),
       package = "downloadthis"
@@ -24,7 +24,7 @@ add_fontawesome <- function(self_contained) {
   } else {
     htmltools::htmlDependency(
       name = "font-awesome",
-      version = "6.5.2",
+      version = "6.7.2",
       src = "assets",
       script = "js/script.js",
       package = "downloadthis"
