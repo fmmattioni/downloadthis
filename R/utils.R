@@ -1,6 +1,6 @@
 encode_this <- function(.tmp_file) {
-  ## encode file as a base64 string
-  b64::encode_file(path = .tmp_file)
+  ## taken from https://yihui.org/en/2018/07/embed-file/
+  base64enc::base64encode(.tmp_file)
 }
 
 get_data_uri <- function(tmp_file) {
