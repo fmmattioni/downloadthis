@@ -1,3 +1,8 @@
+# downloadthis 0.5.0
+
+* Returned to `base64enc` dependency (#48).
+* Updated fontawesome icons to v.6.7.2.
+
 # downloadthis 0.4.1
 
 * Add additional Font Awesome 6.5.2 webfonts to fix pandoc errors (Issue #43).
