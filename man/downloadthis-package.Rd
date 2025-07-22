@@ -13,6 +13,7 @@ Implement download buttons in HTML output from 'rmarkdown' without the need for 
 \seealso{
 Useful links:
 \itemize{
+  \item \url{https://fmmattioni.github.io/downloadthis/}
   \item \url{https://github.com/fmmattioni/downloadthis}
   \item Report bugs at \url{https://github.com/fmmattioni/downloadthis/issues}
 }

@@ -15,7 +15,7 @@ Authors@R:
     )
 Description: Implement download buttons in HTML output from 'rmarkdown' without the need for 'runtime:shiny'.
 License: MIT + file LICENSE
-URL: https://github.com/fmmattioni/downloadthis
+URL: https://fmmattioni.github.io/downloadthis/, https://github.com/fmmattioni/downloadthis
 BugReports: https://github.com/fmmattioni/downloadthis/issues
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
@@ -35,8 +35,7 @@ Suggests:
     knitr,
     rmarkdown,
     testthat (>= 3.0.1),
-    spelling,
-    covr
+    spelling
 VignetteBuilder: knitr
 Language: en-US
 Config/testthat/edition: 3
